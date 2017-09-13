@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="hu">
 <head>
-    <title>Az mi honlapunk</title>
+    <meta charset="utf-8">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif}
+    </style>
+    <title>JS001 - Óra v1</title>
 </head>
 
 <body>
-
-    <h1>A Magyar Zabhegyezők Társasága</h1>
-    <p>Isten hozta a honlapunkon, sajnos épp átalakítás alatt van.</p>
-    <p>Az utlsó módosítás időpontja:
-        <script language="javascript" type="text/javascript">
-        document.write(document.lastModified);
-        </script>
+    <h1>JS001 - Óra v1</h1>
+    <h2>Téma</h2>
+    <p>Hol helyezhetjük ela JavaScript kódokat ?</p>
+    <p>1) A <b>body</b>ban <b>script</b> tag-párok közé zárva a
+    JavaScript az oldal felépülésekor lefut.,
+    így ha van kimenete, az bele ápül a HTML kódba.</p>
+    <p>Pl.: <code>document.write(document.lastModified)</code> értéke:
+    
+    <script language="JavaScript" type="text/javascript">
+    document.write(document.lastModified);
+    </script>
+    
     </p>
-
-</body>
+    <p>2) elhelyezhetjük esemény kezelőkön is:</p>
+    
+    </body>
 </html>
