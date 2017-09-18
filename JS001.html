@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-
 <html lang="hu">
 <head>
-    <meta charset="utf-8">
-    <style>
-        body {font-family: Arial, Helvetica, sans-serif}
-    </style>
-    <title>JS001 - Óra v1</title>
+  <meta charset="utf-8">
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <style type="text/css">
+  body {font-family: Arial, Helvetica, sans-serif}
+  </style>
+  <title>JS001 - A JavaScript elhelyezés</title>
 </head>
-
 <body>
-    <h1>JS001 - Óra v1</h1>
-    <h2>kulcsszavak</h2>
-    <p>[Date obj. |document.write | DOM | Js kód elhelyezés]</p>
-    <hr/>
-    <h2>Téma</h2>
-    <p>Hol helyezhetjük ela JavaScript kódokat ?</p>
-    <p>
-        1) A <b>body</b>ban <b>script</b> tag-párok közé zárva a JavaScript az
-        oldal felépülésekor lefut. Így ha van kimenete, az bele épül a HTML
-        kódba.
-    </p>
-    <p>Pl.:
-        <br/>
-        <code>
-            &lt;p&gt;<br/>&lt;scrip language="JavaScript" type="text/javascript"&gt;<br/>document.write(document.lastModified)<br/>&lt;/script&gt;<br>&lt;/p&gt;
-        </code>
-        <br/>
-        értéke:
-        <script language="JavaScript" type="text/javascript">
-            document.write(document.lastModified);
-        </script>
-    </p>
-    <p>2) elhelyezhetjük esemény kezelőkön is:</p>
-    
-    </body>
+  <h1>JS001 - A JavaScript elhelyezése</h1>
+  <h2>kulcsszavak</h2>
+  <p>[document.write | Js elhelyezése]</p>
+  <hr>
+  <h2>Téma</h2>
+  <p>Hol helyezhetjük ela JavaScript kódokat ?</p>
+  <ol>
+    <li>A weboldal törzsében <b>script</b> tag<i>pár</i> közé zárva. Az oldal feltöltésekor fut le a Js és az eredmény
+    az oldal HTML kódjába kerül.</li>
+  </ol>
+  <p>Példa-1.:<br>
+  <code>&lt;p&gt;<br>
+  &lt;scrip language="JavaScript" type="text/javascript"&gt;<br>
+  document.write(document.lastModified)<br>
+  &lt;/script&gt;<br>
+  &lt;/p&gt;</code></p>
+  <p>Eredmény: 
+  <script language="JavaScript" type="text/javascript">
+
+
+  document.write(document.lastModified);
+  </script></p>
+</body>
 </html>
