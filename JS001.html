@@ -5,31 +5,60 @@
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <style type="text/css">
   body {font-family: Arial, Helvetica, sans-serif}
+  footer p {font-size: small}
+  szakaszjegyzet {font-size: small}
+  sup.lj {font-size: small}
   </style>
   <title>JS001 - A JavaScript elhelyezés</title>
 </head>
 <body>
   <h1>JS001 - A JavaScript elhelyezése</h1>
-  <h2>kulcsszavak</h2>
-  <p>[document.write | Js elhelyezése]</p>
-  <hr>
-  <h2>Téma</h2>
-  <p>Hol helyezhetjük ela JavaScript kódokat ?</p>
-  <ol>
-    <li>A weboldal törzsében <b>script</b> tag<i>pár</i> közé zárva. Az oldal feltöltésekor fut le a Js és az eredmény
-    az oldal HTML kódjába kerül.</li>
-  </ol>
-  <p>Példa-1.:<br>
-  <code>&lt;p&gt;<br>
-  &lt;scrip language="JavaScript" type="text/javascript"&gt;<br>
-  document.write(document.lastModified)<br>
-  &lt;/script&gt;<br>
-  &lt;/p&gt;</code></p>
-  <p>Eredmény: 
-  <script language="JavaScript" type="text/javascript">
-
-
-  document.write(document.lastModified);
-  </script></p>
+  <header>
+    <h2>Kulcsszavak</h2>
+    <p>[alert(...) | document.write | Js elhelyezése]</p>
+    <hr>
+  </header>
+  <section>
+    <h2>Téma: Hová helyezhetjük el a JavaScript kódokat ?</h2>
+    <ol>
+      <li>A weboldal törzsébe <b>script</b> <i>tag</i>ek közé zárva. Az oldal feltöltésekor fut le a Js és az eredmény
+      az oldal HTML kódjába kerül.</li>
+      <li>Az oldal fejlécébe (head blokk). Ez esetben a Js kimenet nem jelenik meg. Viszont föggvény definíciók,
+      változó deklarációk elhelyezésére nagyszerűkerül.</li>
+      <li>HTML elemekbe, eseménykezelőkbe (body, form..., stb.). Ilyen esetekben a kódot nem zárjuk <b>scrip</b>
+      <i>tag</i>ek közé.</li>
+      <li>Önálló állományba. A szokásos állománytipus (kiterjesztés :-)) a .js. Ezt a megoldást a böngészők azzal is
+      támogatják, hogy Js kód a gyorsító tárba (cache) kerül, így a többszöri használat, vagy több lap által való
+      használata gyors lesz.</li>
+    </ol>
+    <p>Példa-1.(könyv:1.2. kód):<br>
+    <code>&lt;p&gt;<br>
+    &lt;scrip language="JavaScript" type="text/javascript"&gt;<br>
+    document.write(document.lastModified)<br>
+    &lt;/script&gt;<br>
+    &lt;/p&gt;</code></p>
+    <p>Eredmény: 
+    <script language="JavaScript" type="text/javascript">
+    document.write(document.lastModified);
+    </script> <sup class="lj">1</sup></p>
+    <p>Példa-2.(majd később :-))</p>
+    <p>Példa-3.(könyv:1.3. kód):<br>
+    Egy nyomógomb (button) <q>onclick</q> (klikkelés) eseményére egy figyelmeztetést teszünk. A figyelmeztetés egy Js
+    függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet.<br>
+    <code>&lt;button onclicl="alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code> <sup class=
+    "lj">2</sup></p>
+    <p><button onclick="alert('Huh, jól megklikkeltél :-o');">Klikkelj!</button></p>
+    <footer>
+      <h3>(szakasz) Jegyzet</h3>
+      <p><sup class="lj">1</sup> <span class="szakaszjegyzet">Figyelemreméltó, hogy ha nem Kliens-Szerver
+      konfigurációban vagyunk, akkor az Internet Explorer a HTML dokumentum utolsó módosításának időpontját adja,
+      ellemben az AVAST SafeZone, a Google Crome az oldal utolsó betöltésének / frissítésének időpontját.
+      Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó módosításának időpontját kellene kapnunk,
+      de ez függ attól, hogy a szerver helyesen van-e beállítva. Tehát jól meg kell gondolni mire használjuk a
+      <code>document.lastModified</code> függvényt.</span></p>
+      <p><sup class="lj">2</sup> <span class="szakaszjegyzet">A könyv nem írja a ;-t az <code>alert(...)</code> után,
+      de a Komodo szól, ha nincs. Hiszekneki, hogy kell.</span></p>
+    </footer>
+  </section>
 </body>
 </html>
