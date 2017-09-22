@@ -6,6 +6,21 @@
   <style type="text/css">
   body {font-family: Arial, Helvetica, sans-serif}
   footer p {font-size: small}
+  header ul {
+    display:inline;
+    margin-left:0;
+    padding-left:0
+  }
+  header ul li {
+    display:block;
+    list-style:none;
+    float:left;
+    border-left-style:none;
+    border-left-width:2px;
+    padding-left: 5px;
+  }
+  .float_clear {clear: left}
+  <!-- -->
   szakaszjegyzet {font-size: small}
   sup.lj {font-size: small}
   </style>
@@ -14,8 +29,18 @@
 <body>
   <h1>JS001 - A JavaScript elhelyezése</h1>
   <header>
+    <h2>Navigáció</h2>
+    <ul>
+      <li>[ <a href="JS000.html">előző</a>
+      </li>
+      <li>| <a href="JS000.html">tartalojegyzék</a>
+      </li>
+      <li>| <a href="#">következő</a> ]
+      </li>
+    </ul>
+    <div class="float_clear"></div>
     <h2>Kulcsszavak</h2>
-    <p>[alert(...) | document.write | Js elhelyezése]</p>
+    <p>[alert(...) | Date() | document.write | Js elhelyezése]</p>
     <hr>
   </header>
   <section>
@@ -31,32 +56,49 @@
       támogatják, hogy Js kód a gyorsító tárba (cache) kerül, így a többszöri használat, vagy több lap által való
       használata gyors lesz.</li>
     </ol>
-    <p>Példa-1.(könyv:1.2. kód):<br>
-    <code>&lt;p&gt;<br>
-    &lt;scrip language="JavaScript" type="text/javascript"&gt;<br>
-    document.write(document.lastModified)<br>
-    &lt;/script&gt;<br>
-    &lt;/p&gt;</code></p>
-    <p>Eredmény: 
+    <h3>Példa-1. (könyv:1.2. kód):</h3>
+    <p><code>&lt;scrip language="JavaScript" type="text/javascript"&gt;<br>
+    document.write(document.lastModified);<br>
+    &lt;/script&gt;</code> <sup class="lj">1</sup></p>
+    <p>Eredmény:</p>
+    <p>
     <script language="JavaScript" type="text/javascript">
-    document.write(document.lastModified);
-    </script> <sup class="lj">1</sup></p>
-    <p>Példa-2.(majd később :-))</p>
-    <p>Példa-3.(könyv:1.3. kód):<br>
-    Egy nyomógomb (button) <q>onclick</q> (klikkelés) eseményére egy figyelmeztetést teszünk. A figyelmeztetés egy Js
-    függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet.<br>
-    <code>&lt;button onclicl="alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code> <sup class=
-    "lj">2</sup></p>
+      document.write(document.lastModified);
+    </script> <sup class="lj">2</sup></p>
+    <h3>Példa-1b. (könyv: 2.1. kód):</h3>
+    <p>Az aktuális időpontot is lekérdezhetjük. Erre a <b>Date</b> osztályt használhatjuk. A <b>new</b> operátorral
+    létrehozunk egy Date tipusú példányt és annak <b>toString()</b> metódusával szövegesen megkapjuk a példányban
+    tárolt időt.</p>
+    <p><code>v_aktHelyiIdo = new Date();<br>
+    v_aktHelyiIdoStr = v_aktHelyiIdo.toString();</code></p>
+    <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen.</p>
+    <p>Eredmény:</p>
+    <p>
+    <script language="JavaScript" type="text/javascript">
+      v_aktHelyiIdo = new Date();
+      v_aktHelyiIdoStr = v_aktHelyiIdo.toString();
+      v_utcIdoStr = v_aktHelyiIdo.toGMTString();
+      document.write("Helyi idő:"+v_aktHelyiIdoStr+" [UTC:"+v_utcIdoStr+"]");
+    </script></p>
+    <h3>Példa-2. (majd később :-))</h3>
+    <h3>Példa-3. (könyv:1.3. kód):</h3>
+    <p>Egy nyomógomb (button) <q>onclick</q> (klikkelés) eseményére egy figyelmeztetést teszünk. A figyelmeztetés egy
+    Js függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet.</p>
+    <p><code>&lt;button onclicl="alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code> <sup class=
+    "lj">3</sup></p>
     <p><button onclick="alert('Huh, jól megklikkeltél :-o');">Klikkelj!</button></p>
     <footer>
       <h3>(szakasz) Jegyzet</h3>
-      <p><sup class="lj">1</sup> <span class="szakaszjegyzet">Figyelemreméltó, hogy ha nem Kliens-Szerver
+      <p><sup class="lj">1</sup> <span class="szakaszjegyzet"><q>Rohan az idő/Megállítanám, de nem lehet...</q> A
+      <b>script</b> elem használatát a HTML szövegében a Komodo sem ajálja és a Nu Html Checker elavult gyakorlatnak
+      minősíti. Remélem a példák végére érve tudni fogom a jó gyakorlatot</span></p>
+      <p><sup class="lj">2</sup> <span class="szakaszjegyzet">Figyelemreméltó, hogy ha nem Kliens-Szerver
       konfigurációban vagyunk, akkor az Internet Explorer a HTML dokumentum utolsó módosításának időpontját adja,
       ellemben az AVAST SafeZone, a Google Crome az oldal utolsó betöltésének / frissítésének időpontját.
       Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó módosításának időpontját kellene kapnunk,
       de ez függ attól, hogy a szerver helyesen van-e beállítva. Tehát jól meg kell gondolni mire használjuk a
       <code>document.lastModified</code> függvényt.</span></p>
-      <p><sup class="lj">2</sup> <span class="szakaszjegyzet">A könyv nem írja a ;-t az <code>alert(...)</code> után,
+      <p><sup class="lj">3</sup> <span class="szakaszjegyzet">A könyv nem írja a ;-t az <code>alert(...)</code> után,
       de a Komodo szól, ha nincs. Hiszekneki, hogy kell.</span></p>
     </footer>
   </section>
