@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<svg version="1.2" baseProfile="tiny" width="210mm" height="297mm" viewBox="0 0 21000 29700" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+<svg version="1.2" baseProfile="tiny" width="75mm" height="160mm" viewBox="0 0 7500 16000" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
  <defs>
   <font id="EmbeddedFont_1" horiz-adv-x="2048">
    <font-face font-family="Arial embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1852" descent="450"/>
@@ -59,122 +59,122 @@
  <g visibility="visible" id="MasterSlide_1_Default">
   <desc>Master slide
   </desc>
-  <rect fill="none" stroke="none" x="0" y="0" width="21000" height="29700"/>
+  <rect fill="none" stroke="none" x="0" y="0" width="7500" height="16000"/>
  </g>
  <g visibility="visible" id="Slide_1_page1">
   <g id="Drawing_1">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 3000,4000 L 2000,4000 2000,3000 4000,3000 4000,4000 3000,4000 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 3000,4000 L 2000,4000 2000,3000 4000,3000 4000,4000 3000,4000 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 1500,1500 L 500,1500 500,500 2500,500 2500,1500 1500,1500 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 1500,1500 L 500,1500 500,500 2500,500 2500,1500 1500,1500 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="2420" y="3619">
-     <tspan x="2420 2670 2746 2941 3135 3330">window</tspan></text>
+    <text x="920" y="1119">
+     <tspan x="920 1170 1246 1441 1635 1830">window</tspan></text>
    </g>
   </g>
   <g id="Drawing_2">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 6000,7000 L 5000,7000 5000,6000 7000,6000 7000,7000 6000,7000 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 6000,7000 L 5000,7000 5000,6000 7000,6000 7000,7000 6000,7000 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,4500 L 3500,4500 3500,3500 5500,3500 5500,4500 4500,4500 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,4500 L 3500,4500 3500,3500 5500,3500 5500,4500 4500,4500 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="5549" y="6619">
-     <tspan x="5549 5625 5701 5896 6078 6256 6353">links[]</tspan></text>
+    <text x="4049" y="4119">
+     <tspan x="4049 4125 4201 4396 4578 4756 4853">links[]</tspan></text>
    </g>
   </g>
   <g id="Drawing_3">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,16500 L 3500,16500 3500,15500 5500,15500 5500,16500 4500,16500 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,16500 L 3500,16500 3500,15500 5500,15500 5500,16500 4500,16500 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 3000,14000 L 2000,14000 2000,13000 4000,13000 4000,14000 3000,14000 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 3000,14000 L 2000,14000 2000,13000 4000,13000 4000,14000 3000,14000 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="3988" y="16119">
-     <tspan x="3988 4183 4259 4437 4534 4729 4847">history</tspan></text>
+    <text x="2488" y="13619">
+     <tspan x="2488 2683 2759 2937 3034 3229 3347">history</tspan></text>
    </g>
   </g>
   <g id="Drawing_4">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,18000 L 3500,18000 3500,17000 5500,17000 5500,18000 4500,18000 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,18000 L 3500,18000 3500,17000 5500,17000 5500,18000 4500,18000 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 3000,15500 L 2000,15500 2000,14500 4000,14500 4000,15500 3000,15500 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 3000,15500 L 2000,15500 2000,14500 4000,14500 4000,15500 3000,15500 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="3896" y="17619">
-     <tspan x="3896 3972 4167 4345 4539 4637 4713 4908">location</tspan></text>
+    <text x="2396" y="15119">
+     <tspan x="2396 2472 2667 2845 3039 3137 3213 3408">location</tspan></text>
    </g>
   </g>
   <g id="Drawing_5">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,5500 L 3500,5500 3500,4500 5500,4500 5500,5500 4500,5500 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,5500 L 3500,5500 3500,4500 5500,4500 5500,5500 4500,5500 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 3000,3000 L 2000,3000 2000,2000 4000,2000 4000,3000 3000,3000 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 3000,3000 L 2000,3000 2000,2000 4000,2000 4000,3000 3000,3000 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="3725" y="5119">
-     <tspan x="3725 3920 4114 4292 4487 4788 4982 5177">document</tspan></text>
+    <text x="2225" y="2619">
+     <tspan x="2225 2420 2614 2792 2987 3288 3482 3677">document</tspan></text>
    </g>
   </g>
   <g id="Drawing_6">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 6000,8500 L 5000,8500 5000,7500 7000,7500 7000,8500 6000,8500 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 6000,8500 L 5000,8500 5000,7500 7000,7500 7000,8500 6000,8500 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,6000 L 3500,6000 3500,5000 5500,5000 5500,6000 4500,6000 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,6000 L 3500,6000 3500,5000 5500,5000 5500,6000 4500,6000 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="5276" y="8119">
-     <tspan x="5276 5471 5665 5843 6038 6233 6351 6529 6626">anchors[]</tspan></text>
+    <text x="3776" y="5619">
+     <tspan x="3776 3971 4165 4343 4538 4733 4851 5029 5126">anchors[]</tspan></text>
    </g>
   </g>
   <g id="Drawing_7">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 6000,10000 L 5000,10000 5000,9000 7000,9000 7000,10000 6000,10000 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 6000,10000 L 5000,10000 5000,9000 7000,9000 7000,10000 6000,10000 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,7500 L 3500,7500 3500,6500 5500,6500 5500,7500 4500,7500 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,7500 L 3500,7500 3500,6500 5500,6500 5500,7500 4500,7500 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="5333" y="9619">
-     <tspan x="5333 5409 5710 5905 6099 6294 6472 6569">images[]</tspan></text>
+    <text x="3833" y="7119">
+     <tspan x="3833 3909 4210 4405 4599 4794 4972 5069">images[]</tspan></text>
    </g>
   </g>
   <g id="Drawing_8">
-   <path fill="rgb(153,204,255)" stroke="none" d="M 6000,11500 L 5000,11500 5000,10500 7000,10500 7000,11500 6000,11500 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 6000,11500 L 5000,11500 5000,10500 7000,10500 7000,11500 6000,11500 Z"/>
+   <path fill="rgb(153,204,255)" stroke="none" d="M 4500,9000 L 3500,9000 3500,8000 5500,8000 5500,9000 4500,9000 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,9000 L 3500,9000 3500,8000 5500,8000 5500,9000 4500,9000 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="normal" font-weight="400">
-    <text x="5456" y="11119">
-     <tspan x="5456 5558 5752 5871 6171 6349 6447">forms[]</tspan></text>
+    <text x="3956" y="8619">
+     <tspan x="3956 4058 4252 4371 4671 4849 4947">forms[]</tspan></text>
    </g>
   </g>
   <g id="Drawing_9">
-   <path fill="rgb(255,255,153)" stroke="none" d="M 7500,13000 L 6500,13000 6500,12000 8500,12000 8500,13000 7500,13000 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 7500,13000 L 6500,13000 6500,12000 8500,12000 8500,13000 7500,13000 Z"/>
-   <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="352" font-style="italic" font-weight="400">
-    <text x="7111" y="12419">
-     <tspan x="7111 7306 7424 7500 7695">űrlap</tspan></text>
-    <text fill="rgb(0,0,0)" stroke="none" x="6935" y="12813">
-     <tspan x="6935 7130 7206 7401 7693 7888">elemek</tspan></text>
+   <path fill="rgb(255,255,153)" stroke="none" d="M 6000,10500 L 5000,10500 5000,9500 7000,9500 7000,10500 6000,10500 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 6000,10500 L 5000,10500 5000,9500 7000,9500 7000,10500 6000,10500 Z"/>
+   <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="italic" font-weight="400">
+    <text x="5611" y="9919">
+     <tspan x="5611 5806 5924 6000 6195">űrlap</tspan></text>
+    <text fill="rgb(0,0,0)" stroke="none" x="5435" y="10313">
+     <tspan x="5435 5630 5706 5901 6193 6388">elemek</tspan></text>
    </g>
   </g>
   <g id="Drawing_10">
-   <path fill="rgb(255,255,153)" stroke="none" d="M 6000,14500 L 5000,14500 5000,13500 7000,13500 7000,14500 6000,14500 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 6000,14500 L 5000,14500 5000,13500 7000,13500 7000,14500 6000,14500 Z"/>
-   <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="352" font-style="italic" font-weight="400">
-    <text x="5174" y="13919">
-     <tspan x="5174 5369 5445 5623 5817 5915 6093 6262 6338 6533 6630">első szintű</tspan></text>
-    <text fill="rgb(0,0,0)" stroke="none" x="4645" y="14313">
-     <tspan x="4645 4899 5174 5462 5559 5754 5949 6025 6220 6398 6495 6690 6982 7177">DOM objektumok</tspan></text>
+   <path fill="rgb(255,255,153)" stroke="none" d="M 4500,12000 L 3500,12000 3500,11000 5500,11000 5500,12000 4500,12000 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,12000 L 3500,12000 3500,11000 5500,11000 5500,12000 4500,12000 Z"/>
+   <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="italic" font-weight="400">
+    <text x="3674" y="11419">
+     <tspan x="3674 3869 3945 4123 4317 4415 4593 4762 4838 5033 5130">első szintű</tspan></text>
+    <text fill="rgb(0,0,0)" stroke="none" x="3145" y="11813">
+     <tspan x="3145 3399 3674 3962 4059 4254 4449 4525 4720 4898 4995 5190 5482 5677">DOM objektumok</tspan></text>
    </g>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_11_0" stroke-linejoin="round" d="M 3000,4000 L 3000,5000 3500,5000"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_11_0" stroke-linejoin="round" d="M 1500,1500 L 1500,2500 2000,2500"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_12_0" stroke-linejoin="round" d="M 3000,4000 L 3000,9750 2999,9750 2999,16000 3500,16000"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_12_0" stroke-linejoin="round" d="M 1500,1500 L 1500,7250 1499,7250 1499,13500 2000,13500"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_13_0" stroke-linejoin="round" d="M 3000,4000 L 3000,10500 2999,10500 2999,17500 3500,17500"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_13_0" stroke-linejoin="round" d="M 1500,1500 L 1500,8000 1499,8000 1499,15000 2000,15000"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_14_0" stroke-linejoin="round" d="M 4500,5500 L 4500,6500 5000,6500"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_14_0" stroke-linejoin="round" d="M 3000,3000 L 3000,4000 3500,4000"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_15_0" stroke-linejoin="round" d="M 4500,5500 L 4500,6500 4499,6500 4499,8000 5000,8000"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_15_0" stroke-linejoin="round" d="M 3000,3000 L 3000,4000 2999,4000 2999,5500 3500,5500"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_16_0" stroke-linejoin="round" d="M 4500,5500 L 4500,7250 4499,7250 4499,9500 5000,9500"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_16_0" stroke-linejoin="round" d="M 3000,3000 L 3000,4750 2999,4750 2999,7000 3500,7000"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_17_0" stroke-linejoin="round" d="M 4500,5500 L 4500,8000 4499,8000 4499,11000 5000,11000"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_17_0" stroke-linejoin="round" d="M 3000,3000 L 3000,5500 2999,5500 2999,8500 3500,8500"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_18_0" stroke-linejoin="round" d="M 6000,11500 L 6000,12500 6500,12500"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_18_0" stroke-linejoin="round" d="M 4500,9000 L 4500,10000 5000,10000"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_19_0" stroke-linejoin="round" d="M 4500,5500 L 4500,9500 4500,9500 4500,14000 5000,14000"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_19_0" stroke-linejoin="round" d="M 3000,3000 L 3000,7000 3000,7000 3000,11500 3500,11500"/>
   </g>
   <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_20_0" stroke-linejoin="round" stroke-dasharray="27,457" d="M 5250,18500 L 1500,18500 1500,2500 9000,2500 9000,18500 5250,18500 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_20_0" stroke-linejoin="round" stroke-dasharray="27,457" d="M 3750,16000 L 0,16000 0,0 7500,0 7500,16000 3750,16000 Z"/>
   </g>
  </g>
 </svg>

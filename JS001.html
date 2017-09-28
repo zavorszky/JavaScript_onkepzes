@@ -4,27 +4,25 @@
   <meta charset="utf-8">
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <style type="text/css">
-  body {font-family: Arial, Helvetica, sans-serif}
-  header ul li {
-    display:inline;
-    list-style:none;
-  }
-  footer {font-family: 'Comic Sans MS', cursive}
-  strong {color: red}
-  .z9_Elhagy {display: none}
+    body {font-family: Arial, Helvetica, sans-serif}
+    header ul li { display:inline; list-style:none; }
+    footer {font-family: 'Comic Sans MS', cursive}
+    strong {color: red}
+    .z9_labjegyzet {font-family: 'Comic Sans MS', cursive; font-size: small}
+    .z9_Elhagy {display: none}
   </style>
   <title>JS001 - A JavaScript elhelyezése</title>
 </head>
 <body>
-  <h1>JS001 - A JavaScript elhelyezése</h1>
+  <h1>JS001 - A JavaScript elhelyezése és más JavaScript dolgok</h1>
   <header>
     <h2 class="z9_Elhagy">Navigáció</h2>
     <ul>
-      <li>[ <a href="JS000.html">előző</a>
+      <li>[ <a href="JS000.html">JS000</a>
       </li>
       <li>| <a href="JS000.html">tartalojegyzék</a>
       </li>
-      <li>| <a href="JS002.html">következő</a> ]
+      <li>| <a href="JS002.html">JS002</a> ]
       </li>
     </ul>
     <h2 class="z9_Elhagy">Kulcsszavak</h2>
@@ -38,8 +36,7 @@
     <hr>
   </header>
   <section>
-    <h2 class="z9_Elhagy">Téma</h2>
-    <p>Hová helyezhetjük el a JavaScript kódokat ?</p>
+    <h2>Hová helyezhetjük el a JavaScript kódokat ?</h2>
     <ol>
       <li>A weboldal törzsébe <b>script</b> elembe vagyis <i>tag</i>ek közé zárva. A script kimenete / az oldal HTML
       kódjába kerül. Az így módosított HTML oldal fog megjelenni.</li>
@@ -107,6 +104,45 @@
         </footer>
       </article>
     </article>
+  </section>
+  <section>
+    <h2>JavaScript elemek</h2>
+    <ul>
+      <li>Utasítások</li>
+      <ul>
+        <li>Szekvencia</li>
+        <li>Elágazás</li>
+        <li>Ciklus</li>
+      </ul>
+      <li>Függvények</li>
+      <li>Változók</li>
+      <li>Objektumok</li>
+      <ul>
+        <li>Jellemzői</li>
+        <ul>
+          <li>Tulajdonság</li>
+          <li>Tagfügvény</li>
+        </ul>
+        <li>Fajtái</li>
+        <ul>
+          <li>Beépített objektumok, a JavaScript részei</li>
+          <li>Egyedi, általunk készített objektumok</li>
+        </ul>
+      </ul>
+    </ul>
+  </section>
+  <section>
+    <h2>A HTML kódban elhelyezett JavaScriptek milyen sorrendben futnak?</h2>
+    <ol>
+      <li>A <b>head</b> elemben elhelyezett kódok és függvények.</li>
+      <li>A <b>body</b> elemben elhelyezett kódok a <q>megjelenés</q>(sic!) sorrendjében.</li>
+      <li>Az eseménykezelők csak a hozzájuk rendet essemény bekövetkeztekor indítják el a JavaScript kódot</li>
+    </ol>
+    <footer>
+      <p class="z9_labjegyzet">Sic, (latinul, jelentése: így) a sic erat scriptum (ez vala írva) kifejezésből. Akkor
+      használják amikor az olvasót arról akarják tájékoztatni, hogy a hibás vagy szokatlan írásmód egy idézett
+      szövegben nem az idézőtől származik, hanem így szerepel az eredeti szövegben.</p>
+    </footer>
   </section>
 </body>
 </html>

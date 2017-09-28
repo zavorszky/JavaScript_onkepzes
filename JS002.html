@@ -4,27 +4,24 @@
   <meta charset="utf-8">
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <style>
-  body {font-family: Arial, Helvetica, sans-serif}
-  header ul li {
-    display:inline;
-    list-style:none;
-  }
-  footer {font-family: 'Comic Sans MS', cursive}
-  strong {color: red}
-  .z9_Elhagy {display: none}
+    body {font-family: Arial, Helvetica, sans-serif}
+    header ul li {display:inline; list-style:none; }
+    strong {color: red}
+    .z9_Elhagy {display: none}
+    .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
   </style>
-  <title>JS002 - Nyelvi alapelemek</title>
+  <title>JS002 - DOM</title>
 </head>
 <body>
-  <h1>JS002 - Nyelvi alapelemek</h1>
+  <h1>JS002 - DOM</h1>
   <header>
     <h2 class="z9_Elhagy">Navigáció</h2>
     <ul>
-      <li>[ <a href="JS001.html">előző</a>
+      <li>[ <a href="JS001.html">JS001</a>
       </li>
       <li>| <a href="JS000.html">tartalojegyzék</a>
       </li>
-      <li>| <a href="#">következő</a> ]
+      <li>| <a href="JS003.html">JS003</a> ]
       </li>
     </ul>
     <h2 class="z9_Elhagy">Kulcsszavak</h2>
@@ -34,43 +31,141 @@
     <hr>
   </header>
   <section>
-    <h2>Nyelvi elemek</h2>
-    <ul>
-      <li>Utasítások</li>
-      <ul>
-        <li>Szekvencia</li>
-        <li>Elágazás</li>
-        <li>Ciklus</li>
-      </ul>
-      <li>Függvények</li>
-      <li>Változók</li>
-      <li>Objektumok</li>
-      <ul>
-        <li>Jellemzői</li>
-        <ul>
-          <li>Tulajdonság</li>
-          <li>Tagfügvény</li>
-        </ul>
-        <li>Fajtái</li>
-        <ul>
-          <li>Beépített objektumok, a JavaScript részei</li>
-          <li><abbr title="Document Oject Model">DOM</abbr> részei</li>
-          <li>Egyedi, általunk készített objektumok</li>
-        </ul>
-      </ul>
-    </ul>
-    <h2>Végrehajtás</h2>
-    <p>A HTML kódban elhelyezett JavaScriptek milyen sorrendben futnak?</p>
+    <h2>Mi ez ?</h2>
+    <p>Dokument Object Model, a böngészők ezt a modelt használják a HTLM kód struktúrált tárolására. Ez egy fa
+    szertkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
+    fülhöz ?! is) külön-külön saját DOM tartozik <b>window</b> gyökér elemmel.</p>
+    <p><a name="a_Abra" id="a_Abra">A DOM vázlaos képe</a><br>
+    <img src="JS002.svg" alt="Nem jeleníthető meg a JS002.svg ábra." title="DOM vázlaos képe" width="400" height=
+    "400"></p>
+    <p><strong>Figyelem !</strong> Fontos megkülönböztetni, hogy a <i>JavaScript</i>nek vannak saját objektumai és a
+    Böngészőnek is van saját objektuma a DOM. Például a JavaScript saját objektuma a <b>Date</b> osztály, a böngészőé a
+    <b>window</b> objektum. A böngészőben implementált (megvalósított, bevezetett) JavaScript tudja használni a DOM
+    objektumait.</p>
+    <p>A DOM objektumainak is vanak tulajdonságaik és tagfüggvényeik. Ezekre úgy hivatkozunk, hogy a gyökértől induva,
+    pontokkal elválaszva felsorolom a hozzá vezető objektum csomópontokat, végül egy pont és utána a tulajdonság vagy
+    tagfüggvény név pl.:<br>
+    <code>window.alert("Figyelem !")</code><br>
+    <code>window.document.write("Hello!")</code></p>
+    <p>Amikor fut a <i>JavaScrip</i>ünk, mindíg van egy default (alapértelmezett / kijelölt / vélelmezett) window
+    aminek az objektumaira hivatkozhatunk a <q>window</q> kiírása nélkül. Így használható pl. a következő utasítás
+    is:<br>
+    <code>alert("Figyelem !")</code></p>
+    <p>Lássunk néhány példát!</p>
+    <h2>document</h2>
     <ol>
-      <li>A <b>head</b> elemben elhelyezett kódok és függvények.</li>
-      <li>A <b>body</b> elemben elhelyezett kódok a <q>megjelenés</q>(sic!) sorrendjében.</li>
-      <li>Az eseménykezelők csak a hozzájuk rendet essemény bekövetkeztekor indítják el a JavaScript kódot</li>
+      <li>document.URL</li>
+      <ul>
+        <li>Az aktuális Weboldal URL-je.</li>
+        <li>tulajdonság</li>
+        <li>r-</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          document.write(document.URL);
+          </script>
+        </li>
+      </ul>
+      <li>document.title</li>
+      <ul>
+        <li>Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
+        <li>tulajdonság</li>
+        <li>r-</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          document.write(document.title);
+          </script>
+        </li>
+      </ul>
+      <li>document.referrer</li>
+      <ul>
+        <li>Az aktuális oldalt BETÖLTŐ oldal URL-je.</li>
+        <li>tulajdonság</li>
+        <li>r-</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          document.write(document.referrer);
+          </script>
+        </li>
+        <li class="z9_Jegyzet"><span class="z9_Jegyzet">Nem működik... Vizsgálom.</span></li>
+      </ul>
+      <li>document.lastModified</li>
+      <ul>
+        <li>Az oldal utolsó módosításának időpontja. Azért csak óvatosan, mert hHa szerverről jön a HTML dokumentum,
+        akkor a szerverren múlik helyesen adja-e az időt... nem mindíg adja, ahogy hallom.</li>
+        <li>tulajdonság</li>
+        <li>r-</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          document.write(document.lastModified);
+          </script>
+        </li>
+        <li><span class="z9_Jegyzet">Ha egy állományból böngésszük a HTML dokumentumot akkor nem minden böngésző adja
+        az állomány utolsó módosításának idejét... (az IE és az Edge igen).</span></li>
+      </ul>
+      <li>document.cookie</li>
+      <ul>
+        <li>Cookie (süti / adatmorzs) kezelés. Beolvas vagy kiír egy sztringet egy süti állományból, ami a Kliens
+        számítógépén a Böngésző által meghatározott helyen van.</li>
+        <li>tulajdonság</li>
+        <li>rw</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          document.write(document.cookie);
+          </script>
+        </li>
+        <li><span class="z9_Jegyzet">Ez izgalmas, később írok erre is példát.</span></li>
+      </ul>
     </ol>
-  </section>
-  <section>
-    <h2>A DOM</h2>
-    <p>Dokument Object Model, a böngészők ezt a modelt használják az HTLM kód struktúrát tárolására</p><img src=
-    "JS002.svg" alt="A DOM szemléltető ábrája." title="DOM részlet" width="300" height="300">
+    <p>Teszt könyvjelző (anchor) <a href="#a_Abra">(Ugrás az ábrára)</a></p>
+    <h2>document.links, document.anchors</h2>
+    <ol>
+      <li>document.links</li>
+      <ul>
+        <li>Az oldalon létrehozott linkek a document.links tömbben vannak tárolva. Egy eleme a
+        <code>document.links[i]</code> ahol i a tömb indexe (i=0,1,...n). Egy ilyen elem egy DOM objektum, aminek
+        tulajdonságai és tagfüggvényei vanna. A példában a <code>href</code> tulajdonságot mutatom meg.</li>
+        <li>kollekció</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          var z9_length=document.links.length;
+          if ( z9_length == 0 ) {
+            document.write("Nincs link az oldalon.");
+          }
+          else {
+            var i;
+            for (i=0;i<z9_length;i++) {
+              document.write(document.links[i].href+"<br>");
+            }
+          }
+          </script>
+        </li>
+      </ul>
+      <li>document.anchors</li>
+      <ul>
+        <li>Az oldalon létrehozott könyvjelzők (anchors) a document.anchors kollekcióban vannak tárolva. Pontosabban, a
+        teljes elérésük a <code>document.links</code> kollekcióban, és a <q>tartalmuk</q> az anchors kollekcióba. Tehát
+        a <code>&lt;a href="a_Abra" &gt;</code> és a <code>&lt;/a&gt;</code> közé eső rész. Nekem érdekes volt , hogy
+        ha egy <b>img</b> elem van ott, akkor az <code>anchor.innerHTML</code> tulajdonság megjelenítésekor
+        (<code>document.write()</code>) a kép jelenik meg :-o. Egy eleme a <code>document.anchors[i]</code>
+        kollekciónak egy DOM objektum, ahol i a tömb indexe (i=0,1,...document.anchors.length-1), aminek tulajdonságai
+        és tagfüggvényei vanna. A példában a <code>innerHTML</code> tulajdonságot mutatom meg.</li>
+        <li>kolleció</li>
+        <li>
+          <script language="JavaScript" type="text/javascript">
+          var z9_length=document.anchors.length;
+          if ( z9_length == 0 ) {
+            document.write("Nincs anchor az oldalon.");
+          }
+          else {
+            var i;
+            for (i=0;i<z9_length;i++) {
+              document.write(document.anchors[i].innerHTML+"<br>");
+            }
+          }
+          </script>
+        </li>
+      </ul>
+    </ol>
   </section>
 </body>
 </html>
