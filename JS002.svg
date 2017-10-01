@@ -137,13 +137,13 @@
    </g>
   </g>
   <g id="Drawing_10">
-   <path fill="rgb(255,255,153)" stroke="none" d="M 4500,12000 L 3500,12000 3500,11000 5500,11000 5500,12000 4500,12000 Z"/>
-   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 4500,12000 L 3500,12000 3500,11000 5500,11000 5500,12000 4500,12000 Z"/>
+   <path fill="rgb(255,255,153)" stroke="none" d="M 5000,12000 L 3500,12000 3500,11000 6500,11000 6500,12000 5000,12000 Z"/>
+   <path fill="none" stroke="rgb(0,0,0)" stroke-linejoin="round" d="M 5000,12000 L 3500,12000 3500,11000 6500,11000 6500,12000 5000,12000 Z"/>
    <g fill="rgb(0,0,0)" stroke="none" font-family="Arial embedded" font-size="353" font-style="italic" font-weight="400">
-    <text x="3674" y="11419">
-     <tspan x="3674 3869 3945 4123 4317 4415 4593 4762 4838 5033 5130">első szintű</tspan></text>
-    <text fill="rgb(0,0,0)" stroke="none" x="3145" y="11813">
-     <tspan x="3145 3399 3674 3962 4059 4254 4449 4525 4720 4898 4995 5190 5482 5677">DOM objektumok</tspan></text>
+    <text x="4174" y="11419">
+     <tspan x="4174 4369 4445 4623 4817 4915 5093 5262 5338 5533 5630">első szintű</tspan></text>
+    <text fill="rgb(0,0,0)" stroke="none" x="3645" y="11813">
+     <tspan x="3645 3899 4174 4462 4559 4754 4949 5025 5220 5398 5495 5690 5982 6177">DOM objektumok</tspan></text>
    </g>
   </g>
   <g>
@@ -172,9 +172,6 @@
   </g>
   <g>
    <path fill="none" stroke="rgb(0,0,0)" id="Drawing_19_0" stroke-linejoin="round" d="M 3000,3000 L 3000,7000 3000,7000 3000,11500 3500,11500"/>
-  </g>
-  <g>
-   <path fill="none" stroke="rgb(0,0,0)" id="Drawing_20_0" stroke-linejoin="round" stroke-dasharray="27,457" d="M 3750,16000 L 0,16000 0,0 7500,0 7500,16000 3750,16000 Z"/>
   </g>
  </g>
 </svg>
