@@ -21,7 +21,7 @@
     <ul>
       <li>[ <a href="JS001.html">JS001</a>
       </li>
-      <li>| <a href="JS000.html">tartalojegyzék</a>
+      <li>| <a href="index.html">index</a>
       </li>
       <li>| <a href="JS003.html">JS003</a> ]
       </li>
@@ -34,22 +34,22 @@
   </header>
   <section>
     <h2>Mi ez ?</h2>
-    <p>Dokument Object Model, a böngészők ezt a modelt használják a HTLM kód struktúrált tárolására. Ez egy fa
-    szertkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
-    fülhöz is ?!) külön-külön tartozik egy részfa saját <b>window</b> gyökér elemmel.</p>
-    <p><a name="a_Abra" id="a_Abra">A DOM vázlaos képe</a><br>
+    <p>Dokument Object Model, a böngészők ezt a modellt használják a HTLM kód struktúrált tárolására. Ez egy fa
+    szerkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
+    fülhöz ?!) külön-külön tartozik egy saját fa <b>window</b> gyökér elemmel.</p>
+    <p><a name="a_Abra" id="a_Abra">A DOM vázlatos képe</a><br>
     <img src="JS002.svg" alt="Nem jeleníthető meg a JS002.svg ábra." title="DOM vázlaos képe" width="400" height=
     "400"></p>
     <p><strong>Figyelem !</strong> Fontos megkülönböztetni, hogy a <i>JavaScript</i>nek vannak saját objektumai és a
     Böngészőnek is van saját objektuma a DOM. Például a JavaScript saját objektuma minden a <b>Date</b> osztályból
-    <b>new</b> operátorral létrehozott példány. A böngészőé a DOM, vagy azon belül a <b>window</b> objektum. A
-    böngészőben implementált (megvalósított, bevezetett) JavaScript tudja használni a DOM objektumait.</p>
-    <p>A DOM objektumainak is vanak tulajdonságaik és tagfüggvényeik. Ezekre úgy hivatkozunk, hogy a gyökértől induva,
-    pontokkal elválaszva felsorolom a hozzá vezető objektum csomópontokat, végül egy pont és utána a tulajdonság vagy
-    tagfüggvény név pl.:<br>
+    <b>new</b> operátorral létrehozott példány. A böngészőé a DOM. A böngészőben implementált (megvalósított,
+    bevezetett) JavaScript tudja használni a DOM objektumait.</p>
+    <p>A DOM objektumainak is vannak tulajdonságaik és tagfüggvényeik. Ezekre úgy hivatkozunk, hogy a gyökértől
+    indulva, pontokkal elválasztva felsorolom a hozzá vezető objektum csomópontokat, végül egy pont és utána a
+    tulajdonság vagy tagfüggvény név pl.:<br>
     <code>window.alert("Figyelem !")</code><br>
     <code>window.document.write("Hello!")</code></p>
-    <p>Amikor fut a JavaScriptünk, mindíg van egy default (alapértelmezett / kijelölt / vélelmezett) <b>window</b>
+    <p>Amikor fut a JavaScriptünk, mindig van egy default (alapértelmezett / kijelölt / vélelmezett) <b>window</b>
     aminek az objektumaira hivatkozhatunk a <q>window</q> kiírása nélkül. Így használható pl. a következő utasítás
     is:<br>
     <code>alert("Figyelem !")</code></p>
@@ -60,7 +60,7 @@
       <ul>
         <li>Az aktuális Weboldal URL-je.</li>
         <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> irható:<span class="z9_Nem">nem</span></li>
+        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
         <li>
           <script language="JavaScript" type="text/javascript">
           document.write(document.URL);
@@ -71,7 +71,7 @@
       <ul>
         <li>Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
         <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> irható:<span class="z9_Nem">nem</span></li>
+        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
         <li>
           <script language="JavaScript" type="text/javascript">
           document.write(document.title);
@@ -82,20 +82,19 @@
       <ul>
         <li>Az aktuális oldalt BETÖLTŐ oldal URL-je.</li>
         <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> irható:<span class="z9_Nem">nem</span></li>
+        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
         <li>
           <script language="JavaScript" type="text/javascript">
           document.write(document.referrer);
           </script>
         </li>
-        <li class="z9_Jegyzet"><span class="z9_Jegyzet">Nem működik... Vizsgálom.</span></li>
+        <li><span class="z9_Jegyzet">Nem működik... Vizsgálom.</span></li>
       </ul>
       <li>document.lastModified</li>
       <ul>
-        <li>Az oldal utolsó módosításának időpontja. Azért csak óvatosan, mert hHa szerverről jön a HTML dokumentum,
-        akkor a szerverren múlik helyesen adja-e az időt... nem mindíg adja, ahogy hallom.</li>
+        <li>Az oldal utolsó módosításának időpontja. Azért csak óvatosan...</li>
         <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> irható:<span class="z9_Nem">nem</span></li>
+        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
         <li>
           <script language="JavaScript" type="text/javascript">
           document.write(document.lastModified);
@@ -104,10 +103,10 @@
       </ul>
       <li>document.cookie</li>
       <ul>
-        <li>Cookie (süti / adatmorzsa) kezelés. Beolvas egy sztringet egy sütiállományból, vagy kiír egy
+        <li>Cookie (süti / adatmorzsa) kezelés. Beolvas egy sztringet egy sütiállományból, vagy kiír eggyet egy
         sütiállományba, ami a Kliens számítógépén a Böngésző által meghatározott könyvtárban van.</li>
         <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> irható:<span class="z9_Igen">igen</span></li>
+        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Igen">igen</span></li>
         <li>
           <script language="JavaScript" type="text/javascript">
           document.write(document.cookie);
@@ -123,7 +122,8 @@
       <ul>
         <li>Az oldalon létrehozott linkek a <b>document.links</b> kollekcióban vannak tárolva. Egy eleme a
         <b>document.links[i]</b>, ahol i a tömb indexe (i=0,1,...n=document.links.length-1). Egy ilyen elem egy DOM
-        objektum, aminek tulajdonságai és tagfüggvényei vanna. A példában a <b>href</b> tulajdonságot mutatom meg.</li>
+        objektum, aminek tulajdonságai és tagfüggvényei vannak. A példában a <b>href</b> tulajdonságot mutatom
+        meg.</li>
         <li>kollekció</li>
         <li>
           <script language="JavaScript" type="text/javascript">
@@ -147,9 +147,9 @@
         kollekcióba. Tehát a <code>&lt;a href="a_Abra"&gt;</code> és a <code>&lt;/a&gt;</code> közé eső rész. Nekem
         érdekes volt , hogy ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság megjelenítésekor
         (document.write()) a kép jelenik meg :-o. A document.anchors egy eleme a <b>document.anchors[i]</b> objektum,
-        ahol i a tömb indexe (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vanna. A
+        ahol i a tömb indexe (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A
         példában a <b>innerHTML</b> tulajdonságot mutatom meg.</li>
-        <li>kolleció</li>
+        <li>kollekció</li>
         <li>
           <script language="JavaScript" type="text/javascript">
           var z9_length=document.anchors.length;
