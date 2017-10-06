@@ -9,8 +9,8 @@
     strong {color: red}
     .z9_Elhagy {display: none}
     .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
-    .z9_Igen {font-weight: bold; color: green}
-    .z9_Nem {color: red}
+    .z9_Igen {background-color: green; color: black}
+    .z9_Nem {background-color: red; color: black}
   </style>
   <title>JS002 - DOM</title>
 </head>
@@ -37,7 +37,7 @@
     <p>Dokument Object Model, a böngészők ezt a modellt használják a HTLM kód struktúrált tárolására. Ez egy fa
     szerkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
     fülhöz ?!) külön-külön tartozik egy saját fa <b>window</b> gyökér elemmel.</p>
-    <p><a name="a_Abra" id="a_Abra">A DOM vázlatos képe</a><br>
+    <p><a id="a_Abra">A DOM vázlatos képe</a><br>
     <img src="JS002.svg" alt="Nem jeleníthető meg a JS002.svg ábra." title="DOM vázlaos képe" width="400" height=
     "400"></p>
     <p><strong>Figyelem !</strong> Fontos megkülönböztetni, hogy a <i>JavaScript</i>nek vannak saját objektumai és a
@@ -54,118 +54,197 @@
     is:<br>
     <code>alert("Figyelem !")</code></p>
     <p>Lássunk néhány példát!</p>
-    <h2>document</h2>
-    <ol>
-      <li>document.URL</li>
-      <ul>
-        <li>Az aktuális Weboldal URL-je.</li>
-        <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          document.write(document.URL);
-          </script>
-        </li>
-      </ul>
-      <li>document.title</li>
-      <ul>
-        <li>Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
-        <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          document.write(document.title);
-          </script>
-        </li>
-      </ul>
-      <li>document.referrer</li>
-      <ul>
-        <li>Az aktuális oldalt BETÖLTŐ oldal URL-je.</li>
-        <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          document.write(document.referrer);
-          </script>
-        </li>
-        <li><span class="z9_Jegyzet">Nem működik... Vizsgálom.</span></li>
-      </ul>
-      <li>document.lastModified</li>
-      <ul>
-        <li>Az oldal utolsó módosításának időpontja. Azért csak óvatosan...</li>
-        <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          document.write(document.lastModified);
-          </script>
-        </li>
-      </ul>
-      <li>document.cookie</li>
-      <ul>
-        <li>Cookie (süti / adatmorzsa) kezelés. Beolvas egy sztringet egy sütiállományból, vagy kiír eggyet egy
-        sütiállományba, ami a Kliens számítógépén a Böngésző által meghatározott könyvtárban van.</li>
-        <li>tulajdonság</li>
-        <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Igen">igen</span></li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          document.write(document.cookie);
-          </script>
-        </li>
-        <li><span class="z9_Jegyzet">Ez izgalmas, később írok erre is példát.</span></li>
-      </ul>
-    </ol>
     <p>Teszt könyvjelző (anchor) <a href="#a_Abra">(Ugrás az ábrára)</a></p>
-    <h2>document.links, document.anchors</h2>
+    <h2>Néhány DOM objektum tulajdonságokkal és tagfüggvényekkel</h2>
     <ol>
-      <li>document.links</li>
-      <ul>
-        <li>Az oldalon létrehozott linkek a <b>document.links</b> kollekcióban vannak tárolva. Egy eleme a
-        <b>document.links[i]</b>, ahol i a tömb indexe (i=0,1,...n=document.links.length-1). Egy ilyen elem egy DOM
-        objektum, aminek tulajdonságai és tagfüggvényei vannak. A példában a <b>href</b> tulajdonságot mutatom
-        meg.</li>
-        <li>kollekció</li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          var z9_length=document.links.length;
-          if ( z9_length == 0 ) {
-            document.write("Nincs link az oldalon.");
-          }
-          else {
-            var i;
-            for (i=0;i<z9_length;i++) {
-              document.write(document.links[i].href+"<br>");
+      <li>document.URL
+        <ul>
+          <li>Az aktuális Weboldal URL-je.</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write(document.URL);
+            </script>
+          </li>
+        </ul>
+      </li>
+      <li>document.title
+        <ul>
+          <li>Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write(document.title);
+            </script>
+          </li>
+        </ul>
+      </li>
+      <li>document.referrer
+        <ul>
+          <li>Az aktuális oldalt BETÖLTŐ oldal URL-je.</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write(document.referrer);
+            </script>
+          </li>
+          <li><span class="z9_Jegyzet">Nem működik... Vizsgálom.</span></li>
+        </ul>
+      </li>
+      <li>document.lastModified
+        <ul>
+          <li>Az oldal utolsó módosításának időpontja. Azért csak óvatosan...</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write(document.lastModified);
+            </script>
+          </li>
+        </ul>
+      </li>
+      <li>document.cookie
+        <ul>
+          <li>Cookie (süti / adatmorzsa) kezelés. Beolvas egy sztringet egy sütiállományból, vagy kiír eggyet egy
+          sütiállományba, ami a Kliens számítógépén a Böngésző által meghatározott könyvtárban van.</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Igen">igen</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write(document.cookie);
+            </script>
+          </li>
+          <li><span class="z9_Jegyzet">Ez izgalmas, később írok erre is példát.</span></li>
+        </ul>
+      </li>
+      <li>document.links
+        <ul>
+          <li>Az oldalon létrehozott linkek a <b>document.links</b> kollekcióban vannak tárolva. Egy eleme a
+          <b>document.links[i]</b>, ahol i a tömb indexe (i=0,1,...n=document.links.length-1). Egy ilyen elem egy DOM
+          objektum, aminek tulajdonságai és tagfüggvényei vannak. A példában a <b>href</b> tulajdonságot mutatom
+          meg.</li>
+          <li>kollekció</li>
+          <li>
+            <script type="text/javascript">
+            var z9_length=document.links.length;
+            if ( z9_length == 0 ) {
+              document.write("Nincs link az oldalon.");
             }
-          }
-          </script>
-        </li>
-      </ul>
-      <li>document.anchors</li>
-      <ul>
-        <li>Az oldalon létrehozott könyvjelzők (anchors) a <b>document.anchors</b> kollekcióban vannak tárolva.
-        Pontosabban, a teljes elérésük a <b>document.links</b> kollekcióban, és a <q>tartalmuk</q> az <b>anchors</b>
-        kollekcióba. Tehát a <code>&lt;a href="a_Abra"&gt;</code> és a <code>&lt;/a&gt;</code> közé eső rész. Nekem
-        érdekes volt , hogy ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság megjelenítésekor
-        (document.write()) a kép jelenik meg :-o. A document.anchors egy eleme a <b>document.anchors[i]</b> objektum,
-        ahol i a tömb indexe (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A
-        példában a <b>innerHTML</b> tulajdonságot mutatom meg.</li>
-        <li>kollekció</li>
-        <li>
-          <script language="JavaScript" type="text/javascript">
-          var z9_length=document.anchors.length;
-          if ( z9_length == 0 ) {
-            document.write("Nincs anchor az oldalon.");
-          }
-          else {
-            var i;
-            for (i=0;i<z9_length;i++) {
-              document.write(document.anchors[i].innerHTML+"<br>");
+            else {
+              var i;
+              for (i=0;i<z9_length;i++) {
+                document.write(document.links[i].href+"<br>");
+              }
             }
-          }
-          </script>
-        </li>
-      </ul>
+            </script>
+          </li>
+          <li><span class="z9_Jegyzet">Nem mindegy hol van a <b>name</b> tulajdonsággal ellátott <b>anchor</b> /
+          <b>a</b> elem. Ha a HTML kódban, a linkeket kiíró szkrip ELŐTT, akkor bekerül a <b>links</b> kollekcióba és
+          megjelenik. Ha utána, akkor nem. Pl. ez a teszt könyvjelző <a href="#a_OldalVege">(Ugrás az oldal végére)</a>
+          nem kerül be a listába. Úgy tűnik, hogy a HTML kód beolvasásával egyidőben épül fel a DOM és ha kiírjuk a
+          <b>document.links</b>-et de csak a kiírás után helyezkedik el egy <b>a</b> elem, akkor az még nincs a
+          <b>document.links</b>-ben ezért nek kerül kiírásra.</span></li>
+        </ul>
+      </li>
+      <li>document.anchors
+        <ul>
+          <li>Az oldalon létrehozott könyvjelzők (anchors) a <b>document.anchors</b> kollekcióban vannak tárolva.
+          Pontosabban, a teljes elérésük a <b>document.links</b> kollekcióban, és a <q>tartalmuk</q> az <b>anchors</b>
+          kollekcióba. Tehát a <code>&lt;a href="a_Abra"&gt;</code> és a <code>&lt;/a&gt;</code> közé eső rész. Nekem
+          érdekes volt , hogy ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság megjelenítésekor
+          (document.write()) a kép jelenik meg :-o. A document.anchors egy eleme a <b>document.anchors[i]</b> objektum,
+          ahol i a tömb indexe (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A
+          példában a <b>innerHTML</b> tulajdonságot mutatom meg.</li>
+          <li>kollekció</li>
+          <li>
+            <script type="text/javascript">
+            var z9_length=document.anchors.length;
+            if ( z9_length == 0 ) {
+              document.write("Nincs anchor az oldalon.");
+            }
+            else {
+              var i;
+              for (i=0;i<z9_length;i++) {
+                document.write(document.anchors[i].innerHTML+"<br>");
+              }
+            }
+            </script>
+          </li>
+        </ul>
+      </li>
+      <li>history.length
+        <ul>
+          <li>Az előzmény lista hossza.</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write(history.length);
+            </script>
+          </li>
+        </ul>
+      </li>
+      <li>history.back(), history.forward(), history.go()
+        <ul>
+          <li>Az eddig meglátogatott URL-ek listájából választhatunk egy URL-t és a Böngésző a hozzá tartozó lapot
+          betölti.</li>
+          <li>tagfüggvény</li>
+          <li><button onclick="history.back();">Előző URL</button> <button onclick="history.forward();">Következő
+          URL</button> <button onclick="history.go(-2);">Vissza 2-vel</button></li>
+        </ul>
+      </li>
+      <li>location.protocol, .hostname, .port, ... tulajdonságok
+        <ul>
+          <li>A Böngésző címsávjában lévő URL-t részeit kérdezhetjük le.</li>
+          <li>tulajdonság</li>
+          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Igen">igen</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write("location.protocol="+location.protocol);
+            document.write("<br>location.hostname="+location.hostname);
+            document.write("<br>location.port="+location.port);
+            document.write("<br>location.pathname="+location.pathname);
+            document.write("<br>location.search="+location.search);
+            document.write("<br>location.hash="+location.hash);
+            </script>
+          </li>
+          <li><button onclick=
+          "location.pathname='/E:/felhasznalok/dady/z9_projects/JavaScript_onkepzes/JS001.html';">Ugrás a
+          JS001-re</button></li>
+        </ul>
+      </li>
+      <li>location.href
+        <ul>
+          <li>A Böngésző címsávjában lévő teljes URL-t lekérdező és beállító tulajdonság.</li>
+          <li>tulajdonság</li>
+          <li>olvasható: <span class="z9_Igen">igen</span> írható: <span class="z9_Igen">igen</span></li>
+          <li>
+            <script type="text/javascript">
+            document.write("location.href="+location.href);
+            </script>
+          </li>
+          <li><button onclick="location.href='index.html';">Ugrás az index-re</button></li>
+        </ul>
+      </li>
     </ol>
+    <p>Végül még egy módszer az előző és a következő oldalra ugrásra:</p>
+    <p><input type="button" onclick="history.back();" value="&lt;&lt; Vissza"> <input type="button" onclick=
+    "history.forward();" value="Előre &gt;&gt;"></p>
   </section>
+  <section class="z9_Jegyzet">
+    <h2>Tapasztalatok</h2>
+    <p>A HTML oldal ellenőrzésekor (Nu Html Checker) több hibára derült fény. Lássuk:</p>
+    <ul>
+      <li>A <b>script</b> elemben a <b>language</b> tulajdonság elavul. Tehát <code>&lt;script
+      type="text/javascript"&gt;</code> a helyes, a <code><del>&lt;script language="Javascript"
+      type="text/javascript"&gt;</del></code> nem.</li>
+      <li>Az <b>a</b> (anchor) elemben a <b>name</b> tulajdonság elavult. Tehát a <code>&lt;a id="a_Abra"&gt;</code> a
+      helyes a <code><del>&lt;a name="a_Abra"&gt;</del></code> nem.</li>
+    </ul>
+  </section>
+  <p><a id="a_OldalVege">Oldal vége</a></p>
 </body>
 </html>
