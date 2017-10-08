@@ -6,12 +6,20 @@
   <title>inex- Javascript gyakorlatok</title>
   <style>
     body {font-family: Arial, Helvetica, sans-serif}
-    footer {font-family: 'Comic Sans MS', cursive; font-size: small}
+    footer {font-family: Arial, Helvetica, sans-serif; font-size: small}
     table {border-collapse:collapse; border:2px solid black}
     tr, th, td {border:1px solid black; padding:2px }
-    span.z9_KonyvCim1 {color: red}
-    span.z9_KonyvCim2 {color: blue}
-    span.z9_KonyvCim3 {color: red}
+    tfoot {font-size: small}
+    span.z9_KonyvCim1 {font-weight: bold; color: red}
+    span.z9_KonyvCim2 {font-weight: bold; color: blue}
+    span.z9_KonyvCim3 {font-weight: bold; color: red}
+    span.z9_Konyv2Cim1 {font-weight: bold; color: black}
+    span.z9_Konyv2Cim2 {font-weight: bold; color: brown}
+    span.z9_Konyv2Cim3 {font-weight: bold; color: black}
+    span.z9_Konyv2Cim4 {font-weight: bold; color: goldenrod}
+    .z9_Igen {background-color: lime; color: black}
+    .z9_Nem {background-color: red; color: black}
+    .z9_NE {font-style: italic}
   </style>
 </head>
 <body>
@@ -53,13 +61,96 @@
     <p>Ez egy tanuló dokumentum, ebből az következik, hogy fokozatosan tisztulnak a fogalmak. Egy-egy fogalom újra és
     újra előkerül, így tudok meg róla egyre többet.</p>
   </section>
+  <section>
+    <h2>JavaScript, DOM objektumok</h2>
+    <table>
+      <caption>
+        A DOM fontosabb objektumai
+      </caption>
+      <tr>
+        <th>Név</th>
+        <th>Tul./Fgv.</th>
+        <th>Írható</th>
+        <th>Olvasható</th>
+      </tr>
+      <tr>
+        <td>document.cookie</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">igen</td>
+      </tr>
+      <tr>
+        <td>document.lastModified</td>
+        <td>tulajdonság</td>
+        <td class="z9_Nem">nem</td>
+        <td class="z9_Igen">igen</td>
+      </tr>
+      <tr>
+        <td>document.referrer</td>
+        <td>tulajdonság</td>
+        <td class="z9_Nem">nem</td>
+        <td class="z9_Igen">igen</td>
+      </tr>
+      <tr>
+        <td>document.title</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">igen</td>
+      </tr>
+      <tr>
+        <td>document.URL</td>
+        <td>tulajdonság</td>
+        <td class="z9_Nem">nem</td>
+        <td class="z9_Igen">igen</td>
+      </tr>
+      <tr>
+        <td>document.write(<i>kif</i>)</td>
+        <td>függvény</td>
+        <td class="z9_NE">né</td>
+        <td class="z9_NE">né</td>
+      </tr>
+      <tfoot>
+        <tr>
+          <td colspan="4"><i>kif</i> = <b>kif</b>ejezés</td>
+        </tr>
+        <tr>
+          <td colspan="4"><i>né</i> = <b>n</b>em <b>é</b>rtelmezett</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p>.</p>
+    <table>
+      <caption>
+        A JavaScript fontosabb objektumai
+      </caption>
+      <tr>
+        <th>Név</th>
+        <th>Milyenség</th>
+        <th>Írható</th>
+        <th>Olvasható</th>
+      </tr>
+      <tr>
+        <td>Date.toString</td>
+        <td>függvény</td>
+        <td class="z9_NE">né</td>
+        <td class="z9_NE">né</td>
+      </tr>
+      <tfoot>
+        <tr>
+          <td colspan="4"><i>né</i> = <b>n</b>em <b>é</b>rtelmezett</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
   <footer>
     <hr>
     <p>Forrás: Michael Mouncur <span class="z9_KonyvCim1">Tanuljuk meg</span> <span class="z9_KonyvCim2">a
-    JavaScript<sup>TM</sup> használatát</span> <span class="z9_KonyvCim2">24 óra alatt</span>. © 2006 Kiskapu Kft. ISBN
-    963 9637 16 5. A jelen HTML dokumentumban bemutatott példák, a könyvben lévőkre utalnak.</p>
+    JavaScript<sup><small>TM</small></sup> használatát</span> <span class="z9_KonyvCim2">24 óra alatt</span>. © 2006
+    Kiskapu Kft. ISBN 963 9637 16 5. A jelen HTML dokumentumban bemutatott példák, a könyvben lévőkre utalnak.</p>
     <p>Szerző: <a href="mailto:zavorszky@yahoo.com">Závorszky (Z9)</a></p>
-    <p>A HTML és a JS kódok: <a href="https://www.activestate.com">Komodo IDE</a></p>
+    <p>A HTML és a JS kódok: <a href="https://www.activestate.com"><span class=
+    "z9_Konyv2Cim1">Active</span><span class="z9_Konyv2Cim2">State</span> <span class=
+    "z9_Konyv2Cim3">Komodo</span></a><sup>®</sup> IDE<span class="z9_Konyv2Cim4">11</span></p>
     <p>HTML ellenőrző: <a href="https://validator.w3.org/nu/">Nu Html Checker</a></p>
     <p>HTML formázó és ellenőrző: <a href="http://www.html-tidy.org">Tidy</a> (<a href=
     "http://www.paehl.com/open_source/?HTML_Tidy_for_HTML5">tidy.exe (Win 64bit) Letöltés</a>)</p>
