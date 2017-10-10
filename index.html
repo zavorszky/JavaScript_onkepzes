@@ -17,9 +17,9 @@
     span.z9_Konyv2Cim2 {font-weight: bold; color: brown}
     span.z9_Konyv2Cim3 {font-weight: bold; color: black}
     span.z9_Konyv2Cim4 {font-weight: bold; color: goldenrod}
-    .z9_Igen {background-color: lime; color: black}
-    .z9_Nem {background-color: red; color: black}
-    .z9_NE {font-style: italic}
+    .z9_Igen {text-align: center; background-color: lime; color: black}
+    .z9_Nem {text-align: center; background-color: red; color: black}
+    .z9_NE {font-style: italic; text-align: center }
   </style>
 </head>
 <body>
@@ -70,51 +70,138 @@
       <tr>
         <th>Név</th>
         <th>Tul./Fgv.</th>
-        <th>Írható</th>
-        <th>Olvasható</th>
+        <th>R</th>
+        <th>W</th>
+      </tr>
+      <tr>
+        <td>document.anchors</td>
+        <td>kollekció</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
+      </tr>
+      <tr>
+        <td>document.anchors.length</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
+      </tr>
+      <tr>
+        <td>document.anchors[i].innerHTML</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
       </tr>
       <tr>
         <td>document.cookie</td>
         <td>tulajdonság</td>
-        <td class="z9_Igen">igen</td>
-        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
+      </tr>
+      <tr>
+        <td>document.links</td>
+        <td>kollekció</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>document.links.length</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
+      </tr>
+      <tr>
+        <td>document.links[i].href</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
       </tr>
       <tr>
         <td>document.lastModified</td>
         <td>tulajdonság</td>
-        <td class="z9_Nem">nem</td>
-        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
       </tr>
       <tr>
         <td>document.referrer</td>
         <td>tulajdonság</td>
-        <td class="z9_Nem">nem</td>
-        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
       </tr>
       <tr>
         <td>document.title</td>
         <td>tulajdonság</td>
-        <td class="z9_Igen">igen</td>
-        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
       </tr>
       <tr>
         <td>document.URL</td>
         <td>tulajdonság</td>
-        <td class="z9_Nem">nem</td>
-        <td class="z9_Igen">igen</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
       </tr>
       <tr>
         <td>document.write(<i>kif</i>)</td>
         <td>függvény</td>
-        <td class="z9_NE">né</td>
-        <td class="z9_NE">né</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>history.length</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Nem">-</td>
+      </tr>
+      <tr>
+        <td>history.back()</td>
+        <td>függvény</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>history.forward()</td>
+        <td>függvény</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>history.go(<i>kif</i>)</td>
+        <td>függvény</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>location.href</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
+      </tr>
+      <tr>
+        <td>location.protocol</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
+      </tr>
+      <tr>
+        <td>location.hostname</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
+      </tr>
+      <tr>
+        <td>...</td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>location.hash</td>
+        <td>tulajdonság</td>
+        <td class="z9_Igen">r</td>
+        <td class="z9_Igen">w</td>
       </tr>
       <tfoot>
         <tr>
           <td colspan="4"><i>kif</i> = <b>kif</b>ejezés</td>
-        </tr>
-        <tr>
-          <td colspan="4"><i>né</i> = <b>n</b>em <b>é</b>rtelmezett</td>
         </tr>
       </tfoot>
     </table>

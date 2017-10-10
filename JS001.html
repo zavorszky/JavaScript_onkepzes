@@ -52,18 +52,21 @@
       <h3 class="z9_Elhagy">Példák</h3>
       <article>
         <h4>Példa 1/1 (könyv:1.2. kód):</h4>
-        <p><code>&lt;p&gt;&lt;scrip language="JavaScript" type="text/javascript"&gt;<br>
+        <p><code>&lt;p&gt;&lt;scrip <del>language="JavaScript"</del> type="text/javascript"&gt;<br>
         document.write(document.lastModified);<br>
         &lt;/script&gt;&lt;/p&gt;</code></p>
         <p>Eredmény:</p>
         <p>
-        <script language="JavaScript" type="text/javascript">
+        <script type="text/javascript">
+
         document.write(document.lastModified);
         </script></p>
         <footer>
           <p><strong>Figyelem!</strong> <q>Rohan az idő/Megállítanám, de nem lehet...</q> :-) A <b>script</b> elem
-          használatát a HTML dokumentum kódjában a Komodo editorom sem ajánlja és a Nu Html Checker elavult gyakorlatnak
-          minősíti. Remélem a példák végére érve tudni fogom a jó gyakorlatot.</p>
+          használatát a HTML dokumentum kódjában a Komodo editorom sem ajánlja és a Nu Html Checker elavult
+          gyakorlatnak minősíti. Remélem a példák végére érve tudni fogom a jó gyakorlatot.</p>
+          <p>A Nu Html Checker elavultnak minősíti a <b>script</b> elem <b>language</b> tulajdonságát, én is leszokom
+          róla :-).</p>
         </footer>
       </article>
       <article>
@@ -76,7 +79,8 @@
         <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen.</p>
         <p>Eredmény:</p>
         <p>
-        <script language="JavaScript" type="text/javascript">
+        <script type="text/javascript">
+
         v_aktHelyiIdo = new Date();
         v_aktHelyiIdoStr = v_aktHelyiIdo.toString();
         v_utcIdoStr = v_aktHelyiIdo.toGMTString();
@@ -107,27 +111,31 @@
   <section>
     <h2>JavaScript elemek</h2>
     <ul>
-      <li>Utasítások</li>
-      <ul>
-        <li>Szekvencia</li>
-        <li>Elágazás</li>
-        <li>Ciklus</li>
-      </ul>
+      <li>Utasítások
+        <ul>
+          <li>Szekvencia</li>
+          <li>Elágazás</li>
+          <li>Ciklus</li>
+        </ul>
+      </li>
       <li>Függvények</li>
       <li>Változók</li>
-      <li>Objektumok</li>
-      <ul>
-        <li>Jellemzői</li>
+      <li>Objektumok
         <ul>
-          <li>Tulajdonság</li>
-          <li>Tagfüggvény</li>
+          <li>Jellemzői
+            <ul>
+              <li>Tulajdonság</li>
+              <li>Tagfüggvény</li>
+            </ul>
+          </li>
+          <li>Fajtái
+            <ul>
+              <li>Beépített objektumok, a JavaScript részei</li>
+              <li>Egyedi, általunk készített objektumok</li>
+            </ul>
+          </li>
         </ul>
-        <li>Fajtái</li>
-        <ul>
-          <li>Beépített objektumok, a JavaScript részei</li>
-          <li>Egyedi, általunk készített objektumok</li>
-        </ul>
-      </ul>
+      </li>
     </ul>
   </section>
   <section>

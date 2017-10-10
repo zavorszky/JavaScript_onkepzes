@@ -61,7 +61,7 @@
         <ul>
           <li>Az aktuális Weboldal URL-je.</li>
           <li>tulajdonság</li>
-          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>olvasható: <span class="z9_Igen">igen</span> írható: <span class="z9_Nem">nem</span></li>
           <li>
             <script type="text/javascript">
             document.write(document.URL);
@@ -73,7 +73,7 @@
         <ul>
           <li>Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
           <li>tulajdonság</li>
-          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
+          <li>olvasható: <span class="z9_Igen">igen</span> írható: <span class="z9_Igen">igen</span></li>
           <li>
             <script type="text/javascript">
             document.write(document.title);
@@ -236,14 +236,9 @@
   </section>
   <section class="z9_Jegyzet">
     <h2>Tapasztalatok</h2>
-    <p>A HTML oldal ellenőrzésekor (Nu Html Checker) több hibára derült fény. Lássuk:</p>
-    <ul>
-      <li>A <b>script</b> elemben a <b>language</b> tulajdonság elavul. Tehát <code>&lt;script
-      type="text/javascript"&gt;</code> a helyes, a <code><del>&lt;script language="Javascript"
-      type="text/javascript"&gt;</del></code> nem.</li>
-      <li>Az <b>a</b> (anchor) elemben a <b>name</b> tulajdonság elavult. Tehát a <code>&lt;a id="a_Abra"&gt;</code> a
-      helyes a <code><del>&lt;a name="a_Abra"&gt;</del></code> nem.</li>
-    </ul>
+    <p>A HTML oldal ellenőrzésekor (Nu Html Checker) kiderült, hogy az <b>a</b> (anchor) elemben a <b>name</b>
+    tulajdonság elavult. Tehát a <code>&lt;a id="a_Abra"&gt;</code> a helyes a <code><del>&lt;a
+    name="a_Abra"&gt;</del></code> nem.</p>
   </section>
   <p><a id="a_OldalVege">Oldal vége</a></p>
 </body>
