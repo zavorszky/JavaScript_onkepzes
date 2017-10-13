@@ -37,7 +37,7 @@
     <p>Dokument Object Model, a böngészők ezt a modellt használják a HTLM kód struktúrált tárolására. Ez egy fa
     szerkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
     fülhöz ?!) külön-külön tartozik egy saját fa <b>window</b> gyökér elemmel.</p>
-    <p><a id="a_Abra">A DOM vázlatos képe</a><br>
+    <p><a name="a_Abra" id="a_Abra">A DOM vázlatos képe</a><br>
     <img src="JS002.svg" alt="Nem jeleníthető meg a JS002.svg ábra." title="DOM vázlaos képe" width="400" height=
     "400"></p>
     <p><strong>Figyelem !</strong> Fontos megkülönböztetni, hogy a <i>JavaScript</i>nek vannak saját objektumai és a
@@ -129,48 +129,61 @@
           <li>kollekció</li>
           <li>
             <script type="text/javascript">
-            var z9_length=document.links.length;
-            if ( z9_length == 0 ) {
+            var v_length=document.links.length;
+            if ( v_length===0 ) {
               document.write("Nincs link az oldalon.");
             }
             else {
               var i;
-              for (i=0;i<z9_length;i++) {
+              for (i=0;i<v_length;i++) {
                 document.write(document.links[i].href+"<br>");
               }
             }
             </script>
           </li>
-          <li><span class="z9_Jegyzet">Nem mindegy hol van a <b>name</b> tulajdonsággal ellátott <b>anchor</b> /
-          <b>a</b> elem. Ha a HTML kódban, a linkeket kiíró szkrip ELŐTT, akkor bekerül a <b>links</b> kollekcióba és
-          megjelenik. Ha utána, akkor nem. Pl. ez a teszt könyvjelző <a href="#a_OldalVege">(Ugrás az oldal végére)</a>
-          nem kerül be a listába. Úgy tűnik, hogy a HTML kód beolvasásával egyidőben épül fel a DOM és ha kiírjuk a
+          <li><span class="z9_Jegyzet">Nem mindegy hol van a <b>id</b> tulajdonsággal ellátott anchor elem. Ha a HTML
+          kódban, a linkeket kiíró szkrip ELŐTT, akkor bekerül a <b>links</b> kollekcióba és megjelenik. Ha utána,
+          akkor nem. Pl. ez a teszt könyvjelző <a href="#a_OldalVege">(Ugrás az oldal végére)</a> nem kerül be a
+          listába. Úgy tűnik, hogy a HTML kód beolvasásával egyidőben épül fel a DOM és ha kiírjuk a
           <b>document.links</b>-et de csak a kiírás után helyezkedik el egy <b>a</b> elem, akkor az még nincs a
           <b>document.links</b>-ben ezért nek kerül kiírásra.</span></li>
+          <li><span class="z9_Jegyzet">Eredetileg az anchor elem azonosító tulajdonsága a <b>name</b> tulajdonság volt
+          de a HTML5-ben ez nem támogatott helyette az általánosan használt <b>id</b> tulajdonságot kell alkalmazni.
+          Tényleg !?</span></li>
         </ul>
       </li>
       <li>document.anchors
         <ul>
-          <li>Az oldalon létrehozott könyvjelzők (anchors) a <b>document.anchors</b> kollekcióban vannak tárolva.
-          Pontosabban, a teljes elérésük a <b>document.links</b> kollekcióban, és a <q>tartalmuk</q> az <b>anchors</b>
-          kollekcióba. Tehát a <code>&lt;a href="a_Abra"&gt;</code> és a <code>&lt;/a&gt;</code> közé eső rész. Nekem
-          érdekes volt , hogy ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság megjelenítésekor
-          (document.write()) a kép jelenik meg :-o. A document.anchors egy eleme a <b>document.anchors[i]</b> objektum,
-          ahol i a tömb indexe (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A
-          példában a <b>innerHTML</b> tulajdonságot mutatom meg.</li>
+          <li>Az oldalon létrehozott könyvjelzők (anchors) a <b>document.anchors</b> kollekcióban vannak tárolva. Tehát
+          a <code>&lt;a name="a_Abra"&gt;</code> és a <code>&lt;/a&gt;</code> közé eső rész. Nekem érdekes volt , hogy
+          ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság megjelenítésekor (document.write()) a
+          kép jelenik meg :-o. A document.anchors egy eleme a <b>document.anchors[i]</b> objektum, ahol i a tömb indexe
+          (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A példában a
+          <b>innerHTML</b> tulajdonságot mutatom meg. <strong>Figyelem!!!</strong> A Böngészők nem egyformán kezelik az
+          anchor elemet. A HTML5 az <b>id</b> tulajdonságot várja az azonosításra, eredetileg a <b>name</b> tulajdonság
+          szolgált erre. Nézzük az eseteket:
+            <ul>
+              <li>name=ninncs,id=van: SafeZone=<strong>nem</strong>, Chrome=<strong>nem</strong>, IE=igen</li>
+              <li>name=van,id=nincs: SafeZone=igen, Chrome=igen, IE=igen</li>
+              <li>name=van,id=van: SafeZone=igen, Chrome=igen, IE=igen</li>
+            </ul>
+          </li>
           <li>kollekció</li>
           <li>
             <script type="text/javascript">
-            var z9_length=document.anchors.length;
-            if ( z9_length == 0 ) {
-              document.write("Nincs anchor az oldalon.");
+            var v_txt;
+            var v_length=document.anchors.length;
+            if ( v_length===0 ) {
+              v_txt="Nincs anchor az oldalon.";
             }
             else {
               var i;
-              for (i=0;i<z9_length;i++) {
-                document.write(document.anchors[i].innerHTML+"<br>");
+              v_txt="";
+              for (i=0;i<v_length;i++) {
+                 v_txt+=(i===0 ? "": "<br>")+document.anchors[i].innerHTML;
               }
             }
+            document.write(v_txt);
             </script>
           </li>
         </ul>
@@ -211,9 +224,12 @@
             document.write("<br>location.hash="+location.hash);
             </script>
           </li>
-          <li><button onclick=
-          "location.pathname='/E:/felhasznalok/dady/z9_projects/JavaScript_onkepzes/JS001.html';">Ugrás a
-          JS001-re</button></li>
+          <li><span class="z9_Jegyzet">Próbáltam a <b>location.pathnam</b> beállításával HTML oldalt váltani. Ha a
+          munkaállomás valamelyik könyvtárában van az oldal, akkor a következőt tapasztaltam: abszolút útvonal
+          beállítása jól működik az Avast SZ, a Chrome és az IE esetén. Viszont ha csak az új HTML lap nevét adom meg
+          csak az IE kezeli korrektül az új URL-t, a másik két böngésző csonka URLT ír í címsorba. Az Avast SZ továbra
+          is jól működik, de a Chrome egy két oldal váltás után nem találja a JSxxx HTML lapok közül a megfelelőt.
+          Tehát ez a lehetőség másra való, általános használatra nem.</span></li>
         </ul>
       </li>
       <li>location.href
@@ -236,9 +252,9 @@
   </section>
   <section class="z9_Jegyzet">
     <h2>Tapasztalatok</h2>
-    <p>A HTML oldal ellenőrzésekor (Nu Html Checker) kiderült, hogy az <b>a</b> (anchor) elemben a <b>name</b>
-    tulajdonság elavult. Tehát a <code>&lt;a id="a_Abra"&gt;</code> a helyes a <code><del>&lt;a
-    name="a_Abra"&gt;</del></code> nem.</p>
+    <p>A <b>history</b>, a <b>location</b> , a <b>document.referrer</b> működésének szemléltetésére még három lapt
+    készítek. készítem a <a href="JS003.html">JS003.html</a>, a <a href="JS004.html">JS004.html</a> és <a href=
+    "JS004.html">JS004.html</a> lapokat.</p>
   </section>
   <p><a id="a_OldalVege">Oldal vége</a></p>
 </body>
