@@ -9,8 +9,8 @@
     strong {color: red}
     .z9_Elhagy {display: none}
     .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
-    .z9_Igen {background-color: green; color: black}
-    .z9_Nem {background-color: red; color: black}
+    .z9_Igen {background-color: lime; color: black; padding-left: 3px; padding-right: 3px}
+    .z9_Nem {background-color: red; color: black; padding-left: 3px; padding-right: 3px}
   </style>
   <title>JS002 - DOM</title>
 </head>
@@ -23,7 +23,7 @@
       </li>
       <li>| <a href="index.html">index</a>
       </li>
-      <li>| <a href="JS003.html">JS003</a> ]
+      <li>| <a href="JS006.html">JS006</a> ]
       </li>
     </ul>
     <h2 class="z9_Elhagy">Kulcsszavak</h2>
@@ -224,7 +224,7 @@
             document.write("<br>location.hash="+location.hash);
             </script>
           </li>
-          <li><span class="z9_Jegyzet">Próbáltam a <b>location.pathnam</b> beállításával HTML oldalt váltani. Ha a
+          <li><span class="z9_Jegyzet">Próbáltam a <b>location.pathname</b> beállításával HTML oldalt váltani. Ha a
           munkaállomás valamelyik könyvtárában van az oldal, akkor a következőt tapasztaltam: abszolút útvonal
           beállítása jól működik az Avast SZ, a Chrome és az IE esetén. Viszont ha csak az új HTML lap nevét adom meg
           csak az IE kezeli korrektül az új URL-t, a másik két böngésző csonka URLT ír í címsorba. Az Avast SZ továbra
