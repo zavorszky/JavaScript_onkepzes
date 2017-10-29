@@ -9,8 +9,9 @@
     strong {color: red}
     .z9_Elhagy {display: none}
     .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
-    .z9_Igen {background-color: lime; color: black; padding-left: 3px; padding-right: 3px}
-    .z9_Nem {background-color: red; color: black; padding-left: 3px; padding-right: 3px}
+    .z9_Igen {font-weight: normal; background-color: lime; color: black; padding-left: 3px; padding-right: 3px}
+    .z9_Nem {font-weight: normal; background-color: red; color: black; padding-left: 3px; padding-right: 3px}
+    section ol li ul li span {font-weight: bold;}
   </style>
   <title>JS002 - DOM</title>
 </head>
@@ -37,13 +38,14 @@
     <p>Dokument Object Model, a böngészők ezt a modellt használják a HTLM kód struktúrált tárolására. Ez egy fa
     szerkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
     fülhöz ?!) külön-külön tartozik egy saját fa <b>window</b> gyökér elemmel.</p>
-    <p><a name="a_Abra" id="a_Abra">A DOM vázlatos képe</a><br>
+    <p><a name="a_Abra" id="a_Abra">A DOM vázlatos képe (Teszt könyvjelző)</a><br>
     <img src="JS002.svg" alt="Nem jeleníthető meg a JS002.svg ábra." title="DOM vázlaos képe" width="400" height=
     "400"></p>
     <p><strong>Figyelem !</strong> Fontos megkülönböztetni, hogy a <i>JavaScript</i>nek vannak saját objektumai és a
     Böngészőnek is van saját objektuma a DOM. Például a JavaScript saját objektuma minden a <b>Date</b> osztályból
-    <b>new</b> operátorral létrehozott példány. A böngészőé a DOM. A böngészőben implementált (megvalósított,
-    bevezetett) JavaScript tudja használni a DOM objektumait.</p>
+    <b>new</b> operátorral létrehozott példány. Erre a példányra mutató referenciát tehetünk egy változóba az =
+    (egyenlőség jel) operátorral. A böngésző objektumát nem kell létrehozni, az a HTML kód beolvasásakor felépül. Ez a
+    DOM. A böngészőben implementált (megvalósított, bevezetett) JavaScript tudja használni a DOM objektumait.</p>
     <p>A DOM objektumainak is vannak tulajdonságaik és tagfüggvényeik. Ezekre úgy hivatkozunk, hogy a gyökértől
     indulva, pontokkal elválasztva felsorolom a hozzá vezető objektum csomópontokat, végül egy pont és utána a
     tulajdonság vagy tagfüggvény név pl.:<br>
@@ -54,55 +56,59 @@
     is:<br>
     <code>alert("Figyelem !")</code></p>
     <p>Lássunk néhány példát!</p>
-    <p>Teszt könyvjelző (anchor) <a href="#a_Abra">(Ugrás az ábrára)</a></p>
+    <p>Uglás/Link az ábra melletti horgonyra (anchor) <a href="#a_Abra">(Ugrás...)</a></p>
     <h2>Néhány DOM objektum tulajdonságokkal és tagfüggvényekkel</h2>
     <ol>
       <li>document.URL
         <ul>
-          <li>Az aktuális Weboldal URL-je.</li>
-          <li>tulajdonság</li>
-          <li>olvasható: <span class="z9_Igen">igen</span> írható: <span class="z9_Nem">nem</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write(document.URL);
-            </script>
+          <li><span>Jelentés</span>: Az aktuális Weboldal URL-je.</li>
+          <li><span>Jellemző</span>: tulajdonság</li>
+          <li><span>Hozzáférés</span>: olvasható: <span class="z9_Igen">igen</span> írható: <span class=
+          "z9_Nem">nem</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_LiDocumentURL"></li>
+            </ul>
           </li>
         </ul>
       </li>
       <li>document.title
         <ul>
-          <li>Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
-          <li>tulajdonság</li>
-          <li>olvasható: <span class="z9_Igen">igen</span> írható: <span class="z9_Igen">igen</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write(document.title);
-            </script>
+          <li><span>Jelentés</span>: Az aktuális Weboldal címe, ami a <b>title</b> elemben van.</li>
+          <li><span>Jellemző</span>: tulajdonság</li>
+          <li><span>Hozzáférés</span>: olvasható: <span class="z9_Igen">igen</span> írható: <span class=
+          "z9_Igen">igen</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_LiDocumentTitle"></li>
+            </ul>
           </li>
         </ul>
       </li>
       <li>document.referrer
         <ul>
-          <li>Az aktuális oldalt BETÖLTŐ oldal URL-je.</li>
-          <li>tulajdonság</li>
-          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write(document.referrer);
-            </script>
+          <li><span>Jelentés</span>: Az aktuális oldalt BETÖLTŐ oldal URL-je.</li>
+          <li><span>Jellemző</span>: tulajdonság</li>
+          <li><span>Hozzáférés</span>: olvasható:<span class="z9_Igen">igen</span> írható:<span class=
+          "z9_Nem">nem</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_LiDocumentReferrer"></li>
+            </ul>
           </li>
-          <li><span class="z9_Jegyzet">Nem működik... Vizsgálom.</span></li>
+          <li><span class="z9_Jegyzet">Nem működik... Nem tudom miért.</span></li>
         </ul>
       </li>
       <li>document.lastModified
         <ul>
-          <li>Az oldal utolsó módosításának időpontja. Azért csak óvatosan...</li>
-          <li>tulajdonság</li>
-          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write(document.lastModified);
-            </script>
+          <li><span>Jelentés</span>: Az oldal utolsó módosításának időpontja. Azért csak óvatosan...</li>
+          <li><span>Jellemző</span>: tulajdonság</li>
+          <li><span>Hozzáférés</span>: olvasható:<span class="z9_Igen">igen</span> írható:<span class=
+          "z9_Nem">nem</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_LiDocumentLastModified"></li>
+            </ul>
           </li>
         </ul>
       </li>
@@ -245,7 +251,13 @@
           <li><button onclick="location.href='index.html';">Ugrás az index-re</button></li>
         </ul>
       </li>
-    </ol>
+    </ol><!-- A példák elkészítése-->
+    <script>
+      document.getElementById("z9_LiDocumentURL").innerHTML = document.URL;
+      document.getElementById("z9_LiDocumentTitle").innerHTML = document.title;
+      document.getElementById("z9_LiDocumentReferrer").innerHTML = document.referrer;
+      document.getElementById("z9_LiDocumentLastModified").innerHTML = document.lastModified;
+    </script>
     <p>Végül még egy módszer az előző és a következő oldalra ugrásra:</p>
     <p><input type="button" onclick="history.back();" value="&lt;&lt; Vissza"> <input type="button" onclick=
     "history.forward();" value="Előre &gt;&gt;"></p>
