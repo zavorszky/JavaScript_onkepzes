@@ -13,6 +13,9 @@
     .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
     .z9_Igen {background-color: lime; color: black; padding-left: 3px; padding-right: 3px}
     .z9_Nem {background-color: red; color: black; padding-left: 3px; padding-right: 3px}
+    .z9_NemErtelmezett {background-color: yellow; color: black; padding-left: 3px; padding-right: 3px}
+    .z9_TdIgen {text-align: center; background-color: lime; color: black}
+    .z9_TdNem {text-align: center; background-color: red; color: black}
     .z9_Fej {font-weight: bold;}
   </style>
   <title>JS002 - DOM</title>
@@ -26,7 +29,7 @@
       </li>
       <li>| <a href="index.html">index</a>
       </li>
-      <li>| <a href="JS006.html">JS006</a> ]
+      <li>| <a href="JS003.html">JS003</a> ]
       </li>
     </ul>
     <h2 class="z9_Elhagy">Kulcsszavak</h2>
@@ -146,7 +149,7 @@
           (i=0,1,...n=document.links.length-1). Egy ilyen elem egy DOM objektum, aminek tulajdonságai és tagfüggvényei
           vannak. A példában a <b>href</b> tulajdonságot mutatom meg.</li>
           <li><span class="z9_Fej">Jellemző</span>: kollekció</li>
-          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Igen">igen</span> írható: ?</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: <span class="z9_NemErtelmezett">nem értelmezett</span></li>
           <li>Példa (document.links[*].href):
             <ul>
               <li id="z9_LiDocumentLinks"></li>
@@ -170,111 +173,168 @@
       </li>
       <li>document.anchors
         <ul>
-          <li>
-            <span class="z9_Fej">Jelentés</span>: Az oldalon létrehozott könyvjelzők (anchors) a
-            <b>document.anchors</b> kollekcióban vannak tárolva. Tehát a <code>&lt;a name="a_Abra"&gt;</code> és a
-            <code>&lt;/a&gt;</code> közé eső rész. Nekem érdekes, hogy ha egy <b>img</b> elem van ott, akkor az
-            <b>innerHTML</b> tulajdonság megjelenítésekor (pl. document.write()) a kép jelenik meg :-o. A
-            document.anchors egy eleme a <b>document.anchors[i]</b> objektum, ahol i a tömb indexe
-            (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A példában a
-            <b>innerHTML</b> tulajdonságot mutatom meg. <strong>Figyelem!!!</strong> A Böngészők nem egyformán kezelik
-            az anchor elemet. A HTML5 az <b>id</b> tulajdonságot várja az azonosításra, eredetileg a <b>name</b>
-            tulajdonság szolgált erre. Nézzük az eseteket:
-            <table>
-              <tr>
-                <th>name</th>
-                <th>id</th>
-                <th>SafeZone</th>
-                <th>Chrome</th>
-                <th>IE</th>
-              </tr>
-              <tr>
-                <td>van</td>
-                <td>van</td>
-                <td>kezeli</td>
-                <td>kezeli</td>
-                <td>kezeli</td>
-              </tr>
-              <tr>
-                <td>van</td>
-                <td>nincs</td>
-                <td>kezeli</td>
-                <td>kezeli</td>
-                <td>kezeli</td>
-              </tr>
-              <tr>
-                <td>nincs</td>
-                <td>van</td>
-                <td>NEM kezeli</td>
-                <td>NEM kezeli</td>
-                <td>kezeli</td>
-              </tr>
-            </table>
-          </li>
+          <li><span class="z9_Fej">Jelentés</span>: Az oldalon létrehozott könyvjelzők (anchors) a
+          <b>document.anchors</b> kollekcióban vannak tárolva. Tehát a <code>&lt;a name="a_Abra"&gt;</code> és a
+          <code>&lt;/a&gt;</code> közé eső rész. A document.anchors egy eleme a <b>document.anchors[i]</b> objektum,
+          ahol i a tömb indexe (i=0,1,...,n=document.anchors.length-1), aminek tulajdonságai és tagfüggvényei vannak. A
+          példában a <b>innerHTML</b> tulajdonságot mutatom meg:</li>
           <li><span class="z9_Fej">Jellemző</span>: kollekció</li>
-          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Igen">igen</span> írható: ?</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: <span class="z9_NemErtelmezett">nem értelmezett</span></li>
           <li>Példa (document.anchors[*].innerHTML):
             <ul>
               <li id="z9_LiDocumentAnchors"></li>
+            </ul>
+          </li>
+          <li>Jegyzetek:
+            <ul class="z9_Jegyzet">
+              <li>
+                <strong>Figyelem!!!</strong> A Böngészők nem egyformán kezelik az anchor elemet. A HTML5 az <b>id</b>
+                tulajdonságot várja az azonosításra, eredetileg a <b>name</b> tulajdonság szolgált erre.
+                <table>
+                  <tr>
+                    <th>name</th>
+                    <th>id</th>
+                    <th>SafeZone</th>
+                    <th>Chrome</th>
+                    <th>IE</th>
+                  </tr>
+                  <tr>
+                    <td>van</td>
+                    <td>van</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                  </tr>
+                  <tr>
+                    <td>van</td>
+                    <td>nincs</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                  </tr>
+                  <tr>
+                    <td>nincs</td>
+                    <td>van</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                  </tr>
+                  <tr>
+                    <td>nincs</td>
+                    <td>nincs</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                  </tr>
+                </table>
+              </li>
+              <li>Nekem érdekes, hogy ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság
+              megjelenítésekor (pl. document.write()) a kép jelenik meg :-o.</li>
             </ul>
           </li>
         </ul>
       </li>
       <li>history.length
         <ul>
-          <li>Az előzmény lista hossza.</li>
-          <li>tulajdonság</li>
-          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Nem">nem</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write(history.length);
-            </script>
+          <li><span class="z9_Fej">Jelentés</span>: Az előzmény lista hossza.</li>
+          <li><span class="z9_Fej">Jellemző</span>: tulajdonság</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Igen">igen</span> írható:<span class=
+          "z9_Nem">nem</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_LihistoryLength"></li>
+            </ul>
           </li>
         </ul>
       </li>
       <li>history.back(), history.forward(), history.go()
         <ul>
-          <li>Az eddig meglátogatott URL-ek listájából választhatunk egy URL-t és a Böngésző a hozzá tartozó lapot
-          betölti.</li>
-          <li>tagfüggvény</li>
+          <li><span class="z9_Fej">Jelentés</span>: Az eddig meglátogatott URL-ek listájából választhatunk egy URL-t és
+          a Böngésző a hozzá tartozó lapot betölti. history.back() : a történet kollekcióból az előző URL-t tölti be.
+          history.forward() : a történet kollekcióból a következő URL-t tölti be. Utóbbinak akkor van értelme ha
+          előzőleg, csupán a history tagfüggvényeit használva visszaléptünk. history.go(<i>kif</i>) ahol a kif egy
+          egész szám kifejezés ami pozitív, 0, vagy negatív lehet.</li>
+          <li><span class="z9_Fej">Jellemző</span>: tagfüggvény</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Nem">nem</span> írható:<span class=
+          "z9_Nem">nem</span> végrehajtható:<span class="z9_Igen">igen</span></li>
           <li><button onclick="history.back();">Előző URL</button> <button onclick="history.forward();">Következő
           URL</button> <button onclick="history.go(-2);">Vissza 2-vel</button></li>
         </ul>
       </li>
       <li>location.protocol, .hostname, .port, ... tulajdonságok
         <ul>
-          <li>A Böngésző címsávjában lévő URL-t részeit kérdezhetjük le.</li>
-          <li>tulajdonság</li>
-          <li>olvasható:<span class="z9_Igen">igen</span> írható:<span class="z9_Igen">igen</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write("location.protocol="+location.protocol);
-            document.write("<br>location.hostname="+location.hostname);
-            document.write("<br>location.port="+location.port);
-            document.write("<br>location.pathname="+location.pathname);
-            document.write("<br>location.search="+location.search);
-            document.write("<br>location.hash="+location.hash);
-            </script>
+          <li><span class="z9_Fej">Jelentés</span>: A Böngésző címsávjában lévő URL-t részeit kérdezhetjük le.</li>
+          <li><span class="z9_Fej">Jellemző</span>: tulajdonság</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Igen">igen</span> írható:<span class=
+          "z9_Igen">igen</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_Location"></li>
+              <li><input type="button" onclick="location.pathname='JS003.html';" value=
+              "location.pathname=JS003.html &gt;"></li>
+            </ul>
           </li>
-          <li><span class="z9_Jegyzet">Próbáltam a <b>location.pathname</b> beállításával HTML oldalt váltani. Ha a
-          munkaállomás valamelyik könyvtárában van az oldal, akkor a következőt tapasztaltam: abszolút útvonal
-          beállítása jól működik az Avast SZ, a Chrome és az IE esetén. Viszont ha csak az új HTML lap nevét adom meg
-          csak az IE kezeli korrektül az új URL-t, a másik két böngésző csonka URLT ír í címsorba. Az Avast SZ továbra
-          is jól működik, de a Chrome egy két oldal váltás után nem találja a JSxxx HTML lapok közül a megfelelőt.
-          Tehát ez a lehetőség másra való, általános használatra nem.</span></li>
+          <li>Jegyzetek:
+            <ul class="z9_Jegyzet">
+              <li>Próbáltam a <b>location.pathname</b> beállításával HTML oldalt váltani. Ha a munkaállomás valamelyik
+              könyvtárában van az oldal, akkor a következőt tapasztaltam: amikor teljes útvonal adom meg a HTML lapot,
+              akkor a három böngészőm (az Avast SZ, a Chrome és az IE) jól jeleníti meg a lapot. Viszont ha csak a HTML
+              lap nevét adom meg, akkor csak az IE jeleníti meg a lapot. Tehát ez a lehetőség másra való, általános
+              használatra nem.</li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>location.href
         <ul>
-          <li>A Böngésző címsávjában lévő teljes URL-t lekérdező és beállító tulajdonság.</li>
-          <li>tulajdonság</li>
-          <li>olvasható: <span class="z9_Igen">igen</span> írható: <span class="z9_Igen">igen</span></li>
-          <li>
-            <script type="text/javascript">
-            document.write("location.href="+location.href);
-            </script>
+          <li><span class="z9_Fej">Jelentés</span>: A Böngésző címsávjában lévő teljes URL-t lekérdező és beállító
+          tulajdonság.</li>
+          <li><span class="z9_Fej">Jellemző</span>: tulajdonság</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: olvasható: <span class="z9_Igen">igen</span> írható: <span class=
+          "z9_Igen">igen</span></li>
+          <li>Példa:
+            <ul>
+              <li id="z9_LocationHref"></li>
+              <li><input type="button" onclick="location.href='JS003.html';" value=
+              "location.href=JS003.html &gt;"></li>
+            </ul>
           </li>
-          <li><button onclick="location.href='index.html';">Ugrás az index-re</button></li>
+          <li>Jegyzetek:
+            <ul class="z9_Jegyzet">
+              <li>A location.pathname és a location.href összehasonlítása.
+                <table>
+                  <tr>
+                    <th>Oldalváltás</th>
+                    <th>HTML megadása</th>
+                    <th>SafeZone</th>
+                    <th>Chrome</th>
+                    <th>IE</th>
+                  </tr>
+                  <tr>
+                    <td>location.pathname</td>
+                    <td>teljes útvonall + HTML állomány név</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                  </tr>
+                  <tr>
+                    <td>location.pathname</td>
+                    <td>HTML állomány név</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                  </tr>
+                  <tr>
+                    <td>location.href</td>
+                    <td>HTML állomány név</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                    <td class="z9_TdIgen">kezeli</td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ol><!-- A példák elkészítése-->
@@ -296,7 +356,7 @@
       else {
         v_HtmlCode="";
         for (i=0;i<v_length;i++) {
-          v_HtmlCode=v_HtmlCode+(i===0 ? "":"<br>")+document.links[i].href;
+          v_HtmlCode +=((i===0) ? "":"<br>")+document.links[i].href;
         }
       }
       document.getElementById("z9_LiDocumentLinks").innerHTML = v_HtmlCode;
@@ -309,21 +369,32 @@
       else {
         v_HtmlCode="";
         for (i=0;i<v_length;i++) {
-          v_HtmlCode+=(i===0 ? "": "<br>")+document.anchors[i].innerHTML;
+          v_HtmlCode +=((i===0) ? "": "<br>")+document.anchors[i].innerHTML;
         }
       }
       document.getElementById("z9_LiDocumentAnchors").innerHTML = v_HtmlCode;
+      //
+      //z9_LihistoryLength
+      document.getElementById("z9_LihistoryLength").innerHTML = history.length;
+      //
+      //z9_Location
+      v_HtmlCode  ="location.protocol="+location.protocol;
+      v_HtmlCode +="<br>location.hostname="+location.hostname;
+      v_HtmlCode +="<br>location.port="+location.port;
+      v_HtmlCode +="<br>location.pathname="+location.pathname;
+      v_HtmlCode +="<br>location.search="+location.search;
+      v_HtmlCode +="<br>location.hash="+location.hash;
+      document.getElementById("z9_Location").innerHTML = v_HtmlCode;
+      //
+      //z9_LocationHref
+      document.getElementById("z9_LocationHref").innerHTML = location.href;
     </script>
     <p>Teszt link az <i>a_OldalVege</i> könyvjelzőre: <a href="#a_OldalVege">(Ugrás az oldal végére)</a></p>
-    <p>Végül még egy módszer az előző és a következő oldalra ugrásra:</p>
-    <p><input type="button" onclick="history.back();" value="&lt;&lt; Vissza"> <input type="button" onclick=
-    "history.forward();" value="Előre &gt;&gt;"></p>
   </section>
   <section class="z9_Jegyzet">
     <h2>Tapasztalatok</h2>
-    <p>A <b>history</b>, a <b>location</b> , a <b>document.referrer</b> működésének szemléltetésére még három lapt
-    készítek. készítem a <a href="JS003.html">JS003.html</a>, a <a href="JS004.html">JS004.html</a> és <a href=
-    "JS004.html">JS004.html</a> lapokat.</p>
+    <p>Az <i>a_OldalVege</i> könyvjelzőre mutató link, a JavaScript blokk futásakor még nem létezett, ezért nem került
+    be a document.links-es példába.</p>
   </section>
   <p><a id="a_OldalVege">Oldal vége</a></p>
 </body>
