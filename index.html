@@ -5,18 +5,16 @@
   <meta charset="utf-8">
   <title>inex- Javascript gyakorlatok</title>
   <style>
-    body {font-family: Arial, Helvetica, sans-serif}
-    footer {font-family: Arial, Helvetica, sans-serif; font-size: small}
+    body {font-family: Arial, Helvetica, sans-serif; color: black; background-color: white; font-size: medium}
+    footer {font-size: small}
+    footer dt {font-weight: bold;}
+    footer dd {font-weight: normal;}
     table {border-collapse:collapse; border:2px solid black}
     tr, th, td {border:1px solid black; padding:2px }
     tfoot {font-size: small}
-    span.z9_KonyvCim1 {font-weight: bold; color: red}
-    span.z9_KonyvCim2 {font-weight: bold; color: blue}
-    span.z9_KonyvCim3 {font-weight: bold; color: red}
-    span.z9_Konyv2Cim1 {font-weight: bold; color: black}
-    span.z9_Konyv2Cim2 {font-weight: bold; color: brown}
-    span.z9_Konyv2Cim3 {font-weight: bold; color: black}
-    span.z9_Konyv2Cim4 {font-weight: bold; color: goldenrod}
+    abbr {background: silver}
+    cite {color: navy}
+    .z9_TBHangsulyos {font-weight: bold;}
     .z9_TdIgen {text-align: center; background-color: lime; color: black}
     .z9_TdNem {text-align: center; background-color: red; color: black}
     .z9_TdNE {font-style: italic; text-align: center }
@@ -48,25 +46,26 @@
   </section>
   <section>
     <h2>De mi ez az egész ?</h2>
-    <p>Érdekel a JavaScript, és egy könyv alapján tanulom. A könyv gyakorlatait, vagy az általuk inspirált feladatokat
-    megvalósítom, így okosítom magam. Amit tanulok, tapasztalok azt a JavaScript kódokat tartalmazó HTML dokumentumba
-    írom. A példákat pedig meg kell nézni a HTML kódban, illetve a JavaScript állományokban.</p>
-    <p>A gyakorlatok Michael Moncur <q><span class="z9_KonyvCim1">Tanuljuk meg</span> <span class="z9_KonyvCim2">a
-    JavaScript<sup><small>TM</small></sup> használatát</span> <span class="z9_KonyvCim3">24 óra alatt</span></q> című
-    könyve alapján készülnek.</p>
+    <p>Érdekel a JavaScript és a <abbr title="HyperText Markup Language">HTML</abbr>, ezért Michael Mouncur:
+    <cite>Tanuljuk meg a JavaScript<sup><small>TM</small></sup> használatát 24 óra alatt</cite> című könyve alapján
+    tanulom. A könyv gyakorlatait, vagy az általuk inspirált feladatokat megvalósítom, így okosítom magam. Amit
+    tanulok, tapasztalok azt a <abbr title="JavaScript">Js</abbr> kódokat tartalmazó HTML dokumentumba írom, illetve a
+    HTLM dokumentumhoz kapcsolódó Js állományokban. A példákat pedig meg kell nézni a HTML kódban, illetve a Js
+    állományokban.</p>
     <p>Egy-egy példa neve: JS<i>nnn</i> alakú.<br>
-    Ebből az állománynevek a kiterjesztés hozzáillesztésével adódnak: JS<i>nnn</i>.html illetve JS<i>nnn</i>.js. Az
-    <i>nnn</i> egy vezető nullákkal kiegészített 3 jegyű azonosító szám.<br>
-    Példa: JS001.html</p>
-    <p>Ez egy tanuló dokumentum, ebből az következik, hogy fokozatosan tisztulnak a fogalmak. Egy-egy fogalom újra és
-    újra előkerül, így tudok meg róla egyre többet.</p>
+    Ebből az állománynevek a kiterjesztés hozzáillesztésével adódnak: JS<i>nnn</i>.html, JS<i>nnn</i>.css illetve
+    JS<i>nnn</i>.js. Az <i>nnn</i> egy vezető nullákkal kiegészített 3 jegyű azonosító szám.<br>
+    Példa: JS001 ~&gt; JS001.html, JS001.css, JS001.js</p>
+    <p>A példákat az AVAST Safe Zone, a Google Chrome és a Microsoft Internet Explorer böngészőjével próbálom ki.</p>
+    <p>A HTML kódolást igyekszem a HTML5 szabványnak megfelelően és nem <q>tolakodó</q> módon végezni. Azért ez az az
+    elv sérül, pl. hogy a Js-t nem ismerő Böngészőkön is értelmesen jelenjenek meg a HTML dokumentumok, hiszen pont a
+    Js kódok kipróbálása a cél.</p>
+    <p>Ez egy tanuló dokumentum, a fogalmak fokozatosan tisztulnak. Egy-egy fogalom újra és újra előkerül, így tudok
+    meg róla egyre többet.</p>
   </section>
   <section>
-    <h2>JavaScript, DOM objektumok</h2>
+    <h2>DOM</h2>
     <table>
-      <caption>
-        A DOM fontosabb objektumai
-      </caption>
       <tr>
         <th>Név</th>
         <th>Tul./Fgv.</th>
@@ -75,140 +74,140 @@
         <th>X</th>
       </tr>
       <tr>
-        <td>document.anchors</td>
+        <td class="z9_TBHangsulyos">window.document.anchors</td>
         <td>kollekció</td>
         <td></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td>document.anchors.length</td>
+        <td>window.document.anchors.length</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>document.anchors[i].innerHTML</td>
-        <td>tulajdonság</td>
-        <td class="z9_TdIgen">r</td>
-        <td class="z9_TdIgen">w</td>
-        <td class="z9_TdNem">-</td>
-      </tr>
-      <tr>
-        <td>document.cookie</td>
+        <td>window.document.anchors[i].innerHTML</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdIgen">w</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>document.links</td>
+        <td>window.document.cookie</td>
+        <td>tulajdonság</td>
+        <td class="z9_TdIgen">r</td>
+        <td class="z9_TdIgen">w</td>
+        <td class="z9_TdNem">-</td>
+      </tr>
+      <tr>
+        <td>window.document.links</td>
         <td>kollekció</td>
         <td></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td>document.links.length</td>
+        <td>window.document.links.length</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>document.links[i].href</td>
-        <td>tulajdonság</td>
-        <td class="z9_TdIgen">r</td>
-        <td class="z9_TdIgen">w</td>
-        <td class="z9_TdNem">-</td>
-      </tr>
-      <tr>
-        <td>document.lastModified</td>
-        <td>tulajdonság</td>
-        <td class="z9_TdIgen">r</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-      </tr>
-      <tr>
-        <td>document.referrer</td>
-        <td>tulajdonság</td>
-        <td class="z9_TdIgen">r</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-      </tr>
-      <tr>
-        <td>document.title</td>
+        <td>window.document.links[i].href</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdIgen">w</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>document.URL</td>
+        <td>window.document.lastModified</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>document.write(<i>kif</i>)</td>
-        <td>függvény</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdIgen">x</td>
-      </tr>
-      <tr>
-        <td>document.write(<i>kif</i>, <i>kif</i>, ...<i>kif</i>)</td>
-        <td>függvény</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdIgen">x</td>
-      </tr>
-      <tr>
-        <td>history.length</td>
+        <td>window.document.referrer</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>history.back()</td>
-        <td>függvény</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdIgen">x</td>
-      </tr>
-      <tr>
-        <td>history.forward()</td>
-        <td>függvény</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdIgen">x</td>
-      </tr>
-      <tr>
-        <td>history.go(<i>kif</i>)</td>
-        <td>függvény</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdNem">-</td>
-        <td class="z9_TdIgen">x</td>
-      </tr>
-      <tr>
-        <td>location.href</td>
+        <td>window.document.title</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdIgen">w</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>location.protocol</td>
+        <td>window.document.URL</td>
+        <td>tulajdonság</td>
+        <td class="z9_TdIgen">r</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+      </tr>
+      <tr>
+        <td>window.document.write(<i>kif</i>)</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td>window.document.write(<i>kif</i>, <i>kif</i>, ...<i>kif</i>)</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td class="z9_TBHangsulyos">window.history.length</td>
+        <td>tulajdonság</td>
+        <td class="z9_TdIgen">r</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+      </tr>
+      <tr>
+        <td>window.history.back()</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td>window.history.forward()</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td>window.history.go(<i>kif</i>)</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td class="z9_TBHangsulyos">window.location.href</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdIgen">w</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>location.hostname</td>
+        <td>window.location.protocol</td>
+        <td>tulajdonság</td>
+        <td class="z9_TdIgen">r</td>
+        <td class="z9_TdIgen">w</td>
+        <td class="z9_TdNem">-</td>
+      </tr>
+      <tr>
+        <td>window.location.hostname</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdIgen">w</td>
@@ -222,14 +221,14 @@
         <td></td>
       </tr>
       <tr>
-        <td>location.hash</td>
+        <td>window.location.hash</td>
         <td>tulajdonság</td>
         <td class="z9_TdIgen">r</td>
         <td class="z9_TdIgen">w</td>
         <td class="z9_TdNem">-</td>
       </tr>
       <tr>
-        <td>window.alert(<i>kif</i>)</td>
+        <td class="z9_TBHangsulyos">window.alert(<i>kif</i>)</td>
         <td>függvény</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
@@ -241,42 +240,96 @@
         </tr>
       </tfoot>
     </table>
-    <p>.</p>
+    <h2>Js objektum típusok, <q>osztályok</q></h2>
     <table>
-      <caption>
-        A JavaScript fontosabb objektumai
-      </caption>
       <tr>
         <th>Név</th>
-        <th>Milyenség</th>
-        <th>Írható</th>
-        <th>Olvasható</th>
+        <th>Tul./Fgv.</th>
+        <th>R</th>
+        <th>W</th>
+        <th>X</th>
       </tr>
       <tr>
-        <td>Date.toString</td>
+        <td>Date()</td>
+        <td>osztály</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>(new Date).toGMTString()</td>
         <td>függvény</td>
-        <td class="z9_NE">né</td>
-        <td class="z9_NE">né</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td>(new Date).toString()</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
       </tr>
       <tfoot>
         <tr>
-          <td colspan="4"><i>né</i> = <b>n</b>em <b>é</b>rtelmezett</td>
+          <td colspan="5"><i>kif</i> = <b>kif</b>ejezés</td>
         </tr>
       </tfoot>
+    </table>
+    <h2>Js alap típusok</h2>
+    <table>
+      <tr>
+        <th>Név</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Integer</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Float</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td>true|false</td>
+        <td></td>
+      </tr>
     </table>
   </section>
   <footer>
     <hr>
-    <p>Forrás: Michael Mouncur <span class="z9_KonyvCim1">Tanuljuk meg</span> <span class="z9_KonyvCim2">a
-    JavaScript<sup><small>TM</small></sup> használatát</span> <span class="z9_KonyvCim2">24 óra alatt</span>. © 2006
-    Kiskapu Kft. ISBN 963 9637 16 5. A jelen HTML dokumentumban bemutatott példák, a könyvben lévőkre utalnak.</p>
-    <p>Szerző: <a href="mailto:zavorszky@yahoo.com">Závorszky (Z9)</a></p>
-    <p>A HTML és a JS kódok: <a href="https://www.activestate.com"><span class=
-    "z9_Konyv2Cim1">Active</span><span class="z9_Konyv2Cim2">State</span> <span class=
-    "z9_Konyv2Cim3">Komodo</span></a><sup>®</sup> IDE<span class="z9_Konyv2Cim4">11</span></p>
-    <p>HTML ellenőrző: <a href="https://validator.w3.org/nu/">Nu Html Checker</a></p>
-    <p>HTML formázó és ellenőrző: <a href="http://www.html-tidy.org">Tidy</a> (<a href=
-    "http://www.paehl.com/open_source/?HTML_Tidy_for_HTML5">tidy.exe (Win 64bit) Letöltés</a>)</p>
+    <dl>
+      <dt>Forrás</dt>
+      <dd>Michael Mouncur <cite>Tanuljuk meg a JavaScript<sup><small>TM</small></sup> használatát 24 óra alatt</cite>.
+      © 2006 Kiskapu Kft. ISBN 963 9637 16 5. A HTML dokumentumokban bemutatott példákat, a könyvben lévők
+      inspirálták.</dd>
+      <dt>Szerző</dt>
+      <dd>
+        <a href="mailto:zavorszky@yahoo.com">Závorszky (Z9)</a>
+      </dd>
+      <dt>A HTML és a JS kódok</dt>
+      <dd>
+        <a href="https://www.activestate.com">Komodo</a> <sup>®</sup> IDE 11
+      </dd>
+      <dt>HTML ellenőrző</dt>
+      <dd>
+        <a href="https://validator.w3.org/nu/">Nu Html Checker</a>
+      </dd>
+      <dt>HTML formázó és ellenőrző</dt>
+      <dd>
+        <a href="http://www.html-tidy.org">Tidy</a> (<a href=
+        "http://www.paehl.com/open_source/?HTML_Tidy_for_HTML5">tidy.exe (Win 64bit) Letöltés</a>)
+      </dd>
+    </dl>
   </footer>
 </body>
 </html>
