@@ -5,16 +5,19 @@
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <style type="text/css">
     body {font-family: Arial, Helvetica, sans-serif}
-    header ul li { display:inline; list-style:none; }
+    nav ul li { display:inline; list-style:none; }
     /*footer {font-family: 'Comic Sans MS', cursive}*/
     strong {color: red}
+    .z9_Kod, .z9_Eredmeny {color: blue;}
+    .z9_Kod h3, .z9_Eredmeny h3 {color: navy}
     .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
     .z9_labjegyzet {font-family: 'Comic Sans MS', cursive; font-size: small}
     .z9_Elhagy {display: none}
+    #z9_SecKucsszavak ul li { display:inline; list-style:none; }
   </style>
   <script>
-    var v_maxKlikkSzam=5;
-    var v_kritikusKlikkSzam=4;
+    var v_maxKlikkSzam=4;
+    var v_kritikusKlikkSzam=v_maxKlikkSzam-1;
     var v_klikkSzam=0;
     function klikkeles(){
       if (v_klikkSzam<v_kritikusKlikkSzam) {
@@ -22,7 +25,10 @@
         window.alert("Klikk:"+v_klikkSzam);
       } else if (v_klikkSzam < v_maxKlikkSzam){
         ++v_klikkSzam;
-        window.alert("Figyelmeztetlek! Elég lesz mán ebből a sok klikkelésből...");
+        window.alert("Figyelmeztetlek! Sok lesz már...");
+      } else if (v_klikkSzam === v_maxKlikkSzam) {
+        ++v_klikkSzam;
+        window.alert("Na mostmár elég!");
       }
     }
   </script>
@@ -30,7 +36,7 @@
 </head>
 <body>
   <h1>JS001 - A JavaScript elhelyezése és más JavaScript dolgok</h1>
-  <header>
+  <nav>
     <h2 class="z9_Elhagy">Navigáció</h2>
     <ul>
       <li>[ <a href="index.html">index</a>
@@ -40,7 +46,10 @@
       <li>| <a href="JS002.html">JS002</a> ]
       </li>
     </ul>
-    <h2 class="z9_Elhagy">Kulcsszavak</h2>
+    <hr>
+  </nav>
+  <section id="z9_SecKucsszavak">
+    <h2>Kulcsszavak</h2>
     <ul>
       <li>[ Date()</li>
       <li>| document.write()</li>
@@ -48,76 +57,95 @@
       <li>| toString()</li>
       <li>| window.alert()]</li>
     </ul>
-    <hr>
-  </header>
+  </section>
   <section>
-    <h2>Hová helyezhetjük el a JavaScript kódokat ?</h2>
+    <h2>Hogyan dolgozik a Böngésző?</h2>
     <p>A a HTML dokumentum megjelenítése a HTML kód feldolgozásával kezdődik. A Böngésző olvassa a szerverről, vagy a
     munkaállomás egy könyvtárából a HTML kódot és ez alapján építi a DOM-ot, a HTML dokumentum modeljét. A HTML kódban
     speciális cimkék / <i>tag</i>ek közé zárva JavaScript utasításokat helyezhetünk el. Ez az elem a <b>script</b>
     elem. Amikor a böngésző egy ilyen elemmel találkozik, értelmezi és végrehajtja azt. A JavaScript kódban
     létrehozhatunk egyszerű változókat, vagy összetett objektumokat és a rájuk mutató referenciákat. Ezzekkel a
     szokásos műveleteket tudjuk elvégezni és a szokásos vezérlő szerkezeteket használhatjuk.</p>
-    <article>
-      <h3>JavaScript módosítja a HTML dokumentumot</h3>
-      <p>Az egyik izgalmas dolg az, hogy a <i>JavaScrit</i>tel manipulálhatjuk a felépülésben lévő, vagy márt teljesen
-      felépített DOM-ot. Pl. a HTML kód <b>body</b> elemében elhelyezett <i>JavaScript</i>tel <q>bele tudunk írni</q> a
-      HTML kódba:<br>
-      <code>&lt;b&gt;Web&lt;/b&gt;lap betöltési ideje: &lt;script <del>language="JavaScript"</del>
-      <del>type="text/javascript"</del>&gt; document.write((new Date()).toString()); &lt;/script&gt;</code><br>
-      <b>Web</b>lap betöltési ideje: 
+    <h2>JavaScript módosítja a HTML dokumentumot</h2>
+    <p>Az egyik izgalmas dolg az, hogy a <i>JavaScrit</i>tel manipulálhatjuk a felépülésben lévő, vagy márt teljesen
+    felépített DOM-ot. Pl. a HTML kód <b>body</b> elemében elhelyezett <i>JavaScript</i>tel <q>bele tudunk írni</q> a
+    HTML kódba:<br></p>
+    <article class="z9_Kod">
+      <h3>Kód</h3>
+      <p><code>&lt;p&gt;&lt;b&gt;Web&lt;/b&gt;lap betöltési ideje: &lt;script <del>language="JavaScript"</del>
+      <del>type="text/javascript"</del>&gt; document.write((new Date()).toString());
+      &lt;/script&gt;&lt;/p&gt;</code></p>
+    </article>
+    <article class="z9_Eredmeny">
+      <h3>Eredmény</h3>
+      <p><b>Web</b>lap betöltési ideje: 
       <script>
       document.write((new Date()).toString());
       </script></p>
-      <p>Hoppá ! :-o Mi ez az áthúzás ? <q>Rohan az idő/Megállítanám, de nem lehet...</q> :-) A <b>script</b> elem
-      tulajdonságai közül kikerült a <b>language</b> (elavult). A <code>type="text/javascript"</code> a HTML5-ben az
-      alapértelmezett, ezért nem kell kiírni. Én is így teszek :-)</p>
-      <p>A document.write() használatára már a szövegszerkesztőm is panaszokdi. Összeesküdött a <i>Komodo Edit</i>emmel
-      a <i>TML Tidy for HTML5 for Windows version 5.5.31</i> is, mert minden újraformázákor egy új sort szúr be a
-      <b>script</b> elembe, ami meglehetősen idegesítő tud lenni. Van jobb, támogatottab módszer a
-      document.write()-nál. Ehhez a HTML és a JavaScript kódnak szorosabban kell együttműködnie. Az a teendő, hogy azt
-      a HTML elemet, amihez valamilyen HTML tartalmat a karunk rendelni el kell látnuk az <b>id</b> azonosító
-      tulajdonsággal. A JavaScript kódban az <b>id</b>nak adott értékkel megkereshetjük a hozzá tartozó DOM objektumot
-      és módosíthatjuk. Nem véletlen a körülményeskedés... nem csak szöveget, hanem HTML kódot is hozzá rendelhetünk
-      pl. egy bekezdés <b>p</b> elemhez. Lássuk a példát:<br>
-      <code>&lt;p id="z9_id1"&gt;&lt;/p&gt; &lt;script&gt; document.getElementById("z9_id1").innerHTML =
+    </article>
+    <p>Hoppá ! :-o Mi ez az áthúzás ? <q>Rohan az idő/Megállítanám, de nem lehet...</q> :-) A <b>script</b> elem
+    tulajdonságai közül kikerült a <b>language</b> (elavult). A <code>type="text/javascript"</code> a HTML5-ben az
+    alapértelmezett, ezért nem kell kiírni. Én is így teszek :-)</p>
+    <p>A document.write() használatára már a szövegszerkesztőm is panaszokdi. Összeesküdött a <i>Komodo Edit</i>emmel a
+    <i>HTML Tidy for HTML5 for Windows version 5.5.31</i> is, mert minden újraformázákor egy új sort szúr be a
+    <b>script</b> elembe, ami meglehetősen idegesítő tud lenni. Van jobb, támogatottab módszer a document.write()-nál.
+    Ehhez a HTML és a JavaScript kódnak szorosabban kell együttműködnie. Az a teendő, hogy azt a HTML elemet, amihez
+    valamilyen HTML tartalmat a karunk rendelni el kell látnuk az <b>id</b> azonosító tulajdonsággal. A JavaScript
+    kódban az <b>id</b>nak adott értékkel megkereshetjük a hozzá tartozó DOM objektumot és módosíthatjuk. Nem véletlen
+    a körülményeskedés... nem csak szöveget, hanem HTML kódot is hozzá rendelhetünk pl. egy bekezdés <b>p</b> elemhez.
+    Lássuk a példát:</p>
+    <article class="z9_Kod">
+      <h3>Kód</h3>
+      <p><code>&lt;p id="z9_id1"&gt;&lt;/p&gt; &lt;script&gt; document.getElementById("z9_id1").innerHTML =
       "&lt;b&gt;Web&lt;/b&gt;lap betöltési ideje:"+(new Date()).toString(); &lt;/script&gt;</code></p>
+    </article>
+    <article class="z9_Eredmeny">
+      <h3>Eredmény</h3>
       <p id="z9_id1"></p>
       <script>
       document.getElementById("z9_id1").innerHTML = "<b>Web<\/b>lap \ betöltési ideje:"+(new Date()).toString();
       </script>
-      <p>Példa 1/2 (könyv: 2.1. kód):</p>
-      <p>Az aktuális időpont lekérdezésére a <b>Date</b> osztályt használhatjuk. A <b>new</b> operátorral létrehozunk
-      egy Date típusú példányt és annak <b>toString()</b> metódusával szövegesen megkapjuk a tárolt időt.</p>
-      <p><code>v_aktHelyiIdo = new Date();<br>
-      v_aktHelyiIdoStr = v_aktHelyiIdo.toString();</code></p>
-      <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen. A <b>document.lastModified</b> tulajdonság a HTML
-      dokumentum utolsó módosításának időpontját... elvileg.</p>
-      <p>Eredmény:</p>
+    </article>
+    <p>A köny alapján nézzünk példát az idő kezelésére. Az aktuális időpont lekérdezésére a <b>Date</b> osztályt
+    használhatjuk. A <b>new</b> operátorral létrehozunk egy Date típusú példányt és annak <b>toString()</b> metódusával
+    szövegesen megkapjuk a tárolt időt.</p>
+    <p><code>v_aktHelyiIdo = new Date();<br>
+    v_aktHelyiIdoStr = v_aktHelyiIdo.toString();</code></p>
+    <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen. A <b>document.lastModified</b> tulajdonság a HTML
+    dokumentum utolsó módosításának időpontját... elvileg.</p>
+    <article class="z9_Kod">
+      <h3>Kód</h3>
+      <p>ld. a HTMK kódot.</p>
+    </article>
+    <article class="z9_Eredmeny">
+      <h3>Eredmény</h3>
       <p id="z9_id2"></p>
       <script>
-        v_aktHelyiIdo = new Date();
+        var v_aktHelyiIdo = new Date();
         var v_aktHelyiIdoStr = v_aktHelyiIdo.toString();
         var v_utcIdoStr = v_aktHelyiIdo.toGMTString();
         var v_utosoModIdoStr = document.lastModified;
-        document.getElementById("z9_id2").innerHTML = "Utolsó betöltés időpontja:"+v_aktHelyiIdoStr+"<br>Utolsó betöltés időpontja (UTC):"+v_utcIdoStr+"<br>HTML utolsó dódosítása:"+v_utosoModIdoStr;
+        document.getElementById("z9_id2").innerHTML = "Utolsó betöltés ideje:"+v_aktHelyiIdoStr+"<br>Utolsó betöltés ideje (UTC):"+v_utcIdoStr+"<br>A HTML utolsó módosíása:"+v_utosoModIdoStr;
       </script>
-      <p>Figyelemreméltó, hogy ha nem Kliens-Szerver konfigurációban vagyunk, akkor az Internet Explorer a HTML
-      dokumentum utolsó módosításának időpontját adja, ellenben az AVAST SafeZone, a Google Crome az oldal utolsó
-      betöltésének / frissítésének időpontját. Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó
-      módosításának időpontját kellene kapnunk, de ez függ attól, hogy a szerver helyesen van-e beállítva. Tehát jól
-      meg kell gondolni mire használjuk a <b>document.lastModified</b> tulajdonságot. A Date osztályból származtatott
-      példány viszont a létrejöttének időpontját tárolja. A különbség jó látható, ha ezt az oldalt az Internet
-      Explorerrel futtatjuk.</p>
     </article>
-    <article>
-      <h3>JavaScript és az Események</h3>
-      <p>A következő izgalmas dolog, hogy különféle eseményekhez hozzárendelhetünk JavaScript kódokat. Pl. <q>egy
-      nyomógomb lenyomása</q> eseményhez hozzárendelhetjük egy figyelmeztető üzenet megjelenítését.hoz rendelhetün</p>
-      <h4>Példa 3/1 (könyv:1.3. kód):</h4>
-      <p>Egy nyomógomb (button) <b>onclick</b> (klikkelés) eseményére egy figyelmeztetést teszünk. A figyelmeztetés egy
-      függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet. Visszatérési értéke nincs.</p>
+    <p>Figyelemreméltó, hogy ha nem Kliens-Szerver konfigurációban vagyunk, akkor az Internet Explorer a HTML
+    dokumentum utolsó módosításának időpontját adja, ellenben az AVAST SafeZone, a Google Crome az oldal utolsó
+    betöltésének / frissítésének időpontját. Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó
+    módosításának időpontját kellene kapnunk, de ez függ attól, hogy a szerver helyesen van-e beállítva. Tehát jól meg
+    kell gondolni mire használjuk a <b>document.lastModified</b> tulajdonságot. A Date osztályból származtatott példány
+    viszont a létrejöttének időpontját tárolja. A különbség jó látható, ha ezt az oldalt az Internet Explorerrel
+    futtatjuk.</p>
+    <h2>JavaScript és az Események</h2>
+    <p>A következő izgalmas dolog, hogy különféle eseményekhez hozzárendelhetünk JavaScript kódokat. Pl. <q>egy
+    nyomógomb lenyomása</q> eseményhez hozzárendelhetjük egy figyelmeztető üzenet megjelenítését.</p>
+    <p>Egy nyomógomb (button) <b>onclick</b> (klikkelés) eseményére egy figyelmeztetést teszünk. A figyelmeztetés egy
+    függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet. Visszatérési értéke nincs.</p>
+    <article class="z9_Kod">
+      <h3>Kód</h3>
       <p><code>&lt;button onclicl="alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code></p>
+    </article>
+    <article class="z9_Eredmeny">
+      <h3>Eredmény</h3>
       <p><button onclick="alert('Huh, jól megklikkeltél :-o');">Klikkelj!</button></p>
       <p><button onclick="klikkeles();">Klikkelgető</button></p>
     </article>
@@ -133,6 +161,20 @@
       támogatják, hogy Js kód a gyorsító tárba (cache) kerül, így a többszöri használata, vagy több lap által való
       használata gyors lesz.</li>
     </ol>
+  </section>
+  <section>
+    <h2>A HTML kódban elhelyezett JavaScriptek milyen sorrendben futnak?</h2>
+    <ol>
+      <li>A <b>head</b> elemben elhelyezett kódok és függvények.</li>
+      <li>A <b>body</b> elemben elhelyezett kódok a <q>megjelenés</q>(sic!) sorrendjében. Talán helyesebb lenne a
+      sorrakerülésük vagy előfordulásuk sorrendjét írni ?!</li>
+      <li>Az eseménykezelők csak a hozzájuk rendet esemény bekövetkeztekor indítják el a JavaScript kódot.</li>
+    </ol>
+    <footer class="z9_labjegyzet">
+      <p>Sic, (latinul, jelentése: így) a sic erat scriptum (ez vala írva) kifejezésből. Akkor használják amikor az
+      olvasót arról akarják tájékoztatni, hogy a hibás vagy szokatlan írásmód egy idézett szövegben nem az idézőtől
+      származik, hanem így szerepel az eredeti szövegben.</p>
+    </footer>
   </section>
   <section>
     <h2>JavaScript elemek</h2>
@@ -163,19 +205,6 @@
         </ul>
       </li>
     </ul>
-  </section>
-  <section>
-    <h2>A HTML kódban elhelyezett JavaScriptek milyen sorrendben futnak?</h2>
-    <ol>
-      <li>A <b>head</b> elemben elhelyezett kódok és függvények.</li>
-      <li>A <b>body</b> elemben elhelyezett kódok a <q>megjelenés</q>(sic!) sorrendjében.</li>
-      <li>Az eseménykezelők csak a hozzájuk rendet esemény bekövetkeztekor indítják el a JavaScript kódot</li>
-    </ol>
-    <footer class="z9_labjegyzet">
-      <p>Sic, (latinul, jelentése: így) a sic erat scriptum (ez vala írva) kifejezésből. Akkor használják amikor az
-      olvasót arról akarják tájékoztatni, hogy a hibás vagy szokatlan írásmód egy idézett szövegben nem az idézőtől
-      származik, hanem így szerepel az eredeti szövegben.</p>
-    </footer>
   </section>
 </body>
 </html>
