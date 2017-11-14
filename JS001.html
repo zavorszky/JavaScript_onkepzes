@@ -6,12 +6,10 @@
   <style type="text/css">
     body {font-family: Arial, Helvetica, sans-serif}
     nav ul li { display:inline; list-style:none; }
-    /*footer {font-family: 'Comic Sans MS', cursive}*/
-    strong {color: red}
+    abbr {background: silver}
     .z9_Kod, .z9_Eredmeny {color: blue;}
     .z9_Kod h3, .z9_Eredmeny h3 {color: navy}
-    .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
-    .z9_labjegyzet {font-family: 'Comic Sans MS', cursive; font-size: small}
+    .z9_Labjegyzet {font-family: 'Comic Sans MS', cursive; font-size: small}
     .z9_Elhagy {display: none}
     #z9_SecKucsszavak ul li { display:inline; list-style:none; }
   </style>
@@ -20,14 +18,12 @@
     var v_kritikusKlikkSzam=v_maxKlikkSzam-1;
     var v_klikkSzam=0;
     function klikkeles(){
+      ++v_klikkSzam;
       if (v_klikkSzam<v_kritikusKlikkSzam) {
-        ++v_klikkSzam;
         window.alert("Klikk:"+v_klikkSzam);
-      } else if (v_klikkSzam < v_maxKlikkSzam){
-        ++v_klikkSzam;
+      } else if (v_klikkSzam === v_kritikusKlikkSzam){
         window.alert("Figyelmeztetlek! Sok lesz már...");
       } else if (v_klikkSzam === v_maxKlikkSzam) {
-        ++v_klikkSzam;
         window.alert("Na mostmár elég!");
       }
     }
@@ -111,11 +107,19 @@
     szövegesen megkapjuk a tárolt időt.</p>
     <p><code>v_aktHelyiIdo = new Date();<br>
     v_aktHelyiIdoStr = v_aktHelyiIdo.toString();</code></p>
-    <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen. A <b>document.lastModified</b> tulajdonság a HTML
-    dokumentum utolsó módosításának időpontját... elvileg.</p>
+    <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen.</p>
+    <p>A <b>document.lastModified</b> tulajdonság a HTML dokumentum utolsó módosításának időpontját... elvileg.</p>
     <article class="z9_Kod">
       <h3>Kód</h3>
-      <p>ld. a HTMK kódot.</p>
+      <p><code>&lt;p id="z9_id2"&gt;&lt;/p&gt;<br>
+      &lt;script&gt;<br>
+      var v_aktHelyiIdo = new Date();<br>
+      var v_aktHelyiIdoStr = v_aktHelyiIdo.toString();<br>
+      var v_utcIdoStr = v_aktHelyiIdo.toGMTString();<br>
+      var v_utosoModIdoStr = document.lastModified;<br>
+      document.getElementById("z9_id2").innerHTML = "Utolsó betöltés
+      ideje:"+v_aktHelyiIdoStr+"&lt;br&gt;Utolsó...";<br>
+      &lt;/script&gt;</code></p>
     </article>
     <article class="z9_Eredmeny">
       <h3>Eredmény</h3>
@@ -128,13 +132,37 @@
         document.getElementById("z9_id2").innerHTML = "Utolsó betöltés ideje:"+v_aktHelyiIdoStr+"<br>Utolsó betöltés ideje (UTC):"+v_utcIdoStr+"<br>A HTML utolsó módosíása:"+v_utosoModIdoStr;
       </script>
     </article>
-    <p>Figyelemreméltó, hogy ha nem Kliens-Szerver konfigurációban vagyunk, akkor az Internet Explorer a HTML
+    <p>A <b>var</b> kulcsszó vezeti be változókat. Megadása nem kötelező, de a változók láthatóságának szabályozására
+    használható. Ha egy változót egy függvényen <u>kívül</u> létrehozunk, akkor az a változó írható, olvasható az egész
+    HTML dokumentum (mondhatnánk alkalmazás ?!) működése idején. Ha ugyan ilyen nevű változót szeretnénk használni egy
+    függvényen <u>belül</u>, lokális változóként, akkor a <b>var</b> kulcszóval kell bevezetni, ellenkező esetben a
+    JavaScript értelmező a függvényen kívül bevezetett, <q>globális</q> változót fogja használni annak minden
+    mellékhatásával együtt.</p>
+    <p>Figyelemreméltó, hogy ha <u>nem</u> Kliens-Szerver konfigurációban vagyunk, akkor az Internet Explorer a HTML
     dokumentum utolsó módosításának időpontját adja, ellenben az AVAST SafeZone, a Google Crome az oldal utolsó
     betöltésének / frissítésének időpontját. Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó
     módosításának időpontját kellene kapnunk, de ez függ attól, hogy a szerver helyesen van-e beállítva. Tehát jól meg
     kell gondolni mire használjuk a <b>document.lastModified</b> tulajdonságot. A Date osztályból származtatott példány
     viszont a létrejöttének időpontját tárolja. A különbség jó látható, ha ezt az oldalt az Internet Explorerrel
     futtatjuk.</p>
+    <p>Nem kötelező a JavaScript kódnak a HTML kódban szerepelnie. A <b>script</b> elem <b>src</b> tulajdonsávával
+    megadhatjuk a külső szkript elérését. A szkript állomány kiterjesztése szokás szerint .js és benne a JavaScript
+    kódok nincsennek <b>script</b> elemben, hiszen ez az elem a HTML szabvány része nem a <i>JavaScript</i>é.</p>
+    <article class="z9_Kod">
+      <h3>Kód</h3>
+      <p><code>&lt;p&gt;Weblap betöltési ideje: &lt;script src="JS001.js"&gt;&lt;/script&gt; &lt;/p&gt;</code></p>
+    </article>
+    <article class="z9_Eredmeny">
+      <h3>Eredmény</h3>
+      <p>Weblap betöltési ideje: 
+      <script src="JS001.js"></script></p>
+    </article>
+    <h2>Szétválasztás</h2>
+    <p>Ahogy nő a projekt, úgy egyre több problémával találkozun. Ezek elkerülésére, vagy legalább könyebb
+    felderítésére ajánlások vannak. Az egyik a <b>var</b> változó meghatározás használata. Egy másik ajánlás, hogy a
+    projekt különböző logikai egységeit külön állományokba tegyük: a HTML kódban a tartalom szerepeljen, ne (vagy csak
+    minimálisan) legyenek formázó vagy aktív elemek. A formázó utasítások a <abbr title=
+    "Cascading Style Sheets">CSS</abbr> állományokban legyenek. Az szkriptek a JavaScript állományokban.</p>
     <h2>JavaScript és az Események</h2>
     <p>A következő izgalmas dolog, hogy különféle eseményekhez hozzárendelhetünk JavaScript kódokat. Pl. <q>egy
     nyomógomb lenyomása</q> eseményhez hozzárendelhetjük egy figyelmeztető üzenet megjelenítését.</p>
@@ -146,9 +174,13 @@
     </article>
     <article class="z9_Eredmeny">
       <h3>Eredmény</h3>
-      <p><button onclick="alert('Huh, jól megklikkeltél :-o');">Klikkelj!</button></p>
+      <p><button onclick="window.alert('Huh, jól megklikkeltél :-o');">Klikkelj!</button></p>
       <p><button onclick="klikkeles();">Klikkelgető</button></p>
     </article>
+    <p>A <q>Klikkelgető</q> gomb működése megmutatja a globális változók használatát. A <b>head</b> elemben elhelyezett
+    <b>script</b> elem tartalmazza a v_klikkSzam globális változót, ami tárolja, hogy hányszor klikkeltünk a gombra. Az
+    <b>onclick</b> esemény megívja a <abbr title="A head elem script gyerekeleme">head/script</abbr> elemben bevezetett <b>klikkeles()</b> függvényt, ami
+    használni tudja a HTML kód betöltésekor létrehozott v_klikkSzam globális változót.</p>
     <h2>Összefoglalva:</h2>
     <ol>
       <li>A weboldal törzsébe egy <b>script</b> elembe vagyis <i>tag</i>ek közé zárva. A script kimenete / az oldal
@@ -158,8 +190,8 @@
       <li>HTML elemekbe, eseménykezelőkbe (body, form..., stb.). Ilyen esetekben a kódot nem zárjuk <b>scrip</b>
       elembe.</li>
       <li>Önálló állományba. A szokásos állománytípus (kiterjesztés :-)) a .js. Ezt a megoldást a böngészők azzal is
-      támogatják, hogy Js kód a gyorsító tárba (cache) kerül, így a többszöri használata, vagy több lap által való
-      használata gyors lesz.</li>
+      támogatják, hogy <abbr title="JavaScript">Js</abbr> kód a gyorsító tárba (cache) kerül, így a többszöri
+      használata, vagy több lap által való használata gyors lesz.</li>
     </ol>
   </section>
   <section>
@@ -170,7 +202,7 @@
       sorrakerülésük vagy előfordulásuk sorrendjét írni ?!</li>
       <li>Az eseménykezelők csak a hozzájuk rendet esemény bekövetkeztekor indítják el a JavaScript kódot.</li>
     </ol>
-    <footer class="z9_labjegyzet">
+    <footer class="z9_Labjegyzet">
       <p>Sic, (latinul, jelentése: így) a sic erat scriptum (ez vala írva) kifejezésből. Akkor használják amikor az
       olvasót arról akarják tájékoztatni, hogy a hibás vagy szokatlan írásmód egy idézett szövegben nem az idézőtől
       származik, hanem így szerepel az eredeti szövegben.</p>
