@@ -48,10 +48,16 @@
     <h2>Kulcsszavak</h2>
     <ul>
       <li>[ Date()</li>
-      <li>| document.write()</li>
-      <li>| toGMTString()</li>
-      <li>| toString()</li>
-      <li>| window.alert()]</li>
+      <li>.toGMTString()</li>
+      <li>.toString() ]</li>
+      <li>[ var ]</li>
+      <li>[ document</li>
+      <li>.getElementById(..)</li>
+      <li>.getElementById(..).innerHTML</li>
+      <li>.lastModified</li>
+      <li>.write() ]</li>
+      <li>[ window</li>
+      <li>.alert() ]</li>
     </ul>
   </section>
   <section>
@@ -140,9 +146,9 @@
     <p>A <b>var</b> kulcsszó vezeti be változókat. Megadása nem kötelező, de a változók láthatóságának szabályozására
     használható. Ha egy változót egy függvényen <u>kívül</u> létrehozunk, akkor az a változó írható, olvasható az egész
     HTML dokumentum (mondhatnánk alkalmazás ?!) működése idején. Ha ugyan ilyen nevű változót szeretnénk használni egy
-    függvényen <u>belül</u>, lokális változóként, akkor a <b>var</b> kulcszóval kell bevezetni, ellenkező esetben a
-    JavaScript értelmező a függvényen kívül bevezetett, <q>globális</q> változót fogja használni annak minden
-    mellékhatásával együtt.</p>
+    függvényen <u>belül</u>, lokális változóként, akkor a <b>var</b> kulcszóval kell bevezetni, ellenkező esetben a Js
+    értelmező a függvényen kívül bevezetett, <q>globális</q> változót fogja használni annak minden mellékhatásával
+    együtt.</p>
     <p>Figyelemreméltó, hogy ha <u>nem</u> Kliens-Szerver konfigurációban vagyunk, akkor az Internet Explorer a HTML
     dokumentum utolsó módosításának időpontját adja, ellenben az AVAST SafeZone, a Google Crome az oldal utolsó
     betöltésének / frissítésének időpontját. Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó
@@ -151,8 +157,8 @@
     viszont a létrejöttének időpontját tárolja. A különbség jó látható, ha ezt az oldalt az Internet Explorerrel
     futtatjuk.</p>
     <p>Nem kötelező a Js kódnak a HTML kódban szerepelnie. A <b>script</b> elem <b>src</b> tulajdonsávával megadhatjuk
-    a külső szkript elérését. A szkript állomány kiterjesztése szokás szerint .js és benne a JavaScript kódok
-    nincsennek <b>script</b> elemben, hiszen ez az elem a HTML szabvány része nem a <i>Js</i>é.</p>
+    a külső szkript elérését. A szkript állomány kiterjesztése szokás szerint .js és benne a Js kódok nincsennek
+    <b>script</b> elemben, hiszen ez az elem a HTML szabvány része nem a <i>Js</i>é.</p>
     <article class="z9_Kod">
       <h3>Kód</h3>
       <p><code>&lt;p&gt;Weblap betöltési ideje: &lt;script src="JS001.js"&gt;&lt;/script&gt; &lt;/p&gt;</code></p>
@@ -175,7 +181,7 @@
     függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet. Visszatérési értéke nincs.</p>
     <article class="z9_Kod">
       <h3>Kód</h3>
-      <p><code>&lt;button onclicl="alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code></p>
+      <p><code>&lt;button onclicl="window.alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code></p>
     </article>
     <article class="z9_Eredmeny">
       <h3>Eredmény</h3>
@@ -196,8 +202,8 @@
       <li>HTML elemekbe, eseménykezelőkbe (body, form..., stb.). Ilyen esetekben a kódot nem zárjuk <b>scrip</b>
       elembe.</li>
       <li>Önálló állományba. A szokásos állománytípus (kiterjesztés :-)) a .js. Ezt a megoldást a böngészők azzal is
-      támogatják, hogy <abbr title="JavaScript">Js</abbr> kód a gyorsító tárba (cache) kerül, így a többszöri
-      használata, vagy több lap által való használata gyors lesz.</li>
+      támogatják, hogy Js kód a gyorsító tárba (cache) kerül, így a többszöri használata, vagy több lap által való
+      használata gyors lesz.</li>
     </ol>
   </section>
   <section>
@@ -206,7 +212,7 @@
       <li>A <b>head</b> elemben elhelyezett kódok és függvények.</li>
       <li>A <b>body</b> elemben elhelyezett kódok a <q>megjelenés</q>(sic!) sorrendjében. Talán helyesebb lenne a
       sorrakerülésük vagy előfordulásuk sorrendjét írni ?!</li>
-      <li>Az eseménykezelők csak a hozzájuk rendet esemény bekövetkeztekor indítják el a JavaScript kódot.</li>
+      <li>Az eseménykezelők csak a hozzájuk rendet esemény bekövetkeztekor indítják el a Js kódot.</li>
     </ol>
     <footer class="z9_Labjegyzet">
       <p>Sic, (latinul, jelentése: így) a sic erat scriptum (ez vala írva) kifejezésből. Akkor használják amikor az
