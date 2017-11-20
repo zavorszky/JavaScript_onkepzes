@@ -163,7 +163,7 @@
       </tr>
       <tr>
         <td><abbr title="No Return Value">NoRetVal</abbr></td>
-        <td>window.document.write(<i>kif</i>)</td>
+        <td>window.document.write(<i>str_kif</i>)</td>
         <td>függvény</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
@@ -171,7 +171,7 @@
       </tr>
       <tr>
         <td>NoRetVal</td>
-        <td>window.document.write(<i>kif</i>, <i>kif</i>, ...<i>kif</i>)</td>
+        <td>window.document.write(<i>str_kif</i>, <i>str_kif</i>, ...<i>str_kif</i>)</td>
         <td>függvény</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
@@ -203,7 +203,7 @@
       </tr>
       <tr>
         <td>NoRetVal</td>
-        <td>window.history.go(<i>kif</i>)</td>
+        <td>window.history.go(<i>int_kif</i>)</td>
         <td>függvény</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
@@ -250,7 +250,23 @@
       </tr>
       <tr>
         <td>NoRetVal</td>
-        <td class="z9_TBHangsulyos">window.alert(<i>kif</i>)</td>
+        <td>window.location.reload(<i>[log_kif]</i>)</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td>NoRetVal</td>
+        <td>window.location.replace(<i>URL_kif</i>)</td>
+        <td>függvény</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdNem">-</td>
+        <td class="z9_TdIgen">x</td>
+      </tr>
+      <tr>
+        <td>NoRetVal</td>
+        <td class="z9_TBHangsulyos">window.alert(<i>str_kif</i>)</td>
         <td>függvény</td>
         <td class="z9_TdNem">-</td>
         <td class="z9_TdNem">-</td>
@@ -258,7 +274,16 @@
       </tr>
       <tfoot>
         <tr>
-          <td colspan="5"><i>kif</i> = <b>kif</b>ejezés</td>
+          <td colspan="5"><i>int_kif</i> = Egész szám eredményű kifejezés</td>
+        </tr>
+        <tr>
+          <td colspan="5"><i>log_kif</i> = <b>log</b>igai <b>kif</b>ejezés</td>
+        </tr>
+        <tr>
+          <td colspan="5"><i>str_kif</i> = String eredményű kifejezés</td>
+        </tr>
+        <tr>
+          <td colspan="5"><i>URL_kif</i> = Olyan String eredményű kifejezés ami egy érvényes URL</td>
         </tr>
       </tfoot>
     </table>

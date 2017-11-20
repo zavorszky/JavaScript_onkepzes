@@ -337,6 +337,49 @@
           </li>
         </ul>
       </li>
+      <li>location.reload(), location.reload(true)
+        <ul>
+          <li><span class="z9_Fej">Jelentés</span>: Újratölti a Webodalt. Ha megadjuk az elhagyható <i>true</i>
+          paraméter értéket akkor a a Böngésző figyelmen kívül hagyja a gyorstár (chache) tartalmát és mindenképpen
+          betölti újra a Eblapot.</li>
+          <li><span class="z9_Fej">Jellemző</span>: tagfüggvény</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Nem">nem</span> írható:<span class=
+          "z9_Nem">nem</span> végrehajtható:<span class="z9_Igen">igen</span></li>
+          <li>Példa:
+            <ul>
+              <li><input type="button" onclick="location.reload();" value="location.reload() ~&gt;"></li>
+              <li><input type="button" onclick="location.reload(true);" value="location.reload(true) ~&gt;"></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>location.replace(új_URL)
+        <ul>
+          <li><span class="z9_Fej">Jelentés</span>: A megadott Weboldalt betölti és megjeleníti, de előtte az előzmény
+          listából törli az aktuális oldal URL-jét.</li>
+          <li><span class="z9_Fej">Jellemző</span>: tagfüggvény</li>
+          <li><span class="z9_Fej">Hozzáférés</span>: olvasható:<span class="z9_Nem">nem</span> írható:<span class=
+          "z9_Nem">nem</span> végrehajtható:<span class="z9_Igen">igen</span></li>
+          <li>Példa:
+            <ul>
+              <li><input type="button" onclick="location.replace('JS003.html');" value=
+              "location.replace('JS003.html') ~&gt;"></li>
+            </ul>
+          </li>
+          <li>Jegyzetek:
+            <ul class="z9_Jegyzet">
+              <li>Akkor most hogyan ? Az <b>A</b> Weblapon kiadjuk a location.replace()-t a <b>B</b> lapra mutató
+              URL-el. A böngésző kitörli az <b>A</b> lap URL-jét az előzmény listából; Majd megjeleníti a <b>B</b>
+              lapot. Megpróbálunk visszalépni a Böngésző <i>Back</i> <q>gombjával</q>, de nem tudunk, mert hiányzik az
+              előzmény listáról az <b>A</b> URL-je. OK. De azon meglepődtem, hogy a <i>Back</i> <q>gombbal</q> az
+              <b>A</b>-t megelőző lapra vissza tudok ugrani (persze csak, ha van). Miért jó az, ha az előző lapra nem
+              tudok visszalépni? Csak arra tudok gondolni, hogy az <b>A</b> lapon valami olyan történt amit nincs
+              értelme megismételni. Pl. az <b>A</b> lapon bejelentkeztetjük a felhasználót, aztán a <b>B</b> lapon egy
+              levelező alkalmazást működtetünk.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ol><!-- A példák elkészítése-->
     <script>
       document.getElementById("z9_LiDocumentURL").innerHTML = document.URL;
