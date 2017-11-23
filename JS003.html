@@ -3,86 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
-  <style>
-    body {font-family: Arial, Helvetica, sans-serif}
-    header ul li {display:inline; list-style:none; }
-    table {border-collapse:collapse; border:2px solid black}
-    tr, th, td {border:1px solid black; padding:2px }
-    tfoot {font-size: small}
-    strong {color: red}
-    .z9_Elhagy {display: none}
-    .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
-  </style>
-  <script>
-    function z9TablaFeltoltes() {
-       document.getElementById("z9_tdUrl").innerHTML = document.URL;
-       document.getElementById("z9_tdLocationHref").innerHTML = location.href;
-       document.getElementById("z9_tdReferrer").innerHTML = document.referrer;
-       document.getElementById("z9_tdHistoryLength").innerHTML = history.length;
-    }
-  </script>
-  <title>JS003 - XXX</title>
+  <title>JS003 - JavaScript érdekességek</title>
+  <link rel="stylesheet" href="JS003.css">
+  <script src="JS003.js"></script>
 </head>
-<body onload="z9TablaFeltoltes();">
-  <h1>JS003 - XXX</h1>
-  <header>
+<body onload="z9IniJsVariables();">
+  <h1>JS003 - JavaScript érdekességek</h1>
+  <nav>
     <h2 class="z9_Elhagy">Navigáció</h2>
     <ul>
-      <li>[ <a href="JS002.html">JS002</a>
+      <li>[ <a href="index.html">index</a>
       </li>
       <li>| <a href="index.html">index</a>
       </li>
-      <li>| <a href="JS004.html">JS004</a> ]
+      <li>| <a href="JS002.html">JS002</a> ]
       </li>
     </ul>
-    <h2 class="z9_Elhagy">Kulcsszavak</h2>
-    <ul>
-      <li>[ XXX ]</li>
-    </ul>
     <hr>
-  </header>
+  </nav>
+  <section id="z9_SecKucsszavak">
+    <h2>Kulcsszavak</h2>
+    <ul>
+      <li>[ Date()</li>
+      <li>.toGMTString()</li>
+      <li>.toString() ]</li>
+      <li>[ var ]</li>
+      <li>[ document</li>
+      <li>.getElementById(..)</li>
+      <li>.getElementById(..).innerHTML</li>
+      <li>.lastModified</li>
+      <li>.write() ]</li>
+      <li>[ window</li>
+      <li>.alert() ]</li>
+    </ul>
+  </section>
   <section>
-    <h2>Mi ez ?</h2>
-    <table>
-      <caption>
-        A DOM fontosabb objektumai
-      </caption>
-      <tr>
-        <th>#</th>
-        <th>Tul./Fgv.</th>
-        <th>Érték</th>
-      </tr>
-      <tr>
-        <td>1.</td>
-        <td>document.referrer</td>
-        <td id="z9_tdReferrer"></td>
-      </tr>
-      <tr>
-        <td>2.</td>
-        <td>document.URL</td>
-        <td id="z9_tdUrl"></td>
-      </tr>
-      <tr>
-        <td>3.</td>
-        <td>location.href</td>
-        <td id="z9_tdLocationHref"></td>
-      </tr>
-      <tr>
-        <td>4.</td>
-        <td>history.length</td>
-        <td id="z9_tdHistoryLength"></td>
-      </tr>
-      <tr>
-        <td>5.</td>
-        <td>history.back()</td>
-        <td><input type="button" onclick="history.back();" value="&lt;&lt; Vissza"></td>
-      </tr>
-      <tr>
-        <td>6.</td>
-        <td>history.forward()</td>
-        <td><input type="button" onclick="history.forward();" value="Előre &gt;&gt;"></td>
-      </tr>
-    </table>
+    <h2>HTML - CSS - JavaScript</h2>
+    <p>Ezen az oldalon a <abbr title="JavaScript">Js</abbr> kódot igyekszem elkülöníteni a <abbr title=
+    "Cascading Style Sheets">CSS</abbr> kódtól és a <abbr title="Hypertext Markup Language">HTML</abbr> kódtól, ezért a
+    <i>JS003.html</i>-hez tartozik egy JS003.css és egy JS003.js állomány is.</p>
+    <h2>JavaScript</h2>
+    <h3>Változók</h3>
+    <p>A Js kódban változó deklarációk és Js utasítások vegyesen fordulnak elő. A Böngésző valamilyen módon -a
+    <abbr title="Document Object Model">DOM</abbr> felépítés közben, egy eseményhez rendelt Js kód végrehajtásakor-
+    elérkezik a Js kódhoz. A Js utasításokat egymás után értelmezi és végrehajtja.</p>
+    <p>A változókat értékadással, a <b>var</b> kulcsszóval illetve egyszerre mindkettő alkalmazásával hozhatjuk
+    létre:</p>
+    <ul>
+      <li><code>Zisti = "Závorszky István";</code></li>
+      <li><code>var Edit;</code></li>
+      <li><code>var Isti = "Bozó István";</code></li>
+    </ul>
+    <p>A változó nevének felépítése:<br>
+    (betű|'_'){betű_szám...}</p>
+    <p>A változó hatóköre:</p>
+    <ul>
+      <li>lobális ( általános )</li>
+      <li>lokális ( helyi )</li>
+    </ul>
+    <p>Az globális változók akkor jönnek létre, ha a változót a függvényeken <em>kívül</em> hozzuk létre. A helyi
+    változókat a függvényeken <em>belül</em> hozzuk lérte, és a függvény végrehajtásának befejezése után nem
+    használhatók (a függvényhez tartozó memória verem felszabadul ?!). Ha egy függvényben egy általános változó nevét
+    akarjuk használni egy heyli változó nevének, akkor a <b>var</b> kulcsszóval kell deklarálni, különben az álltalános
+    változót használja a Böngésző.</p>
+    <article class="z9_Kod">
+      <h4>Kód</h4>
+      <p>A <b>head</b> elemben meghívjuk a JS003.js szkriptet.<br>
+      A szkript léprehoz két globális változót: g_szamlaloA_pl1, g_szamlaloB_pl1, g_szamlaloC_pl1.<br>
+      A g_szamlaloA_pl1 és g_szamlaloB_pl1 értéket kap, a g_szamlaloC_pl1 nem.<br>
+      Anyomógombra klikkelve, az <b>onclick</b> eseményre két függvény fut le: akiirA_pl1() és a kiirB_pl1().<br>
+      Kiíródnak a változók.<br>
+      A függvényen belül <b>var</b> kulcsszóval deklarált lokális változó <q>eltakarja</q> az ugyan olyan nevű globális
+      változót.<br>
+      A kiírásnál látszik, hogy a g_szamlaloC_pl1 <q>undefined</q> értékű.</p><input type="button" onclick=
+      "kiirA_pl1();kiirB_pl1();" value="Változó próba ~&gt;">
+    </article>
+    <article class="z9_Eredmeny">
+      <h4>Eredmény</h4>
+      <p id="idA_pl1"></p>
+      <p id="idB_pl1"></p>
+    </article>
+    <p>A <b>var</b> kulcsszóval létrehozott változó értékr <q>undefined</q>. Tipusa sem meghatározott. Általában egy
+    változó típusa az utoljára kapott értékének a típusa.</p>
+    <article class="z9_Kod">
+      <h4>Kód</h4><input type="button" onclick="tipus_pl2();" value="Tipus próba ~&gt;">
+    </article>
+    <article class="z9_Eredmeny">
+      <h4>Eredmény</h4>
+      <p id="id_pl2"></p>
+    </article>
   </section>
 </body>
 </html>

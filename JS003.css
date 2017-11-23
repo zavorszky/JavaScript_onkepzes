@@ -1,0 +1,33 @@
+/*
+ * Készült:2017.11.22
+ * Készítő: Z9 */
+body
+  {font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  color: black;
+  background-color: darkseagreen}
+nav ul li
+  {display:inline;
+  list-style:none}
+table
+  {border-collapse:collapse;
+  border:2px solid black
+  }
+tr, th, td
+  {border:1px solid black;
+  padding:2px }
+tfoot {font-size: small}
+
+abbr {background: silver}
+
+strong {color: red}
+
+.z9_Kod, .z9_Eredmeny {color: blue;}
+
+.z9_Elhagy {display: none}
+
+.z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
+
+#z9_SecKucsszavak ul li
+  { display:inline;
+  list-style:none}
