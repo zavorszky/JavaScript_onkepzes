@@ -55,10 +55,12 @@
       <li><code>var Isti = "Bozó István";</code></li>
     </ul>
     <p>A változó nevének felépítése:<br>
-    (betű|'_'){betű_szám...}</p>
+    változó_név = első_jel,további_jelek<br>
+    első_jel = '_'|betűk<br>
+    további_jelek = '_'|betűk|számjegyek</p>
     <p>A változó hatóköre:</p>
     <ul>
-      <li>lobális ( általános )</li>
+      <li>globális ( általános )</li>
       <li>lokális ( helyi )</li>
     </ul>
     <p>Az globális változók akkor jönnek létre, ha a változót a függvényeken <em>kívül</em> hozzuk létre. A helyi
@@ -92,6 +94,39 @@
       <h4>Eredmény</h4>
       <p id="id_pl2"></p>
     </article>
+    <h3>Tömbök</h3>
+    <p>A tömböket deklarálni kell:</p>
+    <ul>
+      <li>var l_matek_jegyek = new Array(3);<br>
+      l_matek_jegyek[0] = 4;<br>
+      l_matek_jegyek[1] = 4;<br>
+      l_matek_jegyek[2] = 5;<br></li>
+      <li>var l_matek_jegyek = new Array(4, 4, 5);</li>
+      <li>var l_matek_jegyek = [4, 4, 5];</li>
+    </ul>
+    <article class="z9_Kod">
+      <h4>Kód</h4>
+      <p>A String objektumnak van egy érdeke tagfüggvénye a <b>.split</b>( <i>char</i> ). A megadott karaktert
+      határolónak véve feldarabolja a sztringet és egy tömbbe helyezi:<br>
+      <code><b>var</b> l_nevek_arr=l_nevek_str.split(",");</code></p><input type="button" onclick=
+      "tombbol_sztring_pl3();" value="Tömbből sztring ~&gt;"> <input type="button" onclick="sztringbol_tomb_pl3();"
+      value="Sztringből tömb ~&gt;">
+    </article>
+    <article class="z9_Eredmeny">
+      <h4>Eredmény</h4>
+      <p id="id_pl3"></p>
+    </article>
+    <p>Mellesleg kipróbáltam, hogy viselkedik a <b>null</b> konstans. Azt gondoltam az <em>Oracle</em> adatbáziskezelő
+    sztring kezeléséhez hasonlóan a <b>null</b> értékű változó úgy viselkedik mint az üres sztring, a "". Nem, pl.:<br>
+    <code>var a=null; var b="X"; var c=a+b;</code><br>
+    eredménye: nullX<br>
+    Továbbá összehasonlítható a <b>null</b> és az üres sztring is :-o-:</p>
+    <ul>
+      <li>null === null : true</li>
+      <li>null === "a" : false</li>
+      <li>"" === "a" : true</li>
+      <li>"" === "" : true</li>
+    </ul>
   </section>
 </body>
 </html>
