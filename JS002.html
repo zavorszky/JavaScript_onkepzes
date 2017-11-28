@@ -8,6 +8,7 @@
     header ul li {display:inline; list-style:none; }
     table {border-collapse:collapse; border:2px solid black}
     tr, th, td {border:1px solid black; padding:2px }
+    abbr {background: silver}
     strong {color: red}
     .z9_Elhagy {display: none}
     .z9_Jegyzet {font-family: 'Comic Sans MS', cursive}
@@ -40,19 +41,21 @@
   </header>
   <section>
     <h2>Mi ez ?</h2>
-    <p>Dokument Object Model, a böngészők ezt a modellt használják a HTLM kód struktúrált tárolására. Ez egy fa
+    <p>Document Object Model, a böngészők ezt a modellt használják a HTLM kód struktúrált tárolására. Ez egy fa
     szerkezetű objektum, melyet a böngésző hoz létre a beolvasott HTML kód alapján. Minden böngésző ablakhoz (böngésző
-    fülhöz ?!) külön-külön tartozik egy saját fa <b>window</b> gyökér elemmel.</p>
-    <p><a name="a_Abra" id="a_Abra">A DOM vázlatos képe (Teszt könyvjelző)</a><br>
+    fülhöz ?!) külön-külön tartozik egy saját objektum fa <b>window</b> gyökér elemmel.</p>
+    <p><a id="a_Abra"><br>
     <img src="JS002.svg" alt="Nem jeleníthető meg a JS002.svg ábra." title="DOM vázlaos képe" width="400" height=
-    "400"></p>
+    "400"></a></p>
+    <p id="a_Abra2">Könyvjelző: a_Abra2</p>
     <p><strong>Figyelem !</strong> Fontos megkülönböztetni, hogy a <i>JavaScript</i>nek vannak saját objektumai és a
-    Böngészőnek is van saját objektuma a DOM. Például a JavaScript saját objektuma minden a <b>Date</b> osztályból
-    <b>new</b> operátorral létrehozott példány. Erre a példányra mutató referenciát tehetünk egy változóba az =
-    (egyenlőség jel) operátorral. A böngésző objektumát nem kell létrehozni, az a HTML kód beolvasásakor felépül. Ez a
-    DOM. A böngészőben implementált (megvalósított, bevezetett) JavaScript tudja használni a DOM objektumait.</p>
+    Böngészőnek is van saját objektuma, utóbbié a <abbr title="Document Object Model">DOM</abbr>. Például a JavaScript
+    saját objektuma minden a <b>Date</b> osztályból <b>new</b> operátorral létrehozott példány. Erre a példányra mutató
+    referenciát tehetünk egy változóba az = (egyenlőség jel) operátorral. A böngésző objektumát nem kell létrehozni, az
+    a HTML kód beolvasásakor felépül. A böngészőben implementált (megvalósított, bevezetett) JavaScript tudja használni
+    a DOM objektumait.</p>
     <p>A DOM objektumainak is vannak tulajdonságaik és tagfüggvényeik. Ezekre úgy hivatkozunk, hogy a gyökértől
-    indulva, pontokkal elválasztva felsorolom a hozzá vezető objektum csomópontokat, végül egy pont és utána a
+    indulva, pontokkal elválasztva felsoroljuk a hozzá vezető objektum csomópontokat, végül egy pont és utána a
     tulajdonság vagy tagfüggvény név pl.:<br>
     <code>window.alert("Figyelem !")</code><br>
     <code>window.document.write("Hello!")</code></p>
@@ -60,8 +63,16 @@
     aminek az objektumaira hivatkozhatunk a <q>window</q> kiírása nélkül. Így használható pl. a következő utasítás
     is:<br>
     <code>alert("Figyelem !")</code></p>
+    <p>A HTML dokumentum fontos elemei az <b>a</b> anchor (horgony) elemek, melyeknek két formája van, egyik a LINK,
+    amire kattintva egy új helyre jutunk. Az új hely lehet egy Weboldal, amit az ULR-jével adunk meg, de ponosabban is
+    megadhatjuk az ugrás célját mégpedig a Weblapon belül egy HTML elem azonosítójával. Utóbbi esetben a Böngésző a
+    Weblap tartalmát úgy mutatja meg, hogy a cél HTML elem látható legyen. Ez utóbbi a Bookmark (könyvjelző) amit egy
+    LINK egyik lehetséges célja. Az azonosító egy <b>name</b> vagy <b>id</b> tulajdonság lehet.
+    <strong>Figyelem!</strong> Nem csak <b>a</b> HTML elemet használhatunk könyvjelzőként hanem bármely <b>id</b>
+    tulajdonsággal ellátott elemet.</p>
     <p>Lássunk néhány példát!</p>
-    <p>Uglás/Link az ábra melletti horgonyra (anchor) <a href="#a_Abra">(Ugrás...)</a></p>
+    <p>LINK az ábrára, a könyvjelző egy <b>a</b> elem: <a href="#a_Abra">(Ugrás az ábrára...)</a>.</p>
+    <p>LINK az ábra alá, a könyvjelző egy <b>p</b> (paragraph) elem: <a href="#a_Abra2">(Ugrás az ábra alá...)</a>.</p>
     <h2>Néhány DOM objektum tulajdonságokkal és tagfüggvényekkel</h2>
     <ol>
       <li>document.URL
@@ -144,7 +155,7 @@
       </li>
       <li>document.links
         <ul>
-          <li><span class="z9_Fej">Jelentés</span>: Az oldalon létrehozott linkek a <b>document.links</b> kollekcióban
+          <li><span class="z9_Fej">Jelentés</span>: Az oldalon létrehozott LINK-ek a <b>document.links</b> kollekcióban
           vannak tárolva. Egy eleme a <b>document.links[i]</b>, ahol i a tömb indexe
           (i=0,1,...n=document.links.length-1). Egy ilyen elem egy DOM objektum, aminek tulajdonságai és tagfüggvényei
           vannak. A példában a <b>href</b> tulajdonságot mutatom meg.</li>
@@ -157,14 +168,14 @@
           </li>
           <li>Jegyzetek:
             <ul class="z9_Jegyzet">
-              <li>Az anchor elem két fajtája van, az egyik a <b>link</b>, aminek <b>href</b> tulajdonsága van és ez
-              ugrik a <i>href</i>ben megadott URL-re.<br>
-              A másik a könyvjelző, aminek <b>id</b> tulajdonsága van és ez egy ugrás célja.</li>
-              <li>Nem mindegy hol van az <b>id</b> tulajdonsággal ellátott könyvjelző. Ha a HTML kódban, a linkeket
-              kiíró szkrip <u>előtt</u>, akkor bekerül a <b>links</b> kollekcióba és használható. Ha utána, akkor nem.
-              Pl. a <code>&lt;a href="#a_OldalVege"&gt;(Ugrás az oldal végére)&lt;/a"&gt;</code> teszt link ennek a
-              listának a végén elhelyezkedő JavaScript blokk <u>után</u> helyezkedik el, ezér nem kerül kiírásra. Úgy
-              tűnik, hogy a HTML kód beolvasásával egyidőben épül fel a DOM.</li>
+              <li>Azért az érdekes, hogy ha a könyvjelző egy kép, akkor a neki megfelelő <b>document.links[i]</b>
+              objektum megjelenítése is a kép.<br></li>
+              <li>Nem mindegy hol van az <b>id</b> tulajdonsággal ellátott könyvjelző, ha nem az oldal elkészülte után
+              írunk a HTML kódba. Ilyenkor ha a könyvjelző a linkeket kiíró szkrip <u>előtt</u> van, akkor bekerül a
+              <b>links</b> kollekcióba és pl. kiírható, ha utána, akkor nem. Pl. a <code>&lt;a
+              href="#a_OldalVege"&gt;(Ugrás az oldal végére)&lt;/a"&gt;</code> teszt link ennek a listának a végén
+              elhelyezkedő JavaScript blokk <u>után</u> helyezkedik el, ezér nem kerül kiírásra. Úgy tűnik, hogy a HTML
+              kód beolvasásával egyidőben épül fel a DOM.</li>
               <li>Eredetileg az anchor elem azonosító tulajdonsága a <b>name</b> tulajdonság volt de a HTML5-ben ez nem
               támogatott, helyette az általánosan használt <b>id</b> tulajdonságot kell alkalmazni. Tényleg !?</li>
             </ul>
@@ -192,44 +203,92 @@
                 tulajdonságot várja az azonosításra, eredetileg a <b>name</b> tulajdonság szolgált erre.
                 <table>
                   <tr>
+                    <th>HTML elem</th>
                     <th>name</th>
                     <th>id</th>
-                    <th>SafeZone</th>
-                    <th>Chrome</th>
-                    <th>IE</th>
+                    <th colspan="2">SafeZone</th>
+                    <th colspan="2">Chrome</th>
+                    <th colspan="2">IE</th>
                   </tr>
                   <tr>
-                    <td>van</td>
-                    <td>van</td>
-                    <td class="z9_TdIgen">kezeli</td>
-                    <td class="z9_TdIgen">kezeli</td>
-                    <td class="z9_TdIgen">kezeli</td>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>anchors</th>
+                    <th>LINK</th>
+                    <th>anchors</th>
+                    <th>LINK</th>
+                    <th>anchors</th>
+                    <th>LINK</th>
                   </tr>
                   <tr>
+                    <td><b>a</b></td>
                     <td>van</td>
-                    <td>nincs</td>
-                    <td class="z9_TdIgen">kezeli</td>
-                    <td class="z9_TdIgen">kezeli</td>
-                    <td class="z9_TdIgen">kezeli</td>
+                    <td>van</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
                   </tr>
                   <tr>
-                    <td>nincs</td>
+                    <td><b>a</b></td>
                     <td>van</td>
-                    <td class="z9_TdNem">NEM kezeli</td>
-                    <td class="z9_TdNem">NEM kezeli</td>
-                    <td class="z9_TdIgen">kezeli</td>
+                    <td>nincs</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
                   </tr>
                   <tr>
+                    <td><b>a</b></td>
+                    <td>nincs</td>
+                    <td>van</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdIgen">bekerül</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                  </tr>
+                  <tr>
+                    <td><b>a</b></td>
                     <td>nincs</td>
                     <td>nincs</td>
-                    <td class="z9_TdNem">NEM kezeli</td>
-                    <td class="z9_TdNem">NEM kezeli</td>
-                    <td class="z9_TdNem">NEM kezeli</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdNem">NEM ugrik rá</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdNem">NEM ugrik rá</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdNem">NEM ugrik rá</td>
+                  </tr>
+                  <tr>
+                    <td><b>p</b></td>
+                    <td>nincs</td>
+                    <td>nincs</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdNem">NEM ugrik rá</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdNem">NEM ugrik rá</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdNem">NEM ugrik rá</td>
+                  </tr>
+                  <tr>
+                    <td><b>p</b></td>
+                    <td>nincs</td>
+                    <td>van</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdIgen">ráugrik</td>
+                    <td class="z9_TdNem">NEM kerül be</td>
+                    <td class="z9_TdIgen">ráugrik</td>
                   </tr>
                 </table>
               </li>
-              <li>Nekem érdekes, hogy ha egy <b>img</b> elem van ott, akkor az <b>innerHTML</b> tulajdonság
-              megjelenítésekor (pl. document.write()) a kép jelenik meg :-o.</li>
             </ul>
           </li>
         </ul>
@@ -414,7 +473,7 @@
       // z9_LiDocumentLinks
       v_length=document.links.length;
       if ( v_length===0 ) {
-        v_HtmlCode="*Nincs link az oldalon*";
+        v_HtmlCode="*Nincs LINK az oldalon*";
       }
       else {
         v_HtmlCode="";
@@ -427,7 +486,7 @@
       //z9_LiDocumentAnchors
       v_length=document.anchors.length;
       if ( v_length===0 ) {
-        v_HtmlCode="*Nincs link az oldalon*";
+        v_HtmlCode="*Nincs könyvjelző az oldalon*";
       }
       else {
         v_HtmlCode="";
