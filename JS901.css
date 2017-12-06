@@ -1,0 +1,64 @@
+/*
+ * Feladat: JS901 HTML dokumentum stíluslapja
+ * Készült: 2017.12.06
+ * Készítő: zavorszky@yahoo.com */
+body
+  {font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  color: black;
+  background-color: darkseagreen}
+
+nav ul li
+  {display:inline;
+  list-style:none}
+
+table
+  {border-collapse:collapse;
+  border:2px solid black;}
+
+tr, th, td
+  {border:1px solid black;
+  padding:2px }
+
+tfoot
+  {font-size: small}
+
+/* Az Internet explorer 11.726.15063.0 nem emeli ki (jelöli meg) a képernyőn
+ * az abbr elemmel megadott rövidítéseset. Azért, hogy hasonlók legyenek a HTML
+ * dokumentum képek, beállítok egy CSS tulajdonságot.
+ */
+abbr
+  {background: silver}
+
+strong
+  {color: red}
+
+#id_Tartalomjegyzek ul li
+  {display:inline;
+  list-style:none}
+  
+#id_JsObjTipTab, #id_JsSimpleTipTab
+  {margin-top: 15px}
+
+.z9_TdIgen
+  {text-align: center;
+  background-color: lime;
+  color: black}
+
+.z9_TdNem
+  {text-align: center;
+  background-color: red;
+  color: black}
+
+.z9_Kod, .z9_Eredmeny
+  {color: blue}
+
+.z9_Elhagy
+  {display: none}
+
+.z9_Jegyzet
+  {font-family: 'Comic Sans MS', cursive}
+
+#z9_SecKucsszavak ul li
+  { display:inline;
+  list-style:none}
