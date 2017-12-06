@@ -1,5 +1,5 @@
 /*
- * Feladat: JS901 HTML dokumentum stíluslapja
+ * Feladat: JSnnn HTML lapok közös stíluslapja
  * Készült: 2017.12.06
  * Készítő: zavorszky@yahoo.com */
 body
@@ -12,6 +12,18 @@ nav ul li
   {display:inline;
   list-style:none}
 
+footer
+  {font-size: small}
+  
+footer dt
+  {font-weight: bold;}
+
+footer dd
+  {font-weight: normal;}
+
+section footer
+  {font-size: small}
+
 table
   {border-collapse:collapse;
   border:2px solid black;}
@@ -22,22 +34,8 @@ tr, th, td
 
 tfoot
   {font-size: small}
-
-/* Az Internet explorer 11.726.15063.0 nem emeli ki (jelöli meg) a képernyőn
- * az abbr elemmel megadott rövidítéseset. Azért, hogy hasonlók legyenek a HTML
- * dokumentum képek, beállítok egy CSS tulajdonságot.
- */
-abbr
-  {background: silver}
-
-strong
-  {color: red}
-
-#id_Tartalomjegyzek ul li
-  {display:inline;
-  list-style:none}
   
-#id_JsObjTipTab, #id_JsSimpleTipTab
+.z9_TablaFelsoMargoval
   {margin-top: 15px}
 
 .z9_TdIgen
@@ -50,6 +48,20 @@ strong
   background-color: red;
   color: black}
 
+/*
+ * Az Internet explorer 11.726.15063.0 nem emeli ki (jelöli meg) a képernyőn
+ * az abbr elemmel megadott rövidítéseset. Azért, hogy hasonlók legyenek a HTML
+ * dokumentum képek, beállítok egy CSS tulajdonságot. */
+abbr
+  {background: silver}
+
+strong
+  {color: red}
+
+section.z9_BelsoTartalomjegyzek ul li
+  {display:inline;
+  list-style:none}
+  
 .z9_Kod, .z9_Eredmeny
   {color: blue}
 
@@ -58,7 +70,3 @@ strong
 
 .z9_Jegyzet
   {font-family: 'Comic Sans MS', cursive}
-
-#z9_SecKucsszavak ul li
-  { display:inline;
-  list-style:none}
