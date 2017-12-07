@@ -15,11 +15,8 @@ nav ul li
 footer
   {font-size: small}
   
-footer dt
-  {font-weight: bold;}
-
-footer dd
-  {font-weight: normal;}
+dt
+  {font-weight: bold}
 
 section footer
   {font-size: small}
