@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
-  <link rel="stylesheet" href="JS000.css">
   <style type="text/css">
+    body {font-family: Arial, Helvetica, sans-serif}
+    nav ul li { display:inline; list-style:none; }
+    abbr {background: silver}
     .z9_Kod, .z9_Eredmeny {color: blue;}
     .z9_Kod h3, .z9_Eredmeny h3 {color: navy}
     .z9_Labjegyzet {font-family: 'Comic Sans MS', cursive; font-size: small}
@@ -42,14 +44,30 @@
     </ul>
     <hr>
   </nav>
+  <section id="z9_SecKucsszavak">
+    <h2>Kulcsszavak</h2>
+    <ul>
+      <li>[ Date()</li>
+      <li>.toGMTString()</li>
+      <li>.toString() ]</li>
+      <li>[ var ]</li>
+      <li>[ document</li>
+      <li>.getElementById(..)</li>
+      <li>.getElementById(..).innerHTML</li>
+      <li>.lastModified</li>
+      <li>.write() ]</li>
+      <li>[ window</li>
+      <li>.alert() ]</li>
+    </ul>
+  </section>
   <section>
     <h2>Hogyan dolgozik a Böngésző?</h2>
-    <p>A <abbr title="HyperText Markup Language">HTML</abbr> dokumentum megjelenítése a HTML kód feldolgozásával
+    <p>A a <abbr title="HyperText Markup Language">HTML</abbr> dokumentum megjelenítése a HTML kód feldolgozásával
     kezdődik. A Böngésző olvassa a szerverről, vagy a munkaállomás egy könyvtárából a HTML kódot és ez alapján építi a
     <abbr title="Document Object Model">DOM</abbr>-ot, a HTML dokumentum modeljét. A HTML kódban speciális cimkék /
     <i>tag</i>ek közé zárva JavaScript utasításokat helyezhetünk el. Ez az elem a <b>script</b> elem. Amikor a böngésző
     egy ilyen elemmel találkozik, értelmezi és végrehajtja azt.</p>
-    <p>A JavaScript kódban létrehozhatunk egyszerű változókat, vagy összetett objektumokat és a
+    <p>A <abbr title="JavaScript">Js</abbr> kódban létrehozhatunk egyszerű változókat, vagy összetett objektumokat és a
     rájuk mutató referenciákat. Ezzekkel a szokásos műveleteket tudjuk elvégezni és a szokásos vezérlő szerkezeteket
     használhatjuk.</p>
     <h2>JavaScript módosítja a HTML dokumentumot</h2>
