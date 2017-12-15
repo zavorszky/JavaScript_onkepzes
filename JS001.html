@@ -33,11 +33,11 @@
   <nav>
     <h2 class="z9_Elhagy">Navigáció</h2>
     <ul>
-      <li>[ <a href="index.html">index</a>
+      <li>[ <a href="index.html">&lt; index</a>
       </li>
       <li>| <a href="index.html">index</a>
       </li>
-      <li>| <a href="JS002.html">JS002</a> ]
+      <li>| <a href="JS002.html">JS002 &gt;</a> ]
       </li>
     </ul>
     <hr>
@@ -48,43 +48,31 @@
     kezdődik. A Böngésző olvassa a szerverről, vagy a munkaállomás egy könyvtárából a HTML kódot és ez alapján építi a
     <abbr title="Document Object Model">DOM</abbr>-ot, a HTML dokumentum modeljét. A HTML kódban speciális cimkék /
     <i>tag</i>ek közé zárva JavaScript utasításokat helyezhetünk el. Ez az elem a <b>script</b> elem. Amikor a böngésző
-    egy ilyen elemmel találkozik, értelmezi és végrehajtja azt.</p>
-    <p>A JavaScript kódban létrehozhatunk egyszerű változókat, vagy összetett objektumokat és a
-    rájuk mutató referenciákat. Ezzekkel a szokásos műveleteket tudjuk elvégezni és a szokásos vezérlő szerkezeteket
-    használhatjuk.</p>
-    <h2>JavaScript módosítja a HTML dokumentumot</h2>
-    <p>Az egyik izgalmas dolg az, hogy a <i>JavaScrit</i>tel manipulálhatjuk a felépülésben lévő, vagy márt teljesen
-    felépített DOM-ot. Pl. a HTML kód <b>body</b> elemében elhelyezett <i>Js</i>el <q>bele tudunk írni</q> a HTML
-    kódba:<br></p>
+    egy ilyen elemmel találkozik, abbahagyja a HTML kód feldolgozását és értelmezi, majd végrehajtja a JavaScript
+    utasításokat.</p>
+    <p>A JavaScript kód más módon is bekerülhet a HTML kódba. Bizonyos elemekhez eseménykezelőket adhatunk meg úgy,
+    hogy az elem tulajdonságaként megadjuk az esemény nevét (regex=on[A-Za-z]+, pl.: onload), majd ennek a
+    tulajdonságnak értékül adjuk az esemény bekövetkezését kezelő JavaScript kódot idézőjelek, vagy aposztrófok között.
+    Pl. a <b>body</b> elemhez megadhatjuk az onload esemény, ami akkor lép működésbe, ha az oldal betöltődött:<br>
+    <code>&lt;body onload="window.alert('A betöltés kész!');"&gt;</code><br>
+    Ilyenkor nem használjuk a <b>script</b> elemet.</p>
+    <p><i>JavaScript</i>tel a DOM-ba is elhelyezhetünk eseménykezelőket, ezek a HTML kódban nem jelennek meg.</p>
+    <h2>Mivel dolgozik a Böngésző?</h2>
+    <p>A JavaScript kódban létrehozhatunk egyszerű változókat (szám, szöveg tárolására), függvényeket, JavaScript
+    objektumokat (tulajdonságokkal, függvényekkel) és az objektumokra mutató referenciákat. Létrehozhatunk és
+    használhatunk saját objektumokat is.</p>
+    <p>Talán az a legfontosabb, hogy a DOM objektumait is használhatjuk: megváltoztathatjuk építhetjük, lebonthatjuk
+    őket.</p>
+    <h2>Hogy jelenítünk meg adatokat?</h2>
+    <p>Ha a JavaScript módosítja a DOM-ot, akkor a Böngésző a böngésző ablakban megjeleníti a megváltozott DOM-nak
+    megfelelő HTML dokumentumot. Ehhez a HTML és a JavaScript kódnak szorosan kell együttműködnie. Az a teendő, hogy
+    azt a HTML elemet, amihez valamilyen HTML tartalmat a karunk rendelni el kell látnuk az <b>id</b> azonosító
+    tulajdonsággal. A JavaScript kódban az <b>id</b>nak adott értékkel megkereshetjük a hozzá tartozó DOM objektumot és
+    módosíthatjuk. Nem véletlen a körülményeskedés... nem csak szöveget, hanem HTML kódot is hozzá rendelhetünk pl. egy
+    bekezdés <b>p</b> elemhez.</p>
+    <h2>Példák</h2>
     <article class="z9_Kod">
-      <h3>Kód</h3>
-      <p><code>&lt;p&gt;&lt;b&gt;Web&lt;/b&gt;lap betöltési ideje: &lt;script <del>language="JavaScript"</del>
-      <del>type="text/javascript"</del>&gt; document.write((new Date()).toString());
-      &lt;/script&gt;&lt;/p&gt;</code></p>
-    </article>
-    <article class="z9_Eredmeny">
-      <h3>Eredmény</h3>
-      <p><b>Web</b>lap betöltési ideje: 
-      <script>
-      document.write((new Date()).toString());
-      </script></p>
-    </article>
-    <p>Hoppá ! :-o Mi ez az áthúzás ? <q>Rohan az idő/Megállítanám, de nem lehet...</q> :-) A <b>script</b> elem
-    tulajdonságai közül kikerült a <b>language</b> (elavult). A <code>type="text/javascript"</code> a HTML5-ben az
-    alapértelmezett, ezért nem kell kiírni. Én is így teszek :-)</p>
-    <p>A document.write() használatára a szövegszerkesztőm panaszokdi. Összeesküdött a <i>Komodo Edit</i>emmel a
-    <i>HTML Tidy for HTML5 for Windows version 5.5.31</i> is, mert minden újraformázákor egy új sort szúr be a
-    <b>script</b> elembe, ami meglehetősen idegesítő tud lenni. A <a href=
-    "https://www.w3schools.com/jsref/met_doc_write.asp" target="_blank">www.w3schools.com</a> azt mondja, ez az
-    utasítás arra való, hogy egy megnyitott ablakba <q>bele írjuk</q> a HTML kódját, így a Böngésző azt megjeleníti. Jó
-    még tesztelésre is, de vigyázni kell, ha akkor adjuk meg, amikor a HTML kód betöltése befejetődött, törli az
-    oldalt. Van más módszer is, hogy a HTML dokumentumot módosítsuk Js-el. Ehhez a HTML és a Js kódnak szorosabban kell
-    együttműködnie. Az a teendő, hogy azt a HTML elemet, amihez valamilyen HTML tartalmat a karunk rendelni el kell
-    látnuk az <b>id</b> azonosító tulajdonsággal. A Js kódban az <b>id</b>nak adott értékkel megkereshetjük a hozzá
-    tartozó DOM objektumot és módosíthatjuk. Nem véletlen a körülményeskedés... nem csak szöveget, hanem HTML kódot is
-    hozzá rendelhetünk pl. egy bekezdés <b>p</b> elemhez. Lássuk a példát:</p>
-    <article class="z9_Kod">
-      <h3>Kód</h3>
+      <h3>PL1 - JavaScript a body elemben</h3>
       <p><code>&lt;p id="z9_id1"&gt;&lt;/p&gt; &lt;script&gt; document.getElementById("z9_id1").innerHTML =
       "&lt;b&gt;Web&lt;/b&gt;lap betöltési ideje:"+(new Date()).toString(); &lt;/script&gt;</code></p>
     </article>
