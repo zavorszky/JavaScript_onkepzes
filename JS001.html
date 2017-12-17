@@ -4,13 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <link rel="stylesheet" href="JS000.css">
-  <style type="text/css">
-    .z9_Kod, .z9_Eredmeny {color: blue;}
-    .z9_Kod h3, .z9_Eredmeny h3 {color: navy}
-    .z9_Labjegyzet {font-family: 'Comic Sans MS', cursive; font-size: small}
-    .z9_Elhagy {display: none}
-    #z9_SecKucsszavak ul li { display:inline; list-style:none; }
-  </style>
+  <style type="text/css"></style>
   <script>
     var v_maxKlikkSzam=4;
     var v_kritikusKlikkSzam=v_maxKlikkSzam-1;
@@ -50,31 +44,55 @@
     <i>tag</i>ek közé zárva JavaScript utasításokat helyezhetünk el. Ez az elem a <b>script</b> elem. Amikor a böngésző
     egy ilyen elemmel találkozik, abbahagyja a HTML kód feldolgozását és értelmezi, majd végrehajtja a JavaScript
     utasításokat.</p>
-    <p>A JavaScript kód más módon is bekerülhet a HTML kódba. Bizonyos elemekhez eseménykezelőket adhatunk meg úgy,
-    hogy az elem tulajdonságaként megadjuk az esemény nevét (regex=on[A-Za-z]+, pl.: onload), majd ennek a
-    tulajdonságnak értékül adjuk az esemény bekövetkezését kezelő JavaScript kódot idézőjelek, vagy aposztrófok között.
-    Pl. a <b>body</b> elemhez megadhatjuk az onload esemény, ami akkor lép működésbe, ha az oldal betöltődött:<br>
-    <code>&lt;body onload="window.alert('A betöltés kész!');"&gt;</code><br>
+    <p>A JavaScript kód más módon is bekerülhet a HTML kódba. Bizonyos HTML elemekhez eseménykezelőket adhatunk meg
+    úgy, hogy az elem tulajdonságaként megadjuk az esemény nevét (pl.: onload (regex=on[A-Za-z]+)), majd ennek a
+    tulajdonságnak értékül adjuk az esemény bekövetkezését kezelő JavaScript kódot idézőjelek, vagy aposztrófok
+    között.<br>
+    Pl. annak az eseménynek a neve, hogy a HTML oldal betöltődött <b>onload</b>. Ehhez az eseményhez hozzákapcsolhatunk
+    egy esemény kezelő JavaScript kódot ami kiírja: <q>A betöltés kész!</q>.<br>
     Ilyenkor nem használjuk a <b>script</b> elemet.</p>
-    <p><i>JavaScript</i>tel a DOM-ba is elhelyezhetünk eseménykezelőket, ezek a HTML kódban nem jelennek meg.</p>
+    <p><i>JavaScript</i>tel közvetlenül a DOM-ba is elhelyezhetünk eseménykezelőket, ezek a HTML kódban nem jelennek
+    meg, de működnek.</p>
     <h2>Mivel dolgozik a Böngésző?</h2>
     <p>A JavaScript kódban létrehozhatunk egyszerű változókat (szám, szöveg tárolására), függvényeket, JavaScript
     objektumokat (tulajdonságokkal, függvényekkel) és az objektumokra mutató referenciákat. Létrehozhatunk és
-    használhatunk saját objektumokat is.</p>
+    használhatunk saját objektumokat is (tulajdonságokkal, függvényekkel).</p>
     <p>Talán az a legfontosabb, hogy a DOM objektumait is használhatjuk: megváltoztathatjuk építhetjük, lebonthatjuk
     őket.</p>
     <h2>Hogy jelenítünk meg adatokat?</h2>
     <p>Ha a JavaScript módosítja a DOM-ot, akkor a Böngésző a böngésző ablakban megjeleníti a megváltozott DOM-nak
-    megfelelő HTML dokumentumot. Ehhez a HTML és a JavaScript kódnak szorosan kell együttműködnie. Az a teendő, hogy
-    azt a HTML elemet, amihez valamilyen HTML tartalmat a karunk rendelni el kell látnuk az <b>id</b> azonosító
-    tulajdonsággal. A JavaScript kódban az <b>id</b>nak adott értékkel megkereshetjük a hozzá tartozó DOM objektumot és
-    módosíthatjuk. Nem véletlen a körülményeskedés... nem csak szöveget, hanem HTML kódot is hozzá rendelhetünk pl. egy
-    bekezdés <b>p</b> elemhez.</p>
+    megfelelő HTML <q>képet</q>. Az egyik egyszerű gyakorlat az, hogy azt a HTML elemet, amihez a megjelenítendő
+    tartalmat a karunk rendelni ellátjuk az <b>id</b> azonosító tulajdonsággal. A JavaScript kódban az <b>id</b>val
+    megkeressük a hozzá tartozó DOM objektumot (az egyik DOM függvénnyel) és egy értékadással módosíttuk annak
+    tartalmát. Nem csak szöveget, hanem HTML kódot is hozzá rendelhetünk pl. egy bekezdés <b>p</b> elemhez.</p>
     <h2>Példák</h2>
-    <article class="z9_Kod">
-      <h3>PL1 - JavaScript a body elemben</h3>
-      <p><code>&lt;p id="z9_id1"&gt;&lt;/p&gt; &lt;script&gt; document.getElementById("z9_id1").innerHTML =
-      "&lt;b&gt;Web&lt;/b&gt;lap betöltési ideje:"+(new Date()).toString(); &lt;/script&gt;</code></p>
+    <article>
+      <h3>Pl.: A1 - JavaScript a body elemben</h3>
+      <h4>Feladat</h4>
+      <p>Írjunk ki az oldalra: Hello world!</p>
+      <h4>Példa oldal</h4>
+      <p><a href="JS001A1.html" target="_blank">JS001A1.html</a></p>
+      <h4>Leírás</h4>
+      <p>A JS001A1.html oldal új lapon jelenik meg. Ha (<kbd>Alt</kbd>+<kbd>Tab</kbd>)-al szeretünk váltani, akkor a
+      lapból új ablakot készíthetünk. Ajánlom :-). A forrást a Böngészővel nyissul meg. A <abbr title=
+      "Avast SafeZone">SZ</abbr>, a Google Chrome külön böngésző lapon mutatja a HTML kódot, az <abbr title=
+      "Internet Explorer">IE</abbr> a megjelenített lap alján nyit egy sávot ahol látszik a forrás.</p>
+      <p>Nézzük a <b>body</b> elemtől a kódot.<br>
+      A <b>h1</b> elem tartalmazza a címet ami nagy betűkkel, vastagítva látszik a böngésző lapon.<br>
+      Az első bekezdés - <b>p</b> elem - csak jelzi, hogy a következő bekezdésben lesz a szövegünk.<br>
+      A második bekezdés üres.</p>
+      <p>A következő elem a <b>script</b> elem, ebben van a JavaScript programunk. Na végre itt a JavaScript. Két
+      utasításból áll a program, amiket pontosvessző (;) választ el egymástól. Igen a végén is van egy, ez egyfajta
+      szokás ami nem kötelező.<br>
+      Az első JavaScript utasítás egy értékadás. Az <strong>id_1</strong> azonosítójú HTML elem tartalmának értékül
+      adjuk az üdvözlő szövegünket.<br>
+      A <q>feltöltendő</q> elem megkeresése a DOM <b>document.getElementById(..)</b> függvényével történik.<br>
+      A megtalált DOM objektum <b>innerHTML</b> tulajdonságának adjuk értékül a szöveget.<br>
+      A második JavaScript utasítást már nem kell magyarázni, ezzel az <strong>id_2</strong>-vel azonosított
+      bekezdéshez adunk szöveget.<br>
+      Hoppá, valami baj van? A JS001A1 lapon nem látszik a <q>Hello world! (II.)</q> szöveg. Szerencsére minden jól
+      működik, csak, amikor a programunk második sora lefutott, nem volt még meg az <strong>id_2</strong> azonosítójú
+      bekezdés.</p>
     </article>
     <article class="z9_Eredmeny">
       <h3>Eredmény</h3>
