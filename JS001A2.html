@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <title>JS001A2</title>
+  <script>
+    function kiir_uzenet(p_uzenet) {
+      document.getElementById("id_1").innerHTML = "<b>"+p_uzenet+"<\/b>"+" (I.)";
+      document.getElementById("id_2").innerHTML = "<b>"+p_uzenet+"<\/b>"+" (II.)";
+    }
+  </script>
+</head>
+<body>
+  <h1>Példa: JS001A2</h1>
+  <p>Szöveg kiírás a következő (alábbi) bekezdésbe, <b>p</b> elembe.</p>
+  <p id="id_1"></p>
+  <script>
+    kiir_uzenet("Hello world !");
+  </script>
+  <p id="id_2"></p>
+</body>
+</html>
