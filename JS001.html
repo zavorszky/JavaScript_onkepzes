@@ -93,12 +93,6 @@
       működik, csak, amikor a programunk második sora lefutott, nem volt még meg az <strong>id_2</strong> azonosítójú
       bekezdés.</p>
     </article>
-    <h2>Szétválasztás</h2>
-    <p>Ahogy nő a projekt, úgy egyre több problémával találkozun. Ezek elkerülésére, vagy legalább könyebb
-    felderítésére ajánlások vannak. Az egyik ajánlás az, hogy a projekt különböző logikai egységeit külön állományokba
-    tegyük: a HTML kódban a tartalom szerepeljen, ne (vagy csak minimálisan) legyenek formázó vagy aktív elemek. A
-    formázó utasítások a <abbr title="Cascading Style Sheets">CSS</abbr> állományokban legyenek. A programok JavaScript
-    állományokban.</p>
     <article>
       <h3>Pl.: A2 - JavaScript a body elemben másképp</h3>
       <h4>Feladat</h4>
@@ -119,7 +113,7 @@
       objektumot, ami közvetlenül megjelenik a lapon.<br>
       Az első <b>meta</b> elemet a Tidy HTML kód ellenőrző és formázó program rakta a kódba, hirdeti, hogy ezt a csodát
       amit láthatunk ő ellenőrizte, ő szépítette. Más szerepe nincs.<br>
-      A második <b>meta</b> elem a <b>charset</b> tulajdonsággal megadja a karakter készletet, ami a HTML állomány
+      A második <b>meta</b> elem a <b>charset</b> tulajdonsággal megadja a karakter készletet, amit a HTML állomány
       használ, amiben a HTML állomány le van mentve. Ez alapvető, hogy az ékezetes karakterek helyesen jelenjenek
       meg.<br>
       A következő a <b>title</b> elem. Az a szöveg amit tartalmaz (közrefog) megjeleni a HTML dokumentum <q>fülén</q>.
@@ -135,11 +129,11 @@
       szeretném megmutatni, hogy az <b>innerHTML</b> tulajdonságnak teljes értékű HTML kódot adhatunk meg, nem csak
       szöveget.</p>
       <p>Nézzük meg egy kicsit jobban a függvény deklarációját, ami az alábbi sémának fele meg.</p>
-      <pre>
-function <i>függvény_név</i> (<i>paraméterek</i>) {
-  <i>JavaScript_utasítások</i>
-}
-</pre>
+      <p><code>"function", <i>függvény_név</i>, "(", [ <i>paraméterek</i> ], ")", "{",<br>
+      <i>JavaScript_utasítások,</i><br>
+      "}"</code></p>
+      <p><code><i>paraméterek</i> = <i>paraméter</i> { ','<i>paraméter</i> }<br>
+      <i>JavaScript_utasítások</i> = { <i>JavaScript_utasítás</i> , ';' }</code></p>
       <p>A függvény tipusáról nem esik szó. A paraméterek tipusáról nem esik szó. Hatókör ? Ugyan. Nyilván szó sem
       lehet a tipushibák előzetes kiszűréséről. Mi is szürné ki a hibákat, hiszen nincs fordító. Elég messze van a
       JavaScript a <i>Java</i>tól.<br>
@@ -147,18 +141,18 @@ function <i>függvény_név</i> (<i>paraméterek</i>) {
       <p>Kezdjük a barátkozást azzal, hogy megtanuljuk hogyan kell össze konkatenálni egy karakter literált és egy
       karakteres változót.<br>
       (A tipusokról majd később részletesen lesz szó, most maradjunk a példánál.) Az összeragasztást a <q>+</q>
-      operátor végzi: két karakteres kifejezés <q>összege</q> karakteres kifejezés, mégpedig az első, hozzáfűzve a
-      másodikhoz.<br>
+      operátor végzi: két karakteres kifejezés <q>összege</q> karakteres kifejezés, mégpedig az elsőhöz, hozzáfűzve a
+      második.<br>
       Tidy kedves kicserélte a &lt;/b&gt; záró cimkémet &lt;\/b&gt; záró cimkére. Bevallom nem értem. A backslash (\)
       escape (kivétel) karakterként működik a <i>JavaScript</i>ben. pl. az egyszeres idézőjelet a <code>\'</code>
       karakterpárral kódolhatjuk. Az általam használt böngészők megbirkóznak az én változatommal is, de Tidy egyenlőre
       okosabb, hiszek neki.</p>
     </article>
     <article>
-      <h3>Pl.: A3 - JavaScript a body elemben, III.</h3>
+      <h3>Pl.: A3 - JavaScript eseménykezelő</h3>
       <h4>Feladat</h4>
-      <p>Írjunk ki az oldalra: Hello world!, de készítsün függvényt a feladat elvégzésére és tároljuk külön JavaScript
-      állományban.</p>
+      <p>Tegyünk egy gombot a HTML oldalra. Rendeljünk a gombra klikkelés eseményéhhez (onclick) egy JavaScript
+      programot, ami kiírja a pontos időt.</p>
       <h4>Példa oldal</h4>
       <p><a href="JS001A3.html" target="_blank">JS001A3.html</a></p>
     </article>
@@ -169,6 +163,12 @@ function <i>függvény_név</i> (<i>paraméterek</i>) {
       document.getElementById("z9_id1").innerHTML = "<b>Web<\/b>lap \ betöltési ideje:"+(new Date()).toString();
       </script>
     </article>
+    <h2>Szétválasztás</h2>
+    <p>Ahogy nő a projekt, úgy egyre több problémával találkozun. Ezek elkerülésére, vagy legalább könyebb
+    felderítésére ajánlások vannak. Az egyik ajánlás az, hogy a projekt különböző logikai egységeit külön állományokba
+    tegyük: a HTML kódban a tartalom szerepeljen, ne (vagy csak minimálisan) legyenek formázó vagy aktív elemek. A
+    formázó utasítások a <abbr title="Cascading Style Sheets">CSS</abbr> állományokban legyenek. A programok JavaScript
+    állományokban.</p>
     <p>A köny alapján nézzünk példát az idő kezelésére. Az aktuális időpont lekérdezésére a <b>Date</b> osztályt
     használhatjuk. A <b>new</b> operátorral létrehozunk egy Date típusú példányt és annak <b>toString()</b> metódusával
     szövegesen megkapjuk a tárolt időt.</p>
