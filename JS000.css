@@ -68,6 +68,10 @@ section.z9_BelsoTartalomjegyzek ul li
   {display:inline;
   list-style:none}
   
+section article p.z9_MagyarazoResz
+  {margin-left: 10px;
+  padding-left: 5px}
+  
 .z9_Kod, .z9_Eredmeny
   {color: blue}
 

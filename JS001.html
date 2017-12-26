@@ -4,22 +4,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <link rel="stylesheet" href="JS000.css">
-  <style type="text/css"></style>
-  <script>
-    var v_maxKlikkSzam=4;
-    var v_kritikusKlikkSzam=v_maxKlikkSzam-1;
-    var v_klikkSzam=0;
-    function klikkeles(){
-      ++v_klikkSzam;
-      if (v_klikkSzam<v_kritikusKlikkSzam) {
-        window.alert("Klikk:"+v_klikkSzam);
-      } else if (v_klikkSzam === v_kritikusKlikkSzam){
-        window.alert("Figyelmeztetlek! Sok lesz már...");
-      } else if (v_klikkSzam === v_maxKlikkSzam) {
-        window.alert("Na mostmár elég!");
-      }
-    }
-  </script>
   <title>JS001 - A JavaScript elhelyezése</title>
 </head>
 <body>
@@ -45,11 +29,14 @@
     egy ilyen elemmel találkozik, abbahagyja a HTML kód feldolgozását és értelmezi, majd végrehajtja a JavaScript
     utasításokat.</p>
     <p>A JavaScript kód más módon is bekerülhet a HTML kódba. Bizonyos HTML elemekhez eseménykezelőket adhatunk meg
-    úgy, hogy az elem tulajdonságaként megadjuk az esemény nevét (pl.: onload (regex=on[A-Za-z]+)), majd ennek a
-    tulajdonságnak értékül adjuk az esemény bekövetkezését kezelő JavaScript kódot idézőjelek, vagy aposztrófok
-    között.<br>
-    Pl. annak az eseménynek a neve, hogy a HTML oldal betöltődött <b>onload</b>. Ehhez az eseményhez hozzákapcsolhatunk
-    egy esemény kezelő JavaScript kódot ami kiírja: <q>A betöltés kész!</q>.<br>
+    úgy, hogy az elem tulajdonságaként megadjuk az esemény nevét (pl.: onload), majd ennek a tulajdonságnak értékül
+    adjuk az esemény bekövetkezését kezelő JavaScript kódot idézőjelek, vagy aposztrófok között.</p>
+    <p>Az események nevének felépítése:<br>
+    <code>"on", <i>eseményre_utaló_szó</i></code></p>
+    <p><code><i>eseményre_utaló_szó</i> = "click" | "contextmenu" | ... | "touchstart"</code><br>
+    (ld.: <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">Események összefoglalója</a>)</p>
+    <p>Pl. annak az eseménynek a neve, hogy a HTML oldal betöltődött <b>onload</b>. Ehhez az eseményhez
+    hozzákapcsolhatunk egy esemény kezelő JavaScript kódot ami kiírja: <q>A betöltés kész!</q>.<br>
     Ilyenkor nem használjuk a <b>script</b> elemet.</p>
     <p><i>JavaScript</i>tel közvetlenül a DOM-ba is elhelyezhetünk eseménykezelőket, ezek a HTML kódban nem jelennek
     meg, de működnek.</p>
@@ -116,10 +103,10 @@
       A második <b>meta</b> elem a <b>charset</b> tulajdonsággal megadja a karakter készletet, amit a HTML állomány
       használ, amiben a HTML állomány le van mentve. Ez alapvető, hogy az ékezetes karakterek helyesen jelenjenek
       meg.<br>
-      A következő a <b>title</b> elem. Az a szöveg amit tartalmaz (közrefog) megjeleni a HTML dokumentum <q>fülén</q>.
+      A következő a <b>title</b> elem. Az a szöveg amit tartalmaz (közrefog) megjelenik a HTML dokumentum <q>fülén</q>.
       Szóval mégis megjelenik valami a HTML oldalon ! Ááááá ! Ez nem az oldal, hanem csak a füle, és különben sem lebet
       HTML kóddal felturbózni a szöveget. Pl. nem használhatjuk a szöveg kiemelésére a <b>b</b> elemet.<br>
-      <b>script</b> elem. Ezért az újdonságért vagyunk itt. Amikor a Böngésző ideér, abbahagyja a HTML kód
+      A <b>script</b> elem. Ezért az újdonságért vagyunk itt. Amikor a Böngésző ideér, abbahagyja a HTML kód
       feldolgozását és a <b>script</b> elemben lévő JavaScript utasításokat értelmezi és végrehajtja. A végrehajtás
       jelen esetnem azt jelenti, hogy létrehozza a JavaScript függvényünket, és ezután már bárhol a HTML kódban
       használhatjuk, meghívhatjuk.<br>
@@ -132,8 +119,8 @@
       <p><code>"function", <i>függvény_név</i>, "(", [ <i>paraméterek</i> ], ")", "{",<br>
       <i>JavaScript_utasítások,</i><br>
       "}"</code></p>
-      <p><code><i>paraméterek</i> = <i>paraméter</i> { ','<i>paraméter</i> }<br>
-      <i>JavaScript_utasítások</i> = { <i>JavaScript_utasítás</i> , ';' }</code></p>
+      <p><code><i>paraméterek</i> = <i>paraméter</i>, { ",", <i>paraméter</i> }<br>
+      <i>JavaScript_utasítások</i> = <i>JavaScript_utasítás</i>, { ";", <i>JavaScript_utasítás</i> }</code></p>
       <p>A függvény tipusáról nem esik szó. A paraméterek tipusáról nem esik szó. Hatókör ? Ugyan. Nyilván szó sem
       lehet a tipushibák előzetes kiszűréséről. Mi is szürné ki a hibákat, hiszen nincs fordító. Elég messze van a
       JavaScript a <i>Java</i>tól.<br>
@@ -151,17 +138,85 @@
     <article>
       <h3>Pl.: A3 - JavaScript eseménykezelő</h3>
       <h4>Feladat</h4>
-      <p>Tegyünk egy gombot a HTML oldalra. Rendeljünk a gombra klikkelés eseményéhhez (onclick) egy JavaScript
-      programot, ami kiírja a pontos időt.</p>
+      <p>Tegyünk gombot a HTML oldalra. Rendeljünk a gomb klikkelés eseményéhhez (onclick) egy JavaScript programot,
+      ami kiírja a pontos időt.</p>
       <h4>Példa oldal</h4>
       <p><a href="JS001A3.html" target="_blank">JS001A3.html</a></p>
-    </article>
-    <article class="z9_Eredmeny">
-      <h3>Eredmény</h3>
-      <p id="z9_id1"></p>
-      <script>
-      document.getElementById("z9_id1").innerHTML = "<b>Web<\/b>lap \ betöltési ideje:"+(new Date()).toString();
-      </script>
+      <h4>Leírás</h4>
+      <p>(Klikk a <i>link</i>re, oldal forrásának megjelenítése...:-)<br>
+      A JS001A3 megnyitásakor három gobot jelenít meg a böngésző. Hézzük a forrást.<br>
+      &lt;!DOCTYPE html&gt; - HTML5 a lap.<br>
+      &lt;html&gt; - A HTML kód nyitó cimkéje az oldal nyelvének meghatározásával.<br>
+      &lt;html&gt; / &lt;head&gt; - Információk, kódok gyüjtő eleme.<br>
+      &lt;html&gt; / &lt;head&gt; / &lt;meta&gt; - Tidy... :-)<br>
+      &lt;html&gt; / &lt;head&gt; / &lt;meta&gt; - A HTML kód karakter kódolása.<br>
+      &lt;html&gt; / &lt;head&gt; / &lt;title&gt; - A megjelenő lap fülcímkéje.<br>
+      &lt;html&gt; / &lt;head&gt; / &lt;script&gt; - JavaScript kód</p>
+      <p class="z9_MagyarazoResz">A <b>script</b> elem szükséges, mert a HTML kódot feldolgozó böngészőnek ezzel
+      mondjuk, meg, hogy JavaScript program következik.<br>
+      A JavaScript program egyetlen függény definícióból áll, a <b>kiir_pontos_ido2</b>-éből. A függvénynek kincs
+      paramétere. Az első sorában létrehozunk egy <b>Date</b> tipusú JavaScript objektumot a <b>new</b> operátorral.
+      Erre az objektumra mutató referenciát értékül adjuk a <b>v_pontos_ido</b> változónak. Nem adunk meg paraméter az
+      objektum létrehozásakor, ezért az aktuális dátum és időpont lesz az objektum (lényegi) tartalma.<br>
+      A <b>var</b> kulcsszóval jelezzük a JavaScript feldolgozónak, hogy a v_pontos_ido változó a függvényen belül
+      érvényes változó, helyi változó. Igen, igen... mégis van egy kis lehetőség a változók érvényességi körének
+      meghatározására, de ez nem a <q>klasszikus</q> érvényességi kör meghatározás. Hogy milyen lehetőségeink vannak,
+      azt ezzel a példával megtapasztalhatjuk.<br>
+      A második utasítás a DOM <b>window</b> objektum <b>alert</b> függvényének a hívása. Ez a függvény az adott
+      böngészőlapon megjeleníti a paraméterként megadott üzenetet és egy jóváhagyó klikkelésre vár. A paramétere most
+      egy szöveg literál: <q>A pontos idő (2) :</q> és a dátum objektum <b>toString()</b> függvény eredményének
+      összefűzése.</p>
+      <p>&lt;html&gt; / &lt;head&gt; / &lt;/script&gt; - A <b>script</b> elem lezáró cimkéje.<br>
+      &lt;html&gt; / &lt;/head&gt; - A <b>head</b> elem lezáró cimkéje.<br>
+      &lt;html&gt; / &lt;body&gt; - A HTML oldal fő vagy törzs része, ebbe kerülnek a megjelenésre szánt HTML
+      elemek.<br>
+      &lt;html&gt; / &lt;body&gt; / &lt;h1&gt;, &lt;/h1&gt; - 1-es szintű címsor.<br>
+      &lt;html&gt; / &lt;body&gt; / &lt;p&gt; - Egy bekezdés elem nyitó cimkéje. Ez a bekezdés három nyomógomb elemet
+      tartalmaz.<br>
+      &lt;html&gt; / &lt;body&gt; / &lt;p&gt; / &lt;button&gt;, &lt;/button&gt; - Az első <b>button</b> elem a
+      bekezdésben.</p>
+      <p class="z9_MagyarazoResz">Az elem nyitó- és zárócimkéje között van a gomb felirata: <q>Pontos idő(1)</q>. A
+      gomb <b>onclick</b> tulajdonságának értékül adunk két JavaScript utasítást macskakörmök között, pontosvesszővel
+      elválasztva. A kód majdnem ugyan az mint a <b>kiir_pontos_ido2</b> függvény törzsében csak... csak nincs
+      <b>var</b>. Nincs <b>var</b> kulcsszó és nincs függvény sem amiben a <b>v_pontos_ido</b> változó belső változó
+      lehetne. Az így létrehozott változók általános, globális (?) változók, melyek a létrehozásuk HTML lapján
+      használhatók az első értékadástól kezdve.<br>
+      A Böngésző az eseménytulajdonság értékéül JavaScript kódot vár, ezért a kódon kívül nem kell semmi mást
+      megadni.</p>
+      <p>&lt;html&gt; / &lt;body&gt; / &lt;p&gt; / ..., &lt;br&gt;, &lt;button&gt;, &lt;/button&gt; - A második
+      <b>button</b> elem a bekezdésben.</p>
+      <p class="z9_MagyarazoResz">A gomb <b>onclick</b> tulajdonságában meghívjuk a <b>kiir_pontos_ido2</b> JavaScript
+      függvényünket.</p>
+      <p>&lt;html&gt; / &lt;body&gt; / &lt;p&gt; / ..., &lt;br&gt;, &lt;button&gt;, &lt;/button&gt; - A harmadik
+      <b>button</b> elem a bekezdésben.</p>
+      <p class="z9_MagyarazoResz">Az utolsó gomb <b>onclick</b> tulajdonságában egy JavaScript utasítás van, mégpedig a
+      DOM <b>window.alert()</b> függvényének megívása. A hívás paramétere a <q>A pontos idő (3) :</q> szöveg literál és
+      a <b>v_pontos_ido</b> változóhoz tartozó dátum objektum <b>toString()</b> függvény értékének egybefűzése. Hoppá!
+      hiszen nem is adunk értéket a változónak! Valóban ennek a gombnak a működése attól függ, hogy előtte melyik
+      gombra klikkeltünk.</p>
+      <p>&lt;html&gt; / &lt;body&gt; / &lt;/p&gt;<br>
+      &lt;html&gt; / &lt;/body&gt;<br>
+      &lt;/html&gt;</p>
+      <p>Végül szabályosan lezártuk a nyitott HTML elemeket.</p>
+      <p>Kezdjük a <b>JS001A3</b> oldal használatát azzal, hogy az (1)-es gombra klikkelün. A Böngésző feldob egy alert
+      (figyelmeztető) ablakot, amiben kiírja a pontos dátumot és időpontot, majd várakozni mkezd, hogy az <b>OK</b>
+      gombbal nyugtázzuk. Jegyezzük meg a másodperceket..., OK..., és kis idő mulva klikkeljünk újra az (1)-es gombra.
+      Igen látszik, hogy múlt az idő, a program szépen teszi a dolgát. Ez volt az az eset, amikor a gomb <b>onclick</b>
+      tulajdonságának értékül adtuk a JavaScript utasításokat.</p>
+      <p>Folytassuk a klikkelgetést, de most a (2)-es gombra klikkeljünk. Az eredmény ugyan az, mindíg az aktuális
+      időpont jelenik meg az alert ablakban. Ez volt a saját függvény hívás esete.</p>
+      <p><q>Ha a színpadon egy pisztoly van, annak előbb-utóbb el kell sülnie.</q> (Molnár Ferenc). Klikkeljünk a
+      (3)-as gombra. Mintha késne az óra... Klikk a (2)-esre, igen késik. Klikk a (3)-asra, hoppá, nem változott az
+      időpont az előbbi (3)-asra klikk óta. Hát persze, hiszen nem adtunk értéket a <b>v_pontos_ido</b> változónak.
+      Akkor most miféle időt ír ez ki? Klikk az (1)-esre és gyorsan OK, majd klikk a (3)-asra. Ez ugyan az ! (Ha elég
+      gyorsak voltunk.) Igen, mert az (1)-es gomb JavaScript kódjában az globális <b>v_pontos_ido</b> változó kap
+      értéket, és mivel globális ezért a (3)-as gomb JavaScript kódjában használhatjuk.</p>
+      <p>Azért van itt még valami. A <b>JS001</b> HTML dokumentum kivételével csukjuk be a böngésző füleket és nyissuk
+      meg a <b>JS001A3</b> lapot a három gombjával. Most kezdjük a klikkelést a (3)-as gombbal. Az általam használt
+      három böngésző egyike sem jelenít meg alert ablakot. Hát persze, mert nincs még <b>v_pontos_ido</b> változó. De a
+      szöveget sem jeleníti meg. Ez azt jelenti, hogy a (3)-as gomb esetén a szöveg konkatenáció nem sikerült, hiba
+      történt és a Böngésző <q>lenyelte</q> a hibát. A <b>window.alert()</b> függvényt már nem hajtotta végre. Jó ez ?
+      Nem jó ? Ilyen a JavaScript.</p>
     </article>
     <h2>Szétválasztás</h2>
     <p>Ahogy nő a projekt, úgy egyre több problémával találkozun. Ezek elkerülésére, vagy legalább könyebb
@@ -169,86 +224,6 @@
     tegyük: a HTML kódban a tartalom szerepeljen, ne (vagy csak minimálisan) legyenek formázó vagy aktív elemek. A
     formázó utasítások a <abbr title="Cascading Style Sheets">CSS</abbr> állományokban legyenek. A programok JavaScript
     állományokban.</p>
-    <p>A köny alapján nézzünk példát az idő kezelésére. Az aktuális időpont lekérdezésére a <b>Date</b> osztályt
-    használhatjuk. A <b>new</b> operátorral létrehozunk egy Date típusú példányt és annak <b>toString()</b> metódusával
-    szövegesen megkapjuk a tárolt időt.</p>
-    <p><code>v_aktHelyiIdo = new Date();<br>
-    v_aktHelyiIdoStr = v_aktHelyiIdo.toString();</code></p>
-    <p>A <b>toGMTString()</b> az UTC időt adja meg szövegesen.</p>
-    <p>A <b>document.lastModified</b> tulajdonság a HTML dokumentum utolsó módosításának időpontját... elvileg.</p>
-    <article class="z9_Kod">
-      <h3>Kód</h3>
-      <p><code>&lt;p id="z9_id2"&gt;&lt;/p&gt;<br>
-      &lt;script&gt;<br>
-      var v_aktHelyiIdo = new Date();<br>
-      var v_aktHelyiIdoStr = v_aktHelyiIdo.toString();<br>
-      var v_utcIdoStr = v_aktHelyiIdo.toGMTString();<br>
-      var v_utosoModIdoStr = document.lastModified;<br>
-      document.getElementById("z9_id2").innerHTML = "Utolsó betöltés
-      ideje:"+v_aktHelyiIdoStr+"&lt;br&gt;Utolsó...";<br>
-      &lt;/script&gt;</code></p>
-    </article>
-    <article class="z9_Eredmeny">
-      <h3>Eredmény</h3>
-      <p id="z9_id2"></p>
-      <script>
-        var v_aktHelyiIdo = new Date();
-        var v_aktHelyiIdoStr = v_aktHelyiIdo.toString();
-        var v_utcIdoStr = v_aktHelyiIdo.toGMTString();
-        var v_utosoModIdoStr = document.lastModified;
-        document.getElementById("z9_id2").innerHTML = "Utolsó betöltés ideje:"+v_aktHelyiIdoStr+"<br>Utolsó betöltés ideje (UTC):"+v_utcIdoStr+"<br>A HTML utolsó módosíása:"+v_utosoModIdoStr;
-      </script>
-    </article>
-    <p>A <b>var</b> kulcsszó vezeti be változókat. Megadása nem kötelező, de a változók láthatóságának szabályozására
-    használható. Ha egy változót egy függvényen <u>kívül</u> létrehozunk, akkor az a változó írható, olvasható az egész
-    HTML dokumentum (mondhatnánk alkalmazás ?!) működése idején. Ha ugyan ilyen nevű változót szeretnénk használni egy
-    függvényen <u>belül</u>, lokális változóként, akkor a <b>var</b> kulcszóval kell bevezetni, ellenkező esetben a Js
-    értelmező a függvényen kívül bevezetett, <q>globális</q> változót fogja használni annak minden mellékhatásával
-    együtt.</p>
-    <p>Figyelemreméltó, hogy ha <u>nem</u> Kliens-Szerver konfigurációban vagyunk, akkor az Internet Explorer a HTML
-    dokumentum utolsó módosításának időpontját adja, ellenben az AVAST SafeZone, a Google Crome az oldal utolsó
-    betöltésének / frissítésének időpontját. Kliens-Szerver konfigurációban a szerveren lévő HTML dokumentum utolsó
-    módosításának időpontját kellene kapnunk, de ez függ attól, hogy a szerver helyesen van-e beállítva. Tehát jól meg
-    kell gondolni mire használjuk a <b>document.lastModified</b> tulajdonságot. A Date osztályból származtatott példány
-    viszont a létrejöttének időpontját tárolja. A különbség jó látható, ha ezt az oldalt az Internet Explorerrel
-    futtatjuk.</p>
-    <p>Nem kötelező a Js kódnak a HTML kódban szerepelnie. A <b>script</b> elem <b>src</b> tulajdonsávával megadhatjuk
-    a külső szkript elérését. A szkript állomány kiterjesztése szokás szerint .js és benne a Js kódok nincsennek
-    <b>script</b> elemben, hiszen ez az elem a HTML szabvány része nem a <i>Js</i>é.</p>
-    <article class="z9_Kod">
-      <h3>Kód</h3>
-      <p><code>&lt;p&gt;Weblap betöltési ideje: &lt;script src="JS001.js"&gt;&lt;/script&gt; &lt;/p&gt;</code></p>
-    </article>
-    <article class="z9_Eredmeny">
-      <h3>Eredmény</h3>
-      <p>Weblap betöltési ideje: 
-      <script src="JS001.js"></script></p>
-    </article>
-    <h2>Szétválasztás</h2>
-    <p>Ahogy nő a projekt, úgy egyre több problémával találkozun. Ezek elkerülésére, vagy legalább könyebb
-    felderítésére ajánlások vannak. Az egyik a <b>var</b> változó meghatározás használata. Egy másik ajánlás, hogy a
-    projekt különböző logikai egységeit külön állományokba tegyük: a HTML kódban a tartalom szerepeljen, ne (vagy csak
-    minimálisan) legyenek formázó vagy aktív elemek. A formázó utasítások a <abbr title=
-    "Cascading Style Sheets">CSS</abbr> állományokban legyenek. Az szkriptek a Js állományokban.</p>
-    <h2>JavaScript és az Események</h2>
-    <p>A következő izgalmas dolog, hogy különféle eseményekhez hozzárendelhetünk Js kódokat. Pl. <q>egy nyomógomb
-    lenyomása</q> eseményhez hozzárendelhetjük egy figyelmeztető üzenet megjelenítését.</p>
-    <p>Egy nyomógomb (button) <b>onclick</b> (klikkelés) eseményére egy figyelmeztetést teszünk. A figyelmeztetés egy
-    függvény ami egy kis ablakban megjeleníti a figyelmeztető üzenetet. Visszatérési értéke nincs.</p>
-    <article class="z9_Kod">
-      <h3>Kód</h3>
-      <p><code>&lt;button onclicl="window.alert('Huh, jól megklikkeltél :-o');"&gt;Klikkelj!&lt;/button&gt;</code></p>
-    </article>
-    <article class="z9_Eredmeny">
-      <h3>Eredmény</h3>
-      <p><button onclick="window.alert('Huh, jól megklikkeltél :-o');">Klikkelj!</button></p>
-      <p><button onclick="klikkeles();">Klikkelgető</button></p>
-    </article>
-    <p>A <q>Klikkelgető</q> gomb működése megmutatja a globális változók használatát. A <b>head</b> elemben elhelyezett
-    <b>script</b> elem tartalmazza a v_klikkSzam globális változót, ami tárolja, hogy hányszor klikkeltünk a gombra. Az
-    <b>onclick</b> esemény megívja a <abbr title="A head elem script gyerekeleme">head/script</abbr> elemben bevezetett
-    <b>klikkeles()</b> függvényt, ami használni tudja a HTML kód betöltésekor létrehozott v_klikkSzam globális
-    változót.</p>
     <h2>Összefoglalva:</h2>
     <ol>
       <li>A weboldal törzsébe egy <b>script</b> elembe vagyis <i>tag</i>ek közé zárva. A script kimenete / az oldal
@@ -270,41 +245,11 @@
       sorrakerülésük vagy előfordulásuk sorrendjét írni ?!</li>
       <li>Az eseménykezelők csak a hozzájuk rendet esemény bekövetkeztekor indítják el a Js kódot.</li>
     </ol>
-    <footer class="z9_Labjegyzet">
+    <footer>
       <p>Sic, (latinul, jelentése: így) a sic erat scriptum (ez vala írva) kifejezésből. Akkor használják amikor az
       olvasót arról akarják tájékoztatni, hogy a hibás vagy szokatlan írásmód egy idézett szövegben nem az idézőtől
       származik, hanem így szerepel az eredeti szövegben.</p>
     </footer>
-  </section>
-  <section>
-    <h2>JavaScript elemek</h2>
-    <ul>
-      <li>Utasítások
-        <ul>
-          <li>Szekvencia</li>
-          <li>Elágazás</li>
-          <li>Ciklus</li>
-        </ul>
-      </li>
-      <li>Függvények</li>
-      <li>Változók</li>
-      <li>Objektumok
-        <ul>
-          <li>Jellemzői
-            <ul>
-              <li>Tulajdonság</li>
-              <li>Tagfüggvény</li>
-            </ul>
-          </li>
-          <li>Fajtái
-            <ul>
-              <li>Beépített objektumok, a Js részei</li>
-              <li>Egyedi, általunk készített objektumok</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
   </section>
 </body>
 </html>
