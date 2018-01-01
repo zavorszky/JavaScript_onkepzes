@@ -224,6 +224,16 @@
     tegyük: a HTML kódban a tartalom szerepeljen, ne (vagy csak minimálisan) legyenek formázó vagy aktív elemek. A
     formázó utasítások a <abbr title="Cascading Style Sheets">CSS</abbr> állományokban legyenek. A programok JavaScript
     állományokban.</p>
+    <article>
+      <h3>Pl.: A4 - A HTML-től elválasztott JavaScript</h3>
+      <h4>Feladat</h4>
+      <p>Tegyünk gombot a HTML oldalra. Rendeljünk a gomb klikkelés eseményéhhez (onclick) egy JavaScript programot,
+      ami kiírja a pontos időt. A JavaScript kód külön állományban legyen.</p>
+      <h4>Példa oldal</h4>
+      <p><a href="JS001A4.html" target="_blank">JS001A4.html</a></p>
+      <h4>Leírás</h4>
+      <p>Bla bla bla...</p>
+    </article>
     <h2>Összefoglalva:</h2>
     <ol>
       <li>A weboldal törzsébe egy <b>script</b> elembe vagyis <i>tag</i>ek közé zárva. A script kimenete / az oldal
@@ -236,6 +246,56 @@
       támogatják, hogy Js kód a gyorsító tárba (cache) kerül, így a többszöri használata, vagy több lap által való
       használata gyors lesz.</li>
     </ol>
+    <article>
+      <h3>Pl.: A5 - Hogyan dolgozza fel a HTLM kódot a Böngésző?</h3>
+      <h4>Feladat</h4>
+      <p>Állítsuk meg a HTML oldal feldolgozását betöltéskor.</p>
+      <h4>Példa oldal</h4>
+      <p><a href="JS001A5.html" target="_blank">JS001A5.html</a></p>
+      <h4>Leírás</h4>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Avast SZ</th>
+          <th>Chrome</th>
+          <th>IE</th>
+        </tr>
+        <tr>
+          <td>1.</td>
+          <td>Üres oldal.</td>
+          <td>Üres oldal.</td>
+          <td>Az oldal első fele megjelenik.</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td colspan="3" class="z9_TdKozosSzoveg">Alert ablak az oldal első felénél.</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td colspan="3" class="z9_TdKozosSzoveg">Klikk OK.</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>Az oldal első fele megjelenik.</td>
+          <td>Az oldal első fele megjelenik.</td>
+          <td>Az oldal második fele is megjelenik.</td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td colspan="3" class="z9_TdKozosSzoveg">Alert ablak az oldal teljes betöltéséről.</td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td colspan="3" class="z9_TdKozosSzoveg">Klikk OK.</td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>Az oldal második fele is megjelenik.</td>
+          <td>Az oldal második fele is megjelenik.</td>
+          <td>x</td>
+        </tr>
+      </table>
+    </article>
   </section>
   <section>
     <h2>A HTML kódban elhelyezett JavaScriptek milyen sorrendben futnak?</h2>
