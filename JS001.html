@@ -27,7 +27,10 @@
     <abbr title="Document Object Model">DOM</abbr>-ot, a HTML dokumentum modeljét. A HTML kódban speciális cimkék /
     <i>tag</i>ek közé zárva JavaScript utasításokat helyezhetünk el. Ez az elem a <b>script</b> elem. Amikor a böngésző
     egy ilyen elemmel találkozik, abbahagyja a HTML kód feldolgozását és értelmezi, majd végrehajtja a JavaScript
-    utasításokat.</p>
+    utasításokat. A végrehajtás után folytatja a HTML kód feldolgozást. Ez így megy, amig be nem fejezi a tejles kód
+    beolvasását . A feldolgozás közben a JavaScript utasítások esemény kezelőket helyezhetnek el a DOM-ban, amik a HTML
+    kód feldolgozása után a különféle Böngésző eseményekre elindulhatnak és mindenféle JavaScript huncutságot
+    csinálhatnak :-)</p>
     <p>A JavaScript kód más módon is bekerülhet a HTML kódba. Bizonyos HTML elemekhez eseménykezelőket adhatunk meg
     úgy, hogy az elem tulajdonságaként megadjuk az esemény nevét (pl.: onload), majd ennek a tulajdonságnak értékül
     adjuk az esemény bekövetkezését kezelő JavaScript kódot idézőjelek, vagy aposztrófok között.</p>
@@ -60,9 +63,9 @@
       <p><a href="JS001A1.html" target="_blank">JS001A1.html</a></p>
       <h4>Leírás</h4>
       <p>A JS001A1.html oldal új lapon jelenik meg. Ha (<kbd>Alt</kbd>+<kbd>Tab</kbd>)-al szeretünk váltani, akkor a
-      lapból új ablakot készíthetünk. Ajánlom :-). A forrást a Böngészővel nyissul meg. A <abbr title=
-      "Avast SafeZone">SZ</abbr>, a Google Chrome külön böngésző lapon mutatja a HTML kódot, az <abbr title=
-      "Internet Explorer">IE</abbr> a megjelenített lap alján nyit egy sávot ahol látszik a forrás.</p>
+      lapból új ablakot készíthetünk. Ajánlom :-). A forrást a Böngészővel nyissul meg. A Avast SafeZone, a Google
+      Chrome külön böngésző lapon mutatja a HTML kódot, az Internet Explorer a megjelenített lap alján nyit egy sávot
+      ahol látszik a forrás.</p>
       <p>Nézzük a <b>body</b> elemtől a kódot.<br>
       A <b>h1</b> elem tartalmazza a címet ami nagy betűkkel, vastagítva látszik a böngésző lapon.<br>
       Az első bekezdés - <b>p</b> elem - csak jelzi, hogy a következő bekezdésben lesz a szövegünk.<br>
