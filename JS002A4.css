@@ -1,0 +1,56 @@
+/*
+ * Állomány név: JS002A4
+ * Készült: 2018.01.28
+ * Készítő: zavorszky@yahoo.com
+ */
+body
+  {font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  color: black;
+  background-color: white}
+
+#id_bal_feny {
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  border: solid;
+  border-top: 2px solid ;
+  border-right: none;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  float: left;
+}
+
+#id_jobb_feny {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid ;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  float: left; 
+}
+
+#id_kijelzo {
+  display: block;
+  border: solid;
+  width: 102px;
+  height: 50px;
+  border-top: 2px solid ;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  clear: left;
+}
+
+#id_gomb_startstop {
+  display: block;
+  border: solid;
+  width: 106px;
+  height: 50px;
+  border-top: 2px solid ;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
