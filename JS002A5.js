@@ -15,8 +15,8 @@
 function villogo_ini() {
   v_osztok=[];
   v_osztok[0]=['ms',1];
-  v_osztok[1]=['sec',1000];
-  v_osztok[2]=['min',60];
+  v_osztok[1]=['s',1000];
+  v_osztok[2]=['m',60];
   v_osztok[3]=['h',60];
   v_osztok[4]=['d',24];
   v_allapot="A";

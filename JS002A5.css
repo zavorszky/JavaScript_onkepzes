@@ -21,7 +21,7 @@ body
 #id_jobb_feny {
   width: 75px;
   height: 25px;
-  border-top: 2px solid ;
+  border-top: 2px solid;
   border-right: 2px solid;
   border-bottom: 2px solid;
   border-left: 2px solid;
@@ -44,7 +44,4 @@ body
   display: block;
   width: 156px;
   height: 50px;
-  /*border-right: 2px solid;
-  border-bottom: 2px solid;
-  border-left: 2px solid;*/
 }
