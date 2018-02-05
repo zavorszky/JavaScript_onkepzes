@@ -1,0 +1,47 @@
+/*
+ * Állomány név: JS002A5
+ * Készült: 2018.01.31
+ * Készítő: zavorszky@yahoo.com
+ */
+body
+  {font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  color: black;
+  background-color: white}
+
+#id_bal_feny {
+  width: 75px;
+  height: 25px;
+  border-top: 2px solid ;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  float: left;
+}
+
+#id_jobb_feny {
+  width: 75px;
+  height: 25px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  float: left; 
+}
+
+#id_kijelzo {
+  display: block;
+  width: 152px;
+  height: 50px;
+  line-height: 3em;
+  text-align: center;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  clear: left;
+}
+
+#id_gomb_startstop {
+  display: block;
+  width: 156px;
+  height: 50px;
+}
