@@ -20,8 +20,8 @@ function ido_kulonbseg_formazas(p_d2, p_d1) {
   i=0;
   while ((v_osztando > 0) && (i < 4)) {
     i++;
-    v_hanyados=Math.floor(v_osztando / v_osztok[i][1]);
-    v_maradek=v_osztando - (v_hanyados * v_osztok[i][1]);
+    v_hanyados=Math.floor(v_osztando / this.v_osztok[i][1]);
+    v_maradek=v_osztando - (v_hanyados * this.v_osztok[i][1]);
     v_maradekok[i-1]=v_maradek;
     v_osztando=v_hanyados;
   }
@@ -33,11 +33,11 @@ function ido_kulonbseg_formazas(p_d2, p_d1) {
   
   var v_txt="";
   while (i > 1) {
-    v_txt += " " + v_maradekok[i] + " " + v_osztok[i][0];
+    v_txt += " " + v_maradekok[i] + " " + this.v_osztok[i][0];
     i--;
   }
   
-  v_txt += " " + v_maradekok[i] + " " + v_osztok[i][0];
+  v_txt += " " + v_maradekok[i] + " " + this.v_osztok[i][0];
   
   return v_txt.substring(1,1000);
   
@@ -72,6 +72,7 @@ function tik(p_esemeny) {
   }
   
   // A új állapotnak megfelelő Böngésző állapot beállítása.
+  var stopper_ref = this;
   if (this.v_allapot === "A" && v_allapot_uj === "D") {
     document.getElementById(this.id_gomb).innerHTML="Start";
     document.getElementById(this.id_bal_feny).style.backgroundColor = "yellow";
@@ -81,9 +82,11 @@ function tik(p_esemeny) {
     document.getElementById(this.id_bal_feny).style.backgroundColor = "green";
     document.getElementById(this.id_jobb_feny).style.backgroundColor = "red";
     document.getElementById(this.id_gomb).innerHTML="Stop";
-    v_ido_start=new Date();
-    document.getElementById(this.p_id_kijelzo).innerHTML=ido_kulonbseg_formazas(v_ido_start, v_ido_start);
-    this.v_timer_ref = window.setTimeout(this.tik,1000,"onTimeOut");
+    this.v_ido_start=new Date();
+    document.getElementById(this.id_kijelzo).innerHTML=this.ido_kulonbseg_formazas(this.v_ido_start, this.v_ido_start);
+    /*this.v_timer_ref = window.setTimeout(this.tik,1000,"onTimeOut");*/
+    /*this.v_timer_ref = window.setTimeout("tik('onTimeOut')",1000);*/
+    this.v_timer_ref = window.setTimeout(function() {stopper_ref.tik('onTimeOut');},1000);
   }
   else if ((this.v_allapot === "B" || this.v_allapot === "C") && (v_allapot_uj === "D")) {
     if (this.v_timer_ref) window.clearTimeout(this.v_timer_ref);
@@ -91,21 +94,25 @@ function tik(p_esemeny) {
     document.getElementById(this.id_jobb_feny).style.backgroundColor = "yellow";
     document.getElementById(this.id_gomb).innerHTML="Start";
     v_ido_most=new Date();
-    document.getElementById(this.p_id_kijelzo).innerHTML=ido_kulonbseg_formazas(v_ido_most, this.v_ido_start);
+    document.getElementById(this.id_kijelzo).innerHTML=this.ido_kulonbseg_formazas(v_ido_most, this.v_ido_start);
   }
   else if (this.v_allapot === "B" && v_allapot_uj === "C") {
     document.getElementById(this.id_bal_feny).style.backgroundColor = "red";
     document.getElementById(this.id_jobb_feny).style.backgroundColor = "green";
     v_ido_most=new Date();
-    document.getElementById(this.p_id_kijelzo).innerHTML=ido_kulonbseg_formazas(v_ido_most, this.v_ido_start);
-    this.v_timer_ref = window.setTimeout(this.tik,1000,"onTimeOut");
+    document.getElementById(this.id_kijelzo).innerHTML=this.ido_kulonbseg_formazas(v_ido_most, this.v_ido_start);
+    /*this.v_timer_ref = window.setTimeout(this.tik,1000,"onTimeOut");*/
+    /* this.v_timer_ref = window.setTimeout("tik('onTimeOut')",1000); */
+    this.v_timer_ref = window.setTimeout(function() {stopper_ref.tik('onTimeOut');},1000);
   }
   else if (this.v_allapot === "C" && v_allapot_uj === "B") {
     document.getElementById(this.id_bal_feny).style.backgroundColor = "green";
     document.getElementById(this.id_jobb_feny).style.backgroundColor = "red";
     v_ido_most=new Date();
-    document.getElementById(this.p_id_kijelzo).innerHTML=ido_kulonbseg_formazas(v_ido_most, this.v_ido_start);
-    this.v_timer_ref = window.setTimeout(this.tik,1000,"onTimeOut");
+    document.getElementById(this.id_kijelzo).innerHTML=this.ido_kulonbseg_formazas(v_ido_most, this.v_ido_start);
+    /*this.v_timer_ref = window.setTimeout(this.tik,1000,"onTimeOut");*/
+    /*this.v_timer_ref = window.setTimeout("tik('onTimeOut')",1000);*/
+    this.v_timer_ref = window.setTimeout(function() {stopper_ref.tik('onTimeOut');},1000);
   }
   
   this.v_allapot=v_allapot_uj;
@@ -130,7 +137,7 @@ function Stopper(p_id_bal_feny, p_id_jobb_feny, p_id_kijelzo, p_id_gomb) {
   this.v_osztok[4]=['d',24];
   this.id_bal_feny=p_id_bal_feny;
   this.id_jobb_feny=p_id_jobb_feny;
-  this.id_kijelzo=p_if_kijelzo;
+  this.id_kijelzo=p_id_kijelzo;
   this.id_gomb=p_id_gomb;
   this.v_allapot=undefined;
   this.v_timer_ref=undefined;
@@ -138,6 +145,7 @@ function Stopper(p_id_bal_feny, p_id_jobb_feny, p_id_kijelzo, p_id_gomb) {
   this.tik=tik;
   this.ini=ini;
   this.start=start;
+  this.ido_kulonbseg_formazas=ido_kulonbseg_formazas;
 } // Stopper
 
 
