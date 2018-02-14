@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <title>JS002A7</title>
+  <link rel="stylesheet" href="JS002A7.css">
+  <script src="JS002A7.js"></script>
+  <script>
+    stopper1=new Stopper("id_bal_feny", "id_jobb_feny", "id_kijelzo", "id_gomb_startstop");
+    stopper2=new Stopper("id_bal_feny2", "id_jobb_feny2", "id_kijelzo2", "id_gomb_startstop2");
+  </script>
+</head>
+<body onload="stopper1.ini(); stopper2.ini();">
+  <h1>Példa: JS002A7</h1>
+  <h2>1. Stopper</h2>
+  <div id="id_bal_feny"></div>
+  <div id="id_jobb_feny"></div>
+  <div id="id_kijelzo"></div><button id="id_gomb_startstop" onclick="stopper1.start();"></button>
+  <p>Lorem ipsum...</p>
+  <h2>2. Stopper</h2>
+  <div id="id_bal_feny2">
+    __
+  </div>
+  <div id="id_jobb_feny2">
+    __
+  </div>
+  <div id="id_kijelzo2">
+    __
+  </div><button id="id_gomb_startstop2" onclick="stopper2.start();"></button>
+  <p>Lorem ipsum...</p>
+</body>
+</html>
