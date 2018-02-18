@@ -1,0 +1,18 @@
+/*
+ * Állomány:  JS003A1.css
+ * Feladat:   JS003A1
+ * Létrejött: 2018.02.18
+ * Létrehozó: zavorszky@yahoo.com
+ */
+body
+  {font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  color: black;
+  background-color: white}
+
+ol.OLC_betu {
+  list-style-type: lower-alpha;
+}
+span.SC_pont {
+  color: grey
+}
