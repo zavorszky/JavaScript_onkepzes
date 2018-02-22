@@ -14,19 +14,21 @@
   <script src="JS003A1.js"></script>
 </head>
 <body>
-  <h1>Példa: JS003A1</h1><!--KérdőÍv CSapatTagTipus-->
+  <h1>Példa: JS003A1</h1>
+  <p>Lorem ipsum...</p>
   <form name="KI_CSTT" id="KI_CSTT">
     <ol>
       <li>
-        <span class="SC_pont">(össz. pont:)</span> <strong>Azzal veszem ki a részem a csapatmunkából, hogy</strong>
+        <span id="KI_CSTT_pont_1"></span> <strong>Azzal veszem ki a részem a csapatmunkából, hogy</strong>
         <ol class="OLC_betu">
-          <li><span class="SC_pont">(pont:<input type="number" min='0' max='10' name="KI_CSTT_kerdes_1_1">)</span>
-          gyorsan érszreveszem és megragadom a kínálkozó lehetőségeket.</li>
-          <li><span class="SC_pont">(pont:<input type="number" min='0' max='10' name="KI_CSTT_kerdes_1_2">)</span>
-          szinte bárkivel együtt tudok dolgozni</li>
+          <li>( <input type="number" min='0' max='10' name="KI_CSTT_pont_1_1"> ?) gyorsan érszreveszem és
+          megragadom a kínálkozó lehetőségeket.</li>
+          <li>( <input type="number" min='0' max='10' name="KI_CSTT_pont_1_2"> ?) szinte bárkivel együtt tudok
+          dolgozni</li>
         </ol>
       </li>
     </ol>
+    <p>A ellenőrzéshez cklikkeljen az <input type="button" value=":Ellenőrzés:" onclick="ellenorzes();"> gombra</p>
   </form>
 </body>
 </html>
