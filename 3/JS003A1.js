@@ -19,7 +19,7 @@ function ellenorzes() {
   var v_pontszam_jo;
   var v_pontszam_mind_jo;
   var v_pontszam_osszeg;
-  
+
   var i, j, k;
 
   for (i = 0; i < (v_kerdes_csoportok.length); i++) {
@@ -37,7 +37,7 @@ function ellenorzes() {
       }
       v_pontszam_osszeg += v_pontszam;
     }
-    
+
     if (!v_pontszam_mind_jo) {
       v_hiba_uzenet = "[Hibás pontszám]";
       v_hiba_szin = v_szin_hiba;
