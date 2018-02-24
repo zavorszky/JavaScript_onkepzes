@@ -14,21 +14,58 @@
   <script src="JS003A1.js"></script>
 </head>
 <body>
-  <h1>Példa: JS003A1</h1>
-  <p>Lorem ipsum...</p>
+  <h1>Példa: JS003A1 - Csapattagtípus (CsTT) kérdőív (KI)</h1>
+  <p>Útmutató: Minden egyes számozott kijelentésnél válassza ki azokat a mondatokat (vagy mondatot), amelyek
+  legtalálóbban írják le az ön viselkedédét.</p>
+  <p>Akár az összes válaszra adhat pontot, de közülük csak egyre is adhat 10 pontot. A pontok összértéke pontosan 10
+  kell hogy legyen.</p>
   <form name="KI_CSTT" id="KI_CSTT">
     <ol>
       <li>
         <span id="KI_CSTT_pont_1"></span> <strong>Azzal veszem ki a részem a csapatmunkából, hogy</strong>
         <ol class="OLC_betu">
-          <li>( <input type="number" min='0' max='10' name="KI_CSTT_pont_1_1"> ?) gyorsan érszreveszem és
-          megragadom a kínálkozó lehetőségeket.</li>
-          <li>( <input type="number" min='0' max='10' name="KI_CSTT_pont_1_2"> ?) szinte bárkivel együtt tudok
-          dolgozni</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> gyorsan
+          érszreveszem és megragadom a kínálkozó lehetőségeket.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> szinte bárkivel
+          együtt tudok dolgozni.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> sosem fogyok ki az
+          ötletekből.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> kihozom a
+          többiekből, amit a csapatért tenni tudnak.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> mindent
+          végigcsinálok, amit elkezdtem.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> ha a várható
+          eredmény indokolja kész vagyok átmenetileg népszerűtlenné válni.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> ismerős
+          helyzetekben gyorsan meg tudom itélni mely lépések lennének célravezetők.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> előitéletek és
+          elfogultság nélkül teszek alternatív javaslatokat.</li>
+        </ol>
+      </li>
+      <li>
+        <span id="KI_CSTT_pont_2"></span> <strong>A csapatmunkában talán hátrányos, hogy</strong>
+        <ol class="OLC_betu">
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> kényelmetlenül
+          érzem magam egy megbeszélésen, ha nincs megfelelő módon előkészítve és irányítva.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> túlságosan
+          támogatom azokat a javaslatokat, amelyeknek a csoport nem szentel kellő figyelmet.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> ha új ötletekkel
+          kell előhozakodni, többet beszélek a kelleténél.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> túlságosan
+          tárgyilagosan gondolkodom ahhoz, hogy lelkesedjem a közös célokért.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> erőszakosnak és
+          önkényesnek látszaom, amikor megpróbálom elérni, hogy valamilyen problémát megoldjunk.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> nem tudok
+          vezéregyéniség módjára viselkedni, aminek talán az az oka, hogy túlságosan is figyelembe veszem a többiek
+          véleményét.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> ha valami új jut
+          az eszembe, hosszasan elmerengek rajta, és elmulasztom ami közben történik.</li>
+          <li><span>(pontsz.:</span> <input type="number" min="0" max="10" value="1"> <span>)</span> a munkatársam
+          szerint túl sokat aggódom feleslegesen a részletek és a várható nehézségek miatt.</li>
         </ol>
       </li>
     </ol>
-    <p>A ellenőrzéshez cklikkeljen az <input type="button" value=":Ellenőrzés:" onclick="ellenorzes();"> gombra</p>
+    <p>A ellenőrzéshez klikkeljen az <input type="button" value="Ellenőrzés" onclick="ellenorzes();"> gombra</p>
   </form>
 </body>
 </html>
