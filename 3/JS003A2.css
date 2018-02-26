@@ -1,0 +1,21 @@
+/*
+ * Állomány:  JS003A2.css
+ * Feladat:   JS003A2
+ * Létrejött: 2018.02.25
+ * Létrehozó: zavorszky@yahoo.com
+ */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 135%;
+  color: black;
+  background-color: white
+}
+
+ol.OLC_betu {
+  list-style-type: lower-alpha;
+}
+
+form ol li ol li span {
+  color: silver
+}
