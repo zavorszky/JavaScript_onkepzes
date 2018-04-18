@@ -1,3 +1,5 @@
 *.komodoproject
 ~$*.*
+.gitignore
+JavaScript_onkepzes_v2.komodoproject
 
